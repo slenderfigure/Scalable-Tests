@@ -4,7 +4,10 @@
   <div class="top-content">
     <h3>{{ question.title }}</h3>
 
-    <span>Points: <strong>{{ question.points }}</strong></span>
+    <div class="badge">
+      <span>Points:</span>
+      <span>{{ question.points }}</span>
+      </div>
   </div>
 
   <div class="content">
@@ -24,6 +27,6 @@
       [time]="question.timeLimit"
       (timeout)="onTimeout(question)"></timer>
 
-    <button class="proceed-btn">Next</button>
+    <button (click)="changeQuestion()" class="proceed-btn">Next</button>
   </div>
 </div>

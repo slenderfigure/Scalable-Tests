@@ -7,11 +7,13 @@ import { TestService } from './service/test.service';
 
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
 import { TimerComponent } from './timer/timer.component';
+import { TestInfoComponent } from './test-info/test-info.component';
 
 @NgModule({
   declarations: [
     TestQuestionsComponent,
-    TimerComponent
+    TimerComponent,
+    TestInfoComponent
   ],
   imports: [
     CommonModule,

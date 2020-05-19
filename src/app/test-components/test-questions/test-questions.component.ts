@@ -12,7 +12,7 @@ import { Question } from '../question';
 })
 export class TestQuestionsComponent implements OnInit {
   question: Question;
-  loading: boolean = false;
+  loading: boolean = true;
   selected: number;
 
   constructor(
@@ -25,6 +25,7 @@ export class TestQuestionsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.ts.getQuestionById(params.get('id')).subscribe(question => {
         this.question = question;
+        this.loading = false;
       });
     });
   }
@@ -44,6 +45,12 @@ export class TestQuestionsComponent implements OnInit {
 
   onTimeout(question: Question): void {
     question.approved = question.selectedAnswer == question.correctAnswer;
+    this.selected = null;
+    // this.changeQuestion();
   }
 
+  changeQuestion(): void {
+    this.loading = true;
+    this.router.navigate(['/test', +this.question.id + 1]);
+  }
 }
