@@ -219,6 +219,28 @@ body {
 
 @keyframes reveal {
   from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
     opacity: 0;
     transform: translateY(50px);
   }
