@@ -216,3 +216,14 @@ body {
 ::selection {
   background-color: rgba(64, 111, 220, 0.3);
 }
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
