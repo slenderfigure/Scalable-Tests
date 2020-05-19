@@ -9,18 +9,22 @@ import { Input, Output, EventEmitter } from '@angular/core';
 export class TimerComponent implements OnInit, OnChanges {
   @Input() time: string;
   @Output() timeout: EventEmitter<boolean> = new EventEmitter();
+  private animationTimer: any;
+  private questionTimer: any;
   isEnding: boolean = false;
   countDown: string;
-  private timer: any;
-
+  circle: SVGCircleElement;
+  radius: number = 0;
+  circumference: number = 0;
+ 
   constructor() { }
 
   ngOnInit(): void {
-    
   }
 
   ngOnChanges(): void {
-    this.initTimer();
+    this.setDefaults();
+    this.initTimer();    
   }
 
   private initTimer(): void {
@@ -35,11 +39,13 @@ export class TimerComponent implements OnInit, OnChanges {
 
     if (!duration) { return; }
 
-    this.timer = setInterval(() => {
+    this.setProgress(duration);
+
+    this.questionTimer = setInterval(() => {
       if ((duration -= 1) == 0) {
         this.timeout.emit(true);
 
-        clearInterval(this.timer);
+        clearInterval(this.questionTimer);
       }
 
       // hours = mins > 0 ? hours : hours -= 1;
@@ -50,4 +56,32 @@ export class TimerComponent implements OnInit, OnChanges {
       this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
     }, 1000);
   }
+
+  setDefaults(): void {
+    this.circle = document.querySelector('.progress-ring-circle');
+    this.radius = this.circle.r.baseVal.value;
+    this.circumference = this.radius * 2 * Math.PI;
+
+    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
+  }
+
+  setProgress(duration: number): void {
+    let animationCounter = duration;
+
+    const offset = percent => {
+      return this.circumference - percent / 100 * this.circumference;
+    }
+
+    this.circle.style.transition = `stroke-dashoffset ${duration}s linear`;
+
+    this.animationTimer = setInterval(() => {
+      if ((animationCounter -= 1) == 0) {
+        clearInterval(this.animationTimer);
+      }
+      let percent = Math.floor((animationCounter / duration) * 100);
+      
+      this.circle.style.strokeDashoffset = `${offset(percent)}`;
+    });
+  }
+
 }

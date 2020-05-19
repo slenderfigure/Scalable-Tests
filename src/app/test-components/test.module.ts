@@ -9,6 +9,7 @@ import { TestQuestionsComponent } from './test-questions/test-questions.componen
 import { TimerComponent } from './timer/timer.component';
 import { TestInfoComponent } from './test-info/test-info.component';
 
+
 @NgModule({
   declarations: [
     TestQuestionsComponent,

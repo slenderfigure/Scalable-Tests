@@ -10,6 +10,8 @@ export class TestInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  
 }

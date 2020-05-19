@@ -11,6 +11,24 @@
   background-color: #dbe3eb;
 }
 
+.progress-ring {
+  position: relative;
+}
+
+.progress-ring-circle {
+  stroke: #ddd;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  fill: transparent;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.count-down {
+  font-size: 1rem;
+  fill: #666;
+}
+
 .running-out {
-  color: #ff4646 !important;
+  fill: #e44646 !important;
 }
