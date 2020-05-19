@@ -1,4 +1,5 @@
 .progress-ring {
+  user-select: none;
 }
 
 .progress-ring-circle {
