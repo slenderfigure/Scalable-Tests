@@ -259,11 +259,12 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #151D28;
+  padding-bottom: 3rem;
 }
 
 .wrapper {
   max-width: 1000px;
-  margin: 0 auto 4rem;
+  margin: auto;
   padding: 0 1rem;
   animation: reveal 0.5s ease;
 }

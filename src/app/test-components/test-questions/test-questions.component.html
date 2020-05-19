@@ -1,44 +1,46 @@
-<div *ngIf="!loading && question" class="wrapper">
-  <section class="top-section">
-    <timer 
-      [time]="question.timeLimit"
-      (timeout)="onTimeout(question)"></timer>
-  </section>
+<div class="view-container">
+  <div *ngIf="!loading && question" class="wrapper">
+    <section class="top-section">
+      <timer 
+        [time]="question.timeLimit"
+        (timeout)="onTimeout(question)"></timer>
+    </section>
+  
+    <section 
+      *ngIf="!loading && question"
+      class="question-section">
+      <div class="top-content">
+        <h3>{{ question.title }}</h3>
+  
+        <div class="badge">
+          <span>Points:</span>
+          <span>{{ question.points }}</span>
+          </div>
+      </div>
+  
+      <div class="content">
+        <img *ngIf="question.image" [src]="question.image">
+  
+        <button 
+          *ngFor="let answer of question.answers; index as index"
+          (click)="onAnswerClick(question, answer)"
+          class="answer"
+          [class.selected]="selected == index">
+          {{ index + 1 }}. {{ answer }}
+        </button>
+      </div>
+      
+      <div class="bottom-content">
+        <button 
+          [disabled]="selected == null"
+          (click)="changeQuestion()" 
+          class="proceed-btn">
+          <span>Next</span>
+  
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.5rem" height="1.5rem"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </button>
+      </div>
+    </section>
+  </div>
 
-  <section 
-    *ngIf="!loading && question"
-    class="question-section">
-    <div class="top-content">
-      <h3>{{ question.title }}</h3>
-
-      <div class="badge">
-        <span>Points:</span>
-        <span>{{ question.points }}</span>
-        </div>
-    </div>
-
-    <div class="content">
-      <img *ngIf="question.image" [src]="question.image">
-
-      <button 
-        *ngFor="let answer of question.answers; index as index"
-        (click)="onAnswerClick(question, answer)"
-        class="answer"
-        [class.selected]="selected == index">
-        {{ index + 1 }}. {{ answer }}
-      </button>
-    </div>
-    
-    <div class="bottom-content">
-      <button 
-        [disabled]="!selected"
-        (click)="changeQuestion()" 
-        class="proceed-btn">
-        <span>Next</span>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.5rem" height="1.5rem"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-      </button>
-    </div>
-  </section>
 </div>
-
