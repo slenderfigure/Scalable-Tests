@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-interface Question {
-  id: string | number;
-  title: string;
-  points: number;
-  answers?: any[];
-  image?: string;
-  correctAnswer: string;
-  selectedAnswer?: string;  
-  timeLimit: string; // 00:00:00
-  approved?: boolean;
-}
+import { TestService } from '../service/test.service';
+import { Question } from '../question';
 
 @Component({
-  selector: 'dynamic-tests',
-  templateUrl: './dynamic-tests.component.html',
-  styleUrls: ['./dynamic-tests.component.css']
+  selector: 'test-questions',
+  templateUrl: './test-questions.component.html',
+  styleUrls: ['./test-questions.component.css']
 })
-export class DynamicTestsComponent implements OnInit {
+export class TestQuestionsComponent implements OnInit {
   score: number = 10;
   hideQuestion: boolean = false;
   countDown: string = '';
@@ -71,7 +62,7 @@ export class DynamicTestsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private ts: TestService) { }
 
   ngOnInit(): void {
     this.questions = this.questions.map(question => {
@@ -97,28 +88,6 @@ export class DynamicTestsComponent implements OnInit {
 
   onTimeout(question: Question): void {
     question.approved = question.selectedAnswer == question.correctAnswer;
-
-    // if (this.index < this.questions.length - 1) {
-    //   this.index += 1;
-    //   this.selected = null;
-    //   this.activeQuestion = this.questions[this.index];
-    // } else {
-    //   const wrongTotal = this.questions.filter(question => !question.approved).length;
-    //   const rightTotal = this.questions.filter(question => question.approved).length;
-
-    //   const score = 
-    //     this.questions.filter(question => question.approved)
-    //       .map(question => question.points)
-    //       .reduce((a, b) => a + b, 0);
-
-    //   console.log
-    //   (`
-    //     Number of questions: ${this.questions.length},
-    //     Total right: ${rightTotal}
-    //     Total wrong: ${wrongTotal}
-    //     Final score: ${score}
-    //   `);
-    // }
   }
 
 }
