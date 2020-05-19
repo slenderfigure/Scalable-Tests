@@ -206,7 +206,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-  background-color: #151D28;
+  
 }
 
 * {
@@ -253,4 +253,17 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.view-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #151D28;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  animation: reveal 0.5s ease;
 }

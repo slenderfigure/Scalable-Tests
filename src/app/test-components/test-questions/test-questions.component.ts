@@ -25,6 +25,7 @@ export class TestQuestionsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.ts.getQuestionById(params.get('id')).subscribe(question => {
         this.question = question;
+        this.question.answers = this.shuffleAnswers(question.answers);
         this.loading = false;
       });
     });
