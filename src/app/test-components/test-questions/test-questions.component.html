@@ -1,32 +1,37 @@
-<div 
-  *ngIf="!loading && question"
-  class="question-container">
-  <div class="top-content">
-    <h3>{{ question.title }}</h3>
-
-    <div class="badge">
-      <span>Points:</span>
-      <span>{{ question.points }}</span>
-      </div>
-  </div>
-
-  <div class="content">
-    <img *ngIf="question.image" [src]="question.image">
-
-    <button 
-      *ngFor="let answer of question.answers; index as index"
-      (click)="onAnswerClick(question, answer)"
-      class="answer"
-      [class.selected]="selected == index">
-      {{ index + 1 }}. {{ answer }}
-    </button>
-  </div>
-  
-  <div class="bottom-content">
+<div *ngIf="!loading && question" class="wrapper">
+  <section class="top-section">
     <timer 
       [time]="question.timeLimit"
       (timeout)="onTimeout(question)"></timer>
+  </section>
 
-    <button (click)="changeQuestion()" class="proceed-btn">Next</button>
-  </div>
+  <section 
+    *ngIf="!loading && question"
+    class="question-section">
+    <div class="top-content">
+      <h3>{{ question.title }}</h3>
+
+      <div class="badge">
+        <span>Points:</span>
+        <span>{{ question.points }}</span>
+        </div>
+    </div>
+
+    <div class="content">
+      <img *ngIf="question.image" [src]="question.image">
+
+      <button 
+        *ngFor="let answer of question.answers; index as index"
+        (click)="onAnswerClick(question, answer)"
+        class="answer"
+        [class.selected]="selected == index">
+        {{ index + 1 }}. {{ answer }}
+      </button>
+    </div>
+    
+    <div class="bottom-content">
+      <button (click)="changeQuestion()" class="proceed-btn">Next</button>
+    </div>
+  </section>
 </div>
+

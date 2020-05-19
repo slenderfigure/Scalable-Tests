@@ -35,7 +35,7 @@ export class TimerComponent implements OnInit, OnChanges {
     let styled = num => num > 9 ? num : `0${num}`;
 
     this.isEnding = secs > 10 ? false : true;
-    this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
+    this.countDown = `${styled(mins)}:${styled(secs)}`;
 
     if (!duration) { return; }
 
@@ -53,12 +53,12 @@ export class TimerComponent implements OnInit, OnChanges {
       secs  = secs > 0 ? secs -= 1 : 59;
 
       this.isEnding = secs > 10 ? false : true;
-      this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
+      this.countDown = `${styled(mins)}:${styled(secs)}`;
     }, 1000);
   }
 
   setDefaults(): void {
-    this.circle = document.querySelector('.progress-ring-circle');
+    this.circle = document.querySelector('.outer');
     this.radius = this.circle.r.baseVal.value;
     this.circumference = this.radius * 2 * Math.PI;
 
@@ -66,8 +66,7 @@ export class TimerComponent implements OnInit, OnChanges {
   }
 
   setProgress(duration: number): void {
-    let animationCounter = duration;
-
+    let counter = duration;
     const offset = percent => {
       return this.circumference - percent / 100 * this.circumference;
     }
@@ -75,10 +74,10 @@ export class TimerComponent implements OnInit, OnChanges {
     this.circle.style.transition = `stroke-dashoffset ${duration}s linear`;
 
     this.animationTimer = setInterval(() => {
-      if ((animationCounter -= 1) == 0) {
+      if ((counter -= 1) == 0) {
         clearInterval(this.animationTimer);
       }
-      let percent = Math.floor((animationCounter / duration) * 100);
+      let percent = Math.floor((counter / duration) * 100);
       
       this.circle.style.strokeDashoffset = `${offset(percent)}`;
     });

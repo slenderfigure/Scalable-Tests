@@ -1,32 +1,26 @@
-.timer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75px;
-  height: 75px;
-  padding: 1rem;
-  color: #555;
-  font-size: 0.95rem;
-  border-radius: 100px;
-  background-color: #dbe3eb;
-}
-
 .progress-ring {
-  position: relative;
 }
 
 .progress-ring-circle {
-  stroke: #ddd;
-  stroke-width: 6px;
   stroke-linecap: round;
   fill: transparent;
+}
+
+.inner {
+  stroke: #0D1019;
+  stroke-width: 7px;
+}
+
+.outer {
+  stroke: #e00366;
+  stroke-width: 8px;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
 
 .count-down {
   font-size: 1rem;
-  fill: #666;
+  fill: #9eaec2;
 }
 
 .running-out {
