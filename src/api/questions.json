@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "If Peter has 6 balloons, calculate the mass and circumference of the Sun",
+    "points": 5,
+    "answers": [
+      "None of the above", 
+      "Infinite", 
+      "Didn't study for this test", 
+      "What the heck?", 
+      "1.989 × 10^30 kg"
+    ],
+    "correctAnswer": "1.989 × 10^30 kg",
+    "timeLimit": "00:00:15"
+  }, 
+  {
+    "id": 2,
+    "title": "If You Had To Work But Didn’t Need The Money, What Would You Choose To Do?",
+    "points": 5,
+    "answers": [
+      "Fun and weird and makes people think", 
+      "A great way to get a real debate going", 
+      "Everyone has a favorite",
+      "Wacky, but you’ll find out a lot about their diet", 
+      "An interesting way to ask about the dream career"
+    ],
+    "correctAnswer": "An interesting way to ask about the dream career",
+    "timeLimit": "00:00:20"
+  }, 
+  {
+    "id": 3,
+    "title": "Which of the following best describes the technique used on this photo?",
+    "points": 2,
+    "answers": [
+      "Weird dude using a gravity quirk", 
+      "Wingardium leviosa", 
+      "High Speed Photography", 
+      "Wack af", 
+      "Long Exposure Photography"
+    ],
+    "image": "https://dvyvvujm9h0uq.cloudfront.net/com/articles/1543483387-reinhart-julian-1145947-unsplash.jpg",
+    "correctAnswer": "High Speed Photography",
+    "timeLimit": "00:00:15"
+  }
+]

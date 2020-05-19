@@ -15,8 +15,8 @@ import { TestModule } from './test-components/test.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    TestModule
+    TestModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

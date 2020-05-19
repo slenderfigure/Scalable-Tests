@@ -1,17 +1,18 @@
 <div 
+  *ngIf="!loading && question"
   class="question-container">
   <div class="top-content">
-    <h3>{{ activeQuestion.title }}</h3>
+    <h3>{{ question.title }}</h3>
 
-    <span>Points: <strong>{{ activeQuestion.points }}</strong></span>
+    <span>Points: <strong>{{ question.points }}</strong></span>
   </div>
 
   <div class="content">
-    <img *ngIf="activeQuestion.image" [src]="activeQuestion.image">
+    <img *ngIf="question.image" [src]="question.image">
 
     <button 
-      *ngFor="let answer of activeQuestion.answers; index as index"
-      (click)="onAnswerClick(activeQuestion, answer)"
+      *ngFor="let answer of question.answers; index as index"
+      (click)="onAnswerClick(question, answer)"
       class="answer"
       [class.selected]="selected == index">
       {{ index + 1 }}. {{ answer }}
@@ -20,8 +21,8 @@
   
   <div class="bottom-content">
     <timer 
-      [time]="activeQuestion.timeLimit"
-      (timeout)="onTimeout(activeQuestion)"></timer>
+      [time]="question.timeLimit"
+      (timeout)="onTimeout(question)"></timer>
 
     <button class="proceed-btn">Next</button>
   </div>

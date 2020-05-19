@@ -7,5 +7,5 @@ export interface Question {
   correctAnswer: string;
   selectedAnswer?: string;  
   timeLimit: string; // 00:00:00
-  approved: boolean;
+  approved?: boolean;
 }

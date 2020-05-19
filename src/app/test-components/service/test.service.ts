@@ -9,4 +9,12 @@ import { Question } from '../question';
 export class TestService {
 
   constructor(private http: HttpClient) { }
+
+  getQuestionById(id: string | number): Observable<Question> {
+    return this.http.get<Question[]>('../../../api/questions.json').pipe(
+      map(questions => {
+        return questions.find(question => question.id == id);
+      })
+    );
+  }
 }
