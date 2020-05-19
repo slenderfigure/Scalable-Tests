@@ -50,7 +50,8 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   changeQuestion(): void {
-    this.loading = true;
-    this.router.navigate(['/test', +this.question.id + 1]);
+    // this.loading = true;
+    // this.router.navigate(['/test', +this.question.id + 1]);
+    window.location.href = `/test/${+this.question.id + 1}`;
   }
 }

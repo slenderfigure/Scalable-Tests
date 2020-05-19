@@ -24,7 +24,7 @@ export class TimerComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.setDefaults();
-    this.initTimer();    
+    setTimeout(() => this.initTimer()); 
   }
 
   private initTimer(): void {

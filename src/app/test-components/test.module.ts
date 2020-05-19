@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { TestRoutingModule } from './test-routing.module';
 import { TestService } from './service/test.service';
@@ -18,7 +17,6 @@ import { TestInfoComponent } from './test-info/test-info.component';
   ],
   imports: [
     TestRoutingModule,
-    HttpClientModule,
     SharedModule
   ],
   providers: [TestService]
