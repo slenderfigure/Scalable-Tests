@@ -177,6 +177,11 @@ button {
   user-select: none;
 }
 
+button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
 html, body {
   min-height: 100%;
 }
