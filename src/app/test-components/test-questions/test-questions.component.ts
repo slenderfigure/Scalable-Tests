@@ -14,7 +14,9 @@ export class TestQuestionsComponent implements OnInit {
   question: Question;
   loading: boolean = true;
   selected: number;
-  duration: number;
+  private testId: string;
+  private questionId: string | number;
+  private duration: number;
 
   constructor(
     private router: Router,
@@ -24,7 +26,10 @@ export class TestQuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.ts.getQuestionById(params.get('id')).subscribe(question => {
+      this.testId = params.get('testId');
+      this.questionId = params.get('questionId');
+      
+      this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
         this.question = question;
         this.question.answers = this.shuffleAnswers(question.answers);
         this.loading = false;
@@ -58,9 +63,10 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   changeQuestion(): void {
+    // this.onTimeout();
     // this.loading = true;
     // this.router.navigate(['/test', +this.question.id + 1]);
-    // window.location.href = `/test/${+this.question.id + 1}`;
-    this.onTimeout();
+    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
   }
+
 }

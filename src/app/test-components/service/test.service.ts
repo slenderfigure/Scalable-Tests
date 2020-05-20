@@ -23,10 +23,10 @@ export class TestService {
     );
   }
 
-  getQuestionById(id: string | number): Observable<Question> {
-    return this.http.get<Question[]>('../../../api/questions.json').pipe(
-      map(questions => {
-        return questions.find(question => question.id == id);
+  getNextQuestion(tesId: string, questionId: string | number): Observable<Question> {
+    return this.getTest(tesId).pipe(
+      map(test => {
+        return test.questions.find(question => question.id == questionId);
       })
     );
   }
