@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
+import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
 import { Question } from '../question.model';
 
@@ -9,12 +11,21 @@ import { Question } from '../question.model';
   styleUrls: ['./test-info.component.css']
 })
 export class TestInfoComponent implements OnInit {
-  randTest: Test
+  test: Test;
+  loading: boolean = true;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private ts: TestService
+  ) { }
 
   ngOnInit(): void {
-    
+    this.route.paramMap.subscribe(params => {
+      this.ts.getTest(params.get('testId')).subscribe(test => {
+        this.test = test;
+        this.loading = false;
+      });
+    });
   }
 
   

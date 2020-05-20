@@ -1,1 +1,13 @@
-<h1>Test Component</h1>
+<div class="wrapper">
+  <div *ngIf="!loading && test" class="card">
+    <h1>{{ test.subject }} test</h1>
+  
+    <p>Points: {{ test.points }} </p>
+    <p>Total questions: {{ test.questions.length }} </p>
+    <p>Time limit: {{ test.timeLimit / 60 }} minute(s)</p>
+    <p>Difficulty: Low</p>
+  
+    <button [routerLink]="['/test', 3]" class="start-button">Begin Test</button>
+  </div>
+  
+</div>

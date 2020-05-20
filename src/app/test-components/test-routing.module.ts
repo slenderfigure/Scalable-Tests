@@ -5,8 +5,8 @@ import { TestInfoComponent } from './test-info/test-info.component';
 
 
 const routes: Route[] = [
-  { path: 'test', component: TestInfoComponent },
-  { path: 'test/:id', component: TestQuestionsComponent }
+  { path: 'test/:testId', component: TestInfoComponent },
+  { path: 'test/:testId/:questionId', component: TestQuestionsComponent }
 ];
 
 @NgModule({

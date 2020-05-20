@@ -1,7 +1,7 @@
 import { Question } from './question.model';
 
 export class Test {
-  testId: string | number;
+  id: string | number;
   subject: string;
   points: number;
   questions: Question[];
@@ -12,20 +12,21 @@ export class Test {
   modifiedDate: Date;
 
   constructor(params: {
-    testId: string | number,
+    id: string | number,
     subject: string,
     points: number,
     questions: Question[],
     timeLimit: number,
     difficulty: number
   }) {
-    this.testId = params.testId;
+    this.id = params.id;
     this.subject = params.subject;
     this.points = params.points;
     this.questions = params.questions;
     this.timeLimit = params.timeLimit;
     this.difficulty = params.difficulty;
     this.creationDate = new Date();
+    this.score = 0;
   }
   
 }

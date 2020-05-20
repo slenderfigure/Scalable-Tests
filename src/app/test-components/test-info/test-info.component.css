@@ -1,0 +1,23 @@
+.card {
+  max-width: 600px;
+  min-height: 800px;
+  margin: 4rem auto 0;
+  padding: 3rem;
+  background-color: #192433;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card > * {
+  color: #fff;
+}
+
+.start-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: 5rem auto 0;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  background-color: #E00366;
+}
