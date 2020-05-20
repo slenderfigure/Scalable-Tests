@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Question } from '../question';
 
 @Injectable()
 export class TestService {
+  private durationSource: Subject<number> = new Subject();
+  duration$: Observable<number> = this.durationSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -16,5 +18,13 @@ export class TestService {
         return questions.find(question => question.id == id);
       })
     );
+  }
+
+  updateQuestionDuration(duration: number): void {
+    this.durationSource.next(duration);
+  }
+
+  stopDurationUpdate(): void {
+    this.durationSource.complete();
   }
 }

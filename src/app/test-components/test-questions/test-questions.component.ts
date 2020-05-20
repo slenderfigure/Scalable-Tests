@@ -14,6 +14,7 @@ export class TestQuestionsComponent implements OnInit {
   question: Question;
   loading: boolean = true;
   selected: number;
+  duration: number;
 
   constructor(
     private router: Router,
@@ -29,6 +30,11 @@ export class TestQuestionsComponent implements OnInit {
         this.loading = false;
       });
     });
+
+    this.ts.duration$.subscribe({
+      next: val => console.log(val),
+      complete: () => this.onTimeout()
+    });
   }
 
   shuffleAnswers(answers: string[]): string[] {
@@ -39,20 +45,23 @@ export class TestQuestionsComponent implements OnInit {
     return answers;
   }
 
-  onAnswerClick(question: Question, selection): void {
-    this.selected = question.answers.indexOf(selection);
-    question.selectedAnswer = selection;
+  onAnswerClick(index: number): void {
+    this.selected = index;
+    this.question.selectedAnswer = this.question.answers[index];
+    console.log(this.question);
   }
 
-  onTimeout(question: Question): void {
-    question.approved = question.selectedAnswer == question.correctAnswer;
+  onTimeout(): void {
+    this.question.approved = 
+      this.question.selectedAnswer == this.question.correctAnswer;
     this.selected = null;
     // this.changeQuestion();
+    
   }
 
   changeQuestion(): void {
     // this.loading = true;
     // this.router.navigate(['/test', +this.question.id + 1]);
-    window.location.href = `/test/${+this.question.id + 1}`;
+    // window.location.href = `/test/${+this.question.id + 1}`;
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
+import { Input } from '@angular/core';
+
+import { TestService } from '../service/test.service';
 
 @Component({
   selector: 'timer',
@@ -8,7 +10,6 @@ import { Input, Output, EventEmitter } from '@angular/core';
 })
 export class TimerComponent implements OnInit, OnChanges {
   @Input() time: string;
-  @Output() timeout: EventEmitter<boolean> = new EventEmitter();
   private animationTimer: any;
   private questionTimer: any;
   isEnding: boolean = false;
@@ -17,14 +18,14 @@ export class TimerComponent implements OnInit, OnChanges {
   radius: number = 0;
   circumference: number = 0;
  
-  constructor() { }
+  constructor(private ts: TestService) { }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(): void {
     this.setDefaults();
-    setTimeout(() => this.initTimer()); 
+    this.initTimer();
   }
 
   private initTimer(): void {
@@ -34,25 +35,30 @@ export class TimerComponent implements OnInit, OnChanges {
     let duration = (hours * 3600) + (mins * 60) + secs;
     let styled = num => num > 9 ? num : `0${num}`;
 
-    this.countDown = `${styled(mins)}:${styled(secs)}`;
+    this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
 
     if (!duration) { return; }
 
     this.setProgress(duration);
 
     this.questionTimer = setInterval(() => {
-      if ((duration -= 1) == 0) {
-        this.timeout.emit(true);
+      if ((duration -= 1) < 0) { 
+        this.ts.stopDurationUpdate();
         clearInterval(this.questionTimer);
+      } else {
+        if (hours > 0) {
+          if (mins == 0 && secs == 0) {
+            hours -= 1;
+            mins = 60;
+          }
+        }
+        mins = secs > 0 ? mins : mins -= 1;
+        secs = secs > 0 ? secs -= 1 : 59;
+  
+        this.ts.updateQuestionDuration(duration);
+        this.isEnding = duration > 10 ? false : true;
+        this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
       }
-
-      // hours = mins > 0 ? hours : hours -= 1;
-      mins  = secs > 0 ? mins : mins -= 1;
-      secs  = secs > 0 ? secs -= 1 : 59;
-
-      this.isEnding = duration > 10 ? false : true;
-      this.countDown = `${styled(mins)}:${styled(secs)}`;
-      
     }, 1000);
   }
 

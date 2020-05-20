@@ -1,9 +1,7 @@
 <div class="view-container">
   <div *ngIf="!loading && question" class="wrapper">
     <section class="top-section">
-      <timer 
-        [time]="question.timeLimit"
-        (timeout)="onTimeout(question)"></timer>
+      <timer [time]="question.timeLimit"></timer>
     </section>
   
     <section 
@@ -23,7 +21,7 @@
   
         <button 
           *ngFor="let answer of question.answers; index as index"
-          (click)="onAnswerClick(question, answer)"
+          (click)="onAnswerClick(index)"
           class="answer"
           [class.selected]="selected == index">
           {{ index + 1 }}. {{ answer }}

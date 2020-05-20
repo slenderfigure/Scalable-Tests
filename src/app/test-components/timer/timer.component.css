@@ -22,6 +22,7 @@
 .count-down {
   font-size: 1rem;
   fill: #9eaec2;
+  transition: fill 0.3s linear;
 }
 
 .running-out {
