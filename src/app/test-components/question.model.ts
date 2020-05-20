@@ -3,10 +3,13 @@ export interface Question {
   title: string;
   points: number;
   answers: any[];
-  image?: string | string[];
   correctAnswer: string;
   selectedAnswer?: string;  
+  image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;
-  completed?: boolean
+  completed?: boolean;
 }
+
+// You should change the answers from buttons to checkboxes to allow 
+// Multiple question with multiple answers

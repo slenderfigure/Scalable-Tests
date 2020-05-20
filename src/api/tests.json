@@ -10,13 +10,12 @@
         "points": 6,
         "answers": [
           "1 kilogram", 
-          "250 grams", 
           "500 grams", 
           "Practically none", 
           "1 gram"
         ],
-        "image": "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
         "correctAnswer": "250 grams",
+        "image": "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
         "timeLimit": "00:00:20"
       }, 
       {
@@ -24,7 +23,6 @@
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
         "points": 6,
         "answers": [
-          "Slightly Acidic", 
           "Strong Acid", 
           "Slightly Basic", 
           "Neutral", 
@@ -38,14 +36,13 @@
         "title": "What is the most common isotope of hydrogen?",
         "points": 6,
         "answers": [
-          "Protium", 
           "Deuterium", 
           "Tritum", 
           "Hydrogen only has one isotope!", 
           "None of the above"
         ],
-        "image": "https://physicsworld.com/wp-content/uploads/2019/11/Illustration-of-an-atomic-nucleus.jpg",
         "correctAnswer": "Protium",
+        "image": "https://physicsworld.com/wp-content/uploads/2019/11/Illustration-of-an-atomic-nucleus.jpg",
         "timeLimit": "00:00:15"
       }, 
       {
@@ -55,7 +52,6 @@
         "answers": [
           "H2", 
           "O2",
-          "H2O", 
           "H2O2", 
           "CO2"
         ],
@@ -70,7 +66,6 @@
           "A definite shape, but no defined volume", 
           "A definite volume and shape", 
           "No defined volume or shape", 
-          "A defined volume, but not a defined shape", 
           "Water isn't a state of matter"
         ],
         "correctAnswer": "A defined volume, but not a defined shape",

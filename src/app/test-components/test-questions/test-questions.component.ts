@@ -30,8 +30,7 @@ export class TestQuestionsComponent implements OnInit {
       this.questionId = params.get('questionId');
 
       this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
-        this.question = question;
-        this.question.answers = this.shuffleAnswers(question.answers);
+        this.initQuestion(question);
         this.loading = false;
       });
     });
@@ -40,6 +39,12 @@ export class TestQuestionsComponent implements OnInit {
       next: duration => this.duration = duration,
       complete: () => this.questionTimeout()
     });
+  }
+
+  initQuestion(question: Question): void {
+    this.question = question;
+    this.question.answers.push(this.question.correctAnswer);
+    this.question.answers = this.shuffleAnswers(question.answers);
   }
 
   shuffleAnswers(answers: string[]): string[] {
