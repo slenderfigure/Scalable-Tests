@@ -28,7 +28,7 @@ export class TestQuestionsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.testId = params.get('testId');
       this.questionId = params.get('questionId');
-      
+
       this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
         this.question = question;
         this.question.answers = this.shuffleAnswers(question.answers);
@@ -38,7 +38,7 @@ export class TestQuestionsComponent implements OnInit {
 
     this.ts.durationTracker$.subscribe({
       next: duration => this.duration = duration,
-      complete: () => this.onTimeout()
+      complete: () => this.questionTimeout()
     });
   }
 
@@ -56,14 +56,14 @@ export class TestQuestionsComponent implements OnInit {
     console.log(this.question);
   }
 
-  onTimeout(): void {
+  questionTimeout(): void {
     this.question.completed = true;
     this.question.completionDuration = this.duration;
     console.log(this.question);
   }
 
   changeQuestion(): void {
-    // this.onTimeout();
+    // this.questionTimeout();
     // this.loading = true;
     // this.router.navigate(['/test', +this.question.id + 1]);
     window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
