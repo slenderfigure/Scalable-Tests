@@ -1,6 +1,10 @@
 <div class="view-container">
   <div *ngIf="!loading && question" class="wrapper">
     <section class="top-section">
+      <div class="test-information">
+        <h3>Section 1. Choose the correct answer</h3>
+      </div>
+
       <timer [time]="question.timeLimit"></timer>
     </section>
   

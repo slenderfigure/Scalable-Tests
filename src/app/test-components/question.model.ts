@@ -1,10 +1,13 @@
 export interface Question {
   id: string | number;
+  section?: string;
+  problem: string;
   title: string;
   points: number;
   answers: any[];
-  correctAnswer: string;
-  selectedAnswer?: string;  
+  hasVariousAnswers?: boolean;
+  correctAnswer: string | string[];
+  selectedAnswer?: string | string[];  
   image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;

@@ -26,7 +26,29 @@ export class TestInfoComponent implements OnInit {
         this.loading = false;
       });
     });
+
+    console.log(this.createQuestion());
   }
 
-  
+  createQuestion(): Question {
+    return {
+      id: "1",
+      "section": "Section 1",
+      "problem": "Choose the correct answer",
+      title: "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
+      points: 6,
+      answers: [
+        "1 kilogram", 
+        "500 grams", 
+        "Practically none", 
+        "1 gram",
+        "250 grams"
+      ],
+      hasVariousAnswers: true,
+      correctAnswer: [ "250 grams", "1 gram" ],
+      image: "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
+      timeLimit: "00:00:20"
+    }
+  }
+
 }

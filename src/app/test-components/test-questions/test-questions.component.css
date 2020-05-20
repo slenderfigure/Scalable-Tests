@@ -1,8 +1,18 @@
 .top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   width: 100%;
   padding: 2rem 0;
-  text-align: center;
 }
+
+.test-information h3 {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+
 
 .question-section {
   display: flex;
@@ -10,7 +20,7 @@
   width: 100%;
   min-height: 300px;
   margin: auto;
-  border-radius: 6px;
+  border-radius: 2px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.4s ease;
   overflow: hidden;

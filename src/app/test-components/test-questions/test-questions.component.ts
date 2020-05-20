@@ -11,13 +11,13 @@ import { Question } from '../question.model';
   styleUrls: ['./test-questions.component.css']
 })
 export class TestQuestionsComponent implements OnInit {
-  question: Question;
-  loading: boolean = true;
-  selected: number;
   private testId: string;
   private questionId: string | number;
   private duration: number;
-
+  question: Question;
+  loading: boolean = true;
+  selected: number;
+  
   constructor(
     private router: Router,
     private route: ActivatedRoute,
