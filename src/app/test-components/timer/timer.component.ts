@@ -34,7 +34,6 @@ export class TimerComponent implements OnInit, OnChanges {
     let duration = (hours * 3600) + (mins * 60) + secs;
     let styled = num => num > 9 ? num : `0${num}`;
 
-    this.isEnding = secs > 10 ? false : true;
     this.countDown = `${styled(mins)}:${styled(secs)}`;
 
     if (!duration) { return; }
@@ -44,7 +43,6 @@ export class TimerComponent implements OnInit, OnChanges {
     this.questionTimer = setInterval(() => {
       if ((duration -= 1) == 0) {
         this.timeout.emit(true);
-
         clearInterval(this.questionTimer);
       }
 
@@ -52,8 +50,9 @@ export class TimerComponent implements OnInit, OnChanges {
       mins  = secs > 0 ? mins : mins -= 1;
       secs  = secs > 0 ? secs -= 1 : 59;
 
-      this.isEnding = secs > 10 ? false : true;
+      this.isEnding = duration > 10 ? false : true;
       this.countDown = `${styled(mins)}:${styled(secs)}`;
+      
     }, 1000);
   }
 
