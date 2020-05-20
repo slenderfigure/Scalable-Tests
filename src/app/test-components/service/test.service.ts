@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Question } from '../question';
+import { Question } from '../question.model';
 
 @Injectable()
 export class TestService {

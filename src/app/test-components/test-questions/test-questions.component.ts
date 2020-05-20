@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
-import { Question } from '../question';
+import { Question } from '../question.model';
 
 
 @Component({
