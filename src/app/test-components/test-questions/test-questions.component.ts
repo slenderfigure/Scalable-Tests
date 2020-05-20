@@ -31,8 +31,8 @@ export class TestQuestionsComponent implements OnInit {
       });
     });
 
-    this.ts.duration$.subscribe({
-      next: val => console.log(val),
+    this.ts.durationTracker$.subscribe({
+      next: duration => this.duration = duration,
       complete: () => this.onTimeout()
     });
   }
@@ -52,16 +52,15 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   onTimeout(): void {
-    this.question.approved = 
-      this.question.selectedAnswer == this.question.correctAnswer;
-    this.selected = null;
-    // this.changeQuestion();
-    
+    this.question.completed = true;
+    this.question.completionDuration = this.duration;
+    console.log(this.question);
   }
 
   changeQuestion(): void {
     // this.loading = true;
     // this.router.navigate(['/test', +this.question.id + 1]);
     // window.location.href = `/test/${+this.question.id + 1}`;
+    this.onTimeout();
   }
 }

@@ -3,9 +3,10 @@ export interface Question {
   title: string;
   points: number;
   answers: any[];
-  image?: string;
+  image?: string | string[];
   correctAnswer: string;
   selectedAnswer?: string;  
   timeLimit: string; // 00:00:00
-  approved?: boolean;
+  completionDuration?: number;
+  completed?: boolean
 }

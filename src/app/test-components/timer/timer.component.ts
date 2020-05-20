@@ -32,37 +32,38 @@ export class TimerComponent implements OnInit, OnChanges {
     let hours = +this.time.split(':')[0];
     let mins  = +this.time.split(':')[1];
     let secs  = +this.time.split(':')[2];
-    let duration = (hours * 3600) + (mins * 60) + secs;
-    let styled = num => num > 9 ? num : `0${num}`;
-
-    this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
-
-    if (!duration) { return; }
-
+    const duration = (hours * 3600) + (mins * 60) + secs;
+    let elapsed = duration;
+    
+    this.countDown = this.styleCountdown(hours, mins, secs);
     this.setProgress(duration);
 
     this.questionTimer = setInterval(() => {
-      if ((duration -= 1) < 0) { 
-        this.ts.stopDurationUpdate();
+      if ((elapsed -= 1) == 0) { 
+        this.ts.stopDurationTracker();
         clearInterval(this.questionTimer);
-      } else {
-        if (hours > 0) {
-          if (mins == 0 && secs == 0) {
-            hours -= 1;
-            mins = 60;
-          }
-        }
-        mins = secs > 0 ? mins : mins -= 1;
-        secs = secs > 0 ? secs -= 1 : 59;
-  
-        this.ts.updateQuestionDuration(duration);
-        this.isEnding = duration > 10 ? false : true;
-        this.countDown = `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
       }
+      if (hours > 0) {
+        if (mins == 0 && secs == 0) {
+          hours -= 1;
+          mins = 60;
+        }
+      }
+      mins = secs > 0 ? mins : mins -= 1;
+      secs = secs > 0 ? secs -= 1 : 59;
+
+      this.ts.updateDurationTracker(duration - elapsed);
+      this.countDown = this.styleCountdown(hours, mins, secs);
+      this.isEnding = elapsed > 10 ? false : true; 
     }, 1000);
   }
 
-  setDefaults(): void {
+  private styleCountdown(hours: number, mins: number, secs: number): string {
+    let styled = num => num > 9 ? num : `0${num}`;
+    return `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
+  }
+
+  private setDefaults(): void {
     this.circle = document.querySelector('.outer');
     this.radius = this.circle.r.baseVal.value;
     this.circumference = this.radius * 2 * Math.PI;
@@ -70,7 +71,7 @@ export class TimerComponent implements OnInit, OnChanges {
     this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
   }
 
-  setProgress(duration: number): void {
+  private setProgress(duration: number): void {
     let counter = duration;
     const offset = percent => {
       return this.circumference - percent / 100 * this.circumference;

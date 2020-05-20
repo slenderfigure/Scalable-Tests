@@ -7,8 +7,8 @@ import { Question } from '../question';
 
 @Injectable()
 export class TestService {
-  private durationSource: Subject<number> = new Subject();
-  duration$: Observable<number> = this.durationSource.asObservable();
+  private durationTrackerSource: Subject<number> = new Subject();
+  durationTracker$: Observable<number> = this.durationTrackerSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -20,11 +20,11 @@ export class TestService {
     );
   }
 
-  updateQuestionDuration(duration: number): void {
-    this.durationSource.next(duration);
+  updateDurationTracker(duration: number): void {
+    this.durationTrackerSource.next(duration);
   }
 
-  stopDurationUpdate(): void {
-    this.durationSource.complete();
+  stopDurationTracker(): void {
+    this.durationTrackerSource.complete();
   }
 }
