@@ -28,3 +28,8 @@
 .running-out {
   fill: #e44646 !important;
 }
+
+@keyframes emptyOut {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -289.02652413026095px; }
+}

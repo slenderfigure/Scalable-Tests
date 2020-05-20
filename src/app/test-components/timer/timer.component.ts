@@ -36,7 +36,7 @@ export class TimerComponent implements OnInit, OnChanges {
     let elapsed = duration;
     
     this.countDown = this.styleCountdown(hours, mins, secs);
-    this.setProgress(duration);
+    this.circle.style.animation = `emptyOut ${duration}s linear forwards`;
 
     this.questionTimer = setInterval(() => {
       if ((elapsed -= 1) == 0) { 
@@ -69,24 +69,6 @@ export class TimerComponent implements OnInit, OnChanges {
     this.circumference = this.radius * 2 * Math.PI;
 
     this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
-  }
-
-  private setProgress(duration: number): void {
-    let counter = duration;
-    const offset = percent => {
-      return this.circumference - percent / 100 * this.circumference;
-    }
-
-    this.circle.style.transition = `stroke-dashoffset ${duration}s linear`;
-
-    this.animationTimer = setInterval(() => {
-      if ((counter -= 1) == 0) {
-        clearInterval(this.animationTimer);
-      }
-      let percent = Math.floor((counter / duration) * 100);
-      
-      this.circle.style.strokeDashoffset = `${offset(percent)}`;
-    });
   }
 
 }
