@@ -2,7 +2,7 @@
   <div *ngIf="!loading && question" class="wrapper">
     <section class="top-section">
       <div class="test-information">
-        <h3>Section 1. Choose the correct answer</h3>
+        <h3>{{ question.section }}. {{ question.problem }}</h3>
       </div>
 
       <timer [time]="question.timeLimit"></timer>
@@ -23,13 +23,15 @@
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
   
-        <button 
+        <!-- <button 
           *ngFor="let answer of question.answers; index as index"
           (click)="onAnswerClick(index)"
           class="answer"
           [class.selected]="selected == index">
           {{ index + 1 }}. {{ answer }}
-        </button>
+        </button> -->
+
+
       </div>
       
       <div class="bottom-content">

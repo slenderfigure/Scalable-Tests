@@ -43,7 +43,11 @@ export class TestQuestionsComponent implements OnInit {
 
   initQuestion(question: Question): void {
     this.question = question;
-    this.question.answers.push(this.question.correctAnswer);
+    if (!this.question.hasVariousAnswers) {
+      this.question.answers.push(this.question.correctAnswer);
+    } else {
+      this.question.answers = this.question.answers.concat(this.question.correctAnswer);
+    }
     this.question.answers = this.shuffleAnswers(question.answers);
   }
 

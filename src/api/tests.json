@@ -9,7 +9,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
-        "points": 6,
+        "points": 5,
         "answers": [
           "1 kilogram", 
           "500 grams", 
@@ -25,7 +25,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
-        "points": 6,
+        "points": 5,
         "answers": [
           "Strong Acid", 
           "Slightly Basic", 
@@ -40,7 +40,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the most common isotope of hydrogen?",
-        "points": 6,
+        "points": 5,
         "answers": [
           "Deuterium", 
           "Tritum", 
@@ -56,7 +56,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "You can't live without water! What is its chemical formula?",
-        "points": 6,
+        "points": 5,
         "answers": [
           "H2", 
           "O2",
@@ -71,7 +71,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
-        "points": 6,
+        "points": 5,
         "answers": [
           "A definite shape, but no defined volume", 
           "A definite volume and shape", 
@@ -86,7 +86,7 @@
         "section": "Section 1",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
-        "points": 6,
+        "points": 5,
         "answers": [
           "Fire",
           "Electricity",
