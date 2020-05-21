@@ -28,11 +28,12 @@
           tabindex="0" 
           class="answer">
           <input
-            (change)="onAnswerClick(index)" 
             #answers 
-            name="answer" 
+            (change)="selected = index"
+            name="answer"
+            [value]="answer" 
             [type]="question.hasVariousAnswers ? 'checkbox' : 'radio'">
-          <span>{{ index + 1 }}. {{ answer }}</span>
+          <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
         </label>
       </div>
       

@@ -64,10 +64,11 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
     return answers;
   }
 
-  onAnswerClick(index: number): void {
-    this.selected = index;
-    this.question.selectedAnswer = this.question.answers[index];
-    console.log(this.question);
+  checkSelectedAnswers(): void {
+    const answers = this.answers.map(val => <HTMLInputElement>val.nativeElement);
+    const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
+
+    this.question.selectedAnswer = selected;
   }
 
   questionTimeout(): void {
@@ -77,10 +78,10 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
   }
 
   changeQuestion(): void {
-    // this.questionTimeout();
+    this.questionTimeout();
     // this.loading = true;
     // this.router.navigate(['/test', +this.question.id + 1]);
-    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+    // window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
   }
 
 }

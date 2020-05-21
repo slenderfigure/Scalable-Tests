@@ -89,8 +89,7 @@
         "points": 5,
         "answers": [
           "Fire",
-          "Electricity",
-          "Ground"
+          "Electricity"
         ],
         "hasVariousAnswers": true,
         "correctAnswer": ["Solid", "Liquid", "Gas", "Plasma"],

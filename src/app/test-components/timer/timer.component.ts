@@ -58,7 +58,7 @@ export class TimerComponent implements OnInit, OnChanges {
       mins = secs > 0 ? mins : mins -= 1;
       secs = secs > 0 ? secs -= 1 : 59;
 
-      this.ts.updateDurationTracker(duration - elapsed);
+      this.ts.updateDurationTracker((duration + 1) - elapsed);
       this.countDown = this.styleCountdown(hours, mins, secs);
       this.isEnding = elapsed > 10 ? false : true; 
     }, 1000);

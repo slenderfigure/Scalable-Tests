@@ -41,7 +41,7 @@
   justify-content: center;
   align-items: center;
   width: fit-content;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 20px;
   background-color: #444;
   user-select: none;
@@ -96,26 +96,19 @@
 .answer span {
   display: block;
   width: 100%;
-  padding: 1rem 1rem;
+  padding: 0.8rem 1rem;
   color: #444;
   text-align: left;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.answer span strong {
+  margin-right: 0.5rem;
 }
 
 .answer input:checked + span {
   background-color: #dbe3eb !important;
 }
-
-/* .answer {
-  width: 100%;
-  padding: 1rem 1rem;
-  color: #444;
-  text-align: left;
-  border: 1px solid #dbe3eb;
-  border-radius: 12px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-} */
-
 
 .selected {
   background-color: #dbe3eb !important;
@@ -145,9 +138,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   background-color: #E00366;
-  border-radius: 20px;
+  border-radius: 3px;
 }
 
 .proceed-btn:not(:disabled):hover {

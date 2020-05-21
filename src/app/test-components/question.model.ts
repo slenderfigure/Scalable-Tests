@@ -7,7 +7,7 @@ export interface Question {
   answers: any[];
   hasVariousAnswers?: boolean;
   correctAnswer: string | string[];
-  selectedAnswer?: string | string[];  
+  selectedAnswer?: string[];  
   image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;
