@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
@@ -10,7 +11,8 @@ import { Question } from '../question.model';
   templateUrl: './test-questions.component.html',
   styleUrls: ['./test-questions.component.css']
 })
-export class TestQuestionsComponent implements OnInit {
+export class TestQuestionsComponent implements OnInit, AfterViewInit {
+  @ViewChildren('answers') answers: QueryList<ElementRef>;
   private testId: string;
   private questionId: string | number;
   private duration: number;
@@ -39,6 +41,9 @@ export class TestQuestionsComponent implements OnInit {
       next: duration => this.duration = duration,
       complete: () => this.questionTimeout()
     });
+  }
+
+  ngAfterViewInit(): void {
   }
 
   initQuestion(question: Question): void {

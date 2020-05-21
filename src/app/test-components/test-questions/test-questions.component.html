@@ -17,21 +17,23 @@
         <div class="badge">
           <span>Points:</span>
           <span>{{ question.points }}</span>
-          </div>
+        </div>
       </div>
   
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
-  
-        <!-- <button 
+
+        <label 
           *ngFor="let answer of question.answers; index as index"
-          (click)="onAnswerClick(index)"
-          class="answer"
-          [class.selected]="selected == index">
-          {{ index + 1 }}. {{ answer }}
-        </button> -->
-
-
+          tabindex="0" 
+          class="answer">
+          <input
+            (change)="onAnswerClick(index)" 
+            #answers 
+            name="answer" 
+            [type]="question.hasVariousAnswers ? 'checkbox' : 'radio'">
+          <span>{{ index + 1 }}. {{ answer }}</span>
+        </label>
       </div>
       
       <div class="bottom-content">

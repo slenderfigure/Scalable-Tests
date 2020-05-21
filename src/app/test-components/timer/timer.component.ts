@@ -10,7 +10,6 @@ import { TestService } from '../service/test.service';
 })
 export class TimerComponent implements OnInit, OnChanges {
   @Input() time: string;
-  private animationTimer: any;
   private questionTimer: any;
   isEnding: boolean = false;
   countDown: string;
@@ -28,14 +27,21 @@ export class TimerComponent implements OnInit, OnChanges {
     this.initTimer();
   }
 
+  private setDefaults(): void {
+    this.circle = document.querySelector('.outer');
+    this.radius = this.circle.r.baseVal.value;
+    this.circumference = this.radius * 2 * Math.PI;
+    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
+    this.countDown = this.time;
+  }
+
   private initTimer(): void {
     let hours = +this.time.split(':')[0];
     let mins  = +this.time.split(':')[1];
     let secs  = +this.time.split(':')[2];
-    const duration = (hours * 3600) + (mins * 60) + secs;
+    let duration = (hours * 3600) + (mins * 60) + secs;
     let elapsed = duration;
     
-    this.countDown = this.styleCountdown(hours, mins, secs);
     this.circle.style.animation = `emptyOut ${duration}s linear forwards`;
 
     this.questionTimer = setInterval(() => {
@@ -59,16 +65,8 @@ export class TimerComponent implements OnInit, OnChanges {
   }
 
   private styleCountdown(hours: number, mins: number, secs: number): string {
-    let styled = num => num > 9 ? num : `0${num}`;
+    const styled = num => num > 9 ? num : `0${num}`;
     return `${styled(hours)}:${styled(mins)}:${styled(secs)}`;
-  }
-
-  private setDefaults(): void {
-    this.circle = document.querySelector('.outer');
-    this.radius = this.circle.r.baseVal.value;
-    this.circumference = this.radius * 2 * Math.PI;
-
-    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
   }
 
 }
