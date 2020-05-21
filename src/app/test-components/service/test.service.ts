@@ -43,19 +43,24 @@ export class TestService {
     questionId: number,
     seletedAnswers: string[],
     duration: number
-  ): void {
-    let test: Test = JSON.parse(localStorage.getItem('Test Session'));
-    const question = test.questions.find(question => question.id == questionId);
+  ): Observable<any> {   
+    return new Observable(observer => {
+      const session: Test = JSON.parse(localStorage.getItem('Test Session'));
+      const question = session.questions.find(question => question.id == questionId);
 
-    question.completed = true;
-    question.completionDuration = duration;
-    question.selectedAnswer = seletedAnswers;
-    localStorage.setItem('Test Session', JSON.stringify(test));
-    
-    console.log(test.questions.filter(cur => {
-      return cur.correctAnswer.length == cur.selectedAnswer.length &&
-        cur.correctAnswer.every(answer => cur.selectedAnswer.includes(answer));
-    }));
+      question.completed = true;
+      question.completionDuration = duration;
+      question.selectedAnswer = seletedAnswers;
+      localStorage.setItem('Test Session', JSON.stringify(session));
+
+      const totalCompleted = session.questions.filter(question => question.completed);
+
+      session.sessionCompleted = session.questions.length == totalCompleted.length;
+      observer.next(session.sessionCompleted);
+      localStorage.setItem('Test Session', JSON.stringify(session));
+      
+      return { unsubscribe() {} }
+    });
   }
 
   gradeTest(): Observable<any> {

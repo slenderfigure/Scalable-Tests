@@ -1,11 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
-import { Test } from '../test.model';
-import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -13,7 +11,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './test-questions.component.html',
   styleUrls: ['./test-questions.component.css']
 })
-export class TestQuestionsComponent implements OnInit, AfterViewInit {
+export class TestQuestionsComponent implements OnInit {
   @ViewChildren('answers') answers: QueryList<ElementRef>;
   private testId: string;
   private questionId: number;
@@ -48,9 +46,6 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-  }
-
   private initQuestion(question: Question): void {
     this.question = question;
     if (!this.question.hasVariousAnswers) {
@@ -72,7 +67,6 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
   private getSelectedAnswers(): string[] {
     const answers  = this.answers.map(val => <HTMLInputElement>val.nativeElement);
     const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
-
     return selected;
   }
 
@@ -81,14 +75,19 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
       this.question.id,
       this.getSelectedAnswers(), 
       this.duration
-    );    
-    //window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+    ).subscribe(testCompleted => {
+      if (!testCompleted) {
+        window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+      } else {
+        this.router.navigate(['test-result']);
+      }
+    })
+    // this.loading = true;
+    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);   
   }
 
   changeQuestion(): void {
-    this.questionTimeout();
-    // this.loading = true;
-    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);    
+    this.questionTimeout(); 
   }
 
 }
