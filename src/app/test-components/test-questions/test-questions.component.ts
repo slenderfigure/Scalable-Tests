@@ -1,9 +1,11 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
+import { Test } from '../test.model';
+import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -19,6 +21,7 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
   question: Question;
   loading: boolean = true;
   selected: number;
+
   
   constructor(
     private router: Router,
@@ -32,8 +35,10 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
       this.questionId = +params.get('questionId');
 
       this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
-        this.initQuestion(question);
-        this.loading = false;
+        if (question) {
+          this.initQuestion(question);
+          this.loading = false;
+        }
       });
     });
 
@@ -77,14 +82,13 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
       this.getSelectedAnswers(), 
       this.duration
     );    
-    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+    //window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
   }
 
   changeQuestion(): void {
     this.questionTimeout();
-    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
     // this.loading = true;
-    // this.router.navigate(['/test', this.testId, +this.question.id + 1])
+    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);    
   }
 
 }

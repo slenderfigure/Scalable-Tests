@@ -51,6 +51,11 @@ export class TestService {
     question.completionDuration = duration;
     question.selectedAnswer = seletedAnswers;
     localStorage.setItem('Test Session', JSON.stringify(test));
+    
+    console.log(test.questions.filter(cur => {
+      return cur.correctAnswer.length == cur.selectedAnswer.length &&
+        cur.correctAnswer.every(answer => cur.selectedAnswer.includes(answer));
+    }));
   }
 
   gradeTest(): Observable<any> {

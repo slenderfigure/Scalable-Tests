@@ -15,6 +15,7 @@ export class Test {
   score: number;
   creationDate: Date;
   modifiedDate: Date;
+  sessionCompleted: boolean;
 
   constructor(params: {
     id: string | number,
@@ -38,6 +39,7 @@ export class Test {
     this.difficulty = params.difficulty;
     this.creationDate = new Date();
     this.score = 0;
+    this.sessionCompleted = false;
   }
   
 }
