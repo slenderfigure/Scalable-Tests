@@ -46,18 +46,23 @@ export class TestService {
   ): Observable<any> {   
     return new Observable(observer => {
       const session: Test = JSON.parse(localStorage.getItem('Test Session'));
-      const question = session.questions.find(question => question.id == questionId);
+      
+      if (!session) {
+        observer.unsubscribe();
+      } else {
+        const question = session.questions.find(question => question.id == questionId);
 
-      question.completed = true;
-      question.completionDuration = duration;
-      question.selectedAnswer = seletedAnswers;
-      localStorage.setItem('Test Session', JSON.stringify(session));
+        question.completed = true;
+        question.completionDuration = duration;
+        question.selectedAnswer = seletedAnswers;
+        localStorage.setItem('Test Session', JSON.stringify(session));
 
-      const totalCompleted = session.questions.filter(question => question.completed);
+        const totalCompleted = session.questions.filter(question => question.completed);
 
-      session.sessionCompleted = session.questions.length == totalCompleted.length;
-      observer.next(session.sessionCompleted);
-      localStorage.setItem('Test Session', JSON.stringify(session));
+        session.sessionCompleted = session.questions.length == totalCompleted.length;
+        observer.next(session.sessionCompleted);
+        localStorage.setItem('Test Session', JSON.stringify(session));
+      }
       
       return { unsubscribe() {} }
     });

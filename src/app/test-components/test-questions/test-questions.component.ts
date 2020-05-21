@@ -79,7 +79,7 @@ export class TestQuestionsComponent implements OnInit {
       if (!testCompleted) {
         window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
       } else {
-        this.router.navigate(['test-result']);
+        this.router.navigate(['test-results']);
       }
     })
     // this.loading = true;
