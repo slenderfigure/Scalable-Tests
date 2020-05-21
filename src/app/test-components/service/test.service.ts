@@ -38,4 +38,21 @@ export class TestService {
   stopDurationTracker(): void {
     this.durationTrackerSource.complete();
   }
+
+  questionBacktracker(
+    testId: string,
+    questionId: number,
+    seletedAnswers: string[],
+    duration: number
+  ): void {
+    this.getTest(testId).subscribe(test => {
+      const question = test.questions.find(question => question.id == questionId);
+      question.completed = true;
+      question.completionDuration = duration;
+      question.selectedAnswer = seletedAnswers;
+
+      localStorage.setItem('Test Session', JSON.stringify(test));
+    });
+  }
+
 }

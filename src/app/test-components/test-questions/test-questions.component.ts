@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
+import { Test } from '../test.model';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Question } from '../question.model';
 export class TestQuestionsComponent implements OnInit, AfterViewInit {
   @ViewChildren('answers') answers: QueryList<ElementRef>;
   private testId: string;
-  private questionId: string | number;
+  private questionId: number;
   private duration: number;
   question: Question;
   loading: boolean = true;
@@ -29,7 +30,7 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.testId = params.get('testId');
-      this.questionId = params.get('questionId');
+      this.questionId = +params.get('questionId');
 
       this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
         this.initQuestion(question);
@@ -46,7 +47,7 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-  initQuestion(question: Question): void {
+  private initQuestion(question: Question): void {
     this.question = question;
     if (!this.question.hasVariousAnswers) {
       this.question.answers.push(this.question.correctAnswer);
@@ -56,7 +57,7 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
     this.question.answers = this.shuffleAnswers(question.answers);
   }
 
-  shuffleAnswers(answers: string[]): string[] {
+  private shuffleAnswers(answers: string[]): string[] {
     for (let i = answers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [answers[i], answers[j]] = [answers[j], answers[i]];
@@ -64,24 +65,29 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
     return answers;
   }
 
-  checkSelectedAnswers(): void {
-    const answers = this.answers.map(val => <HTMLInputElement>val.nativeElement);
+  private getSelectedAnswers(): string[] {
+    const answers  = this.answers.map(val => <HTMLInputElement>val.nativeElement);
     const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
 
-    this.question.selectedAnswer = selected;
+    return selected;
   }
 
-  questionTimeout(): void {
-    this.question.completed = true;
-    this.question.completionDuration = this.duration;
-    console.log(this.question);
+  private questionTimeout(): void {
+    this.ts.questionBacktracker(
+      this.testId,
+      this.question.id,
+      this.getSelectedAnswers(), 
+      this.duration
+    );
   }
 
   changeQuestion(): void {
     this.questionTimeout();
     // this.loading = true;
-    // this.router.navigate(['/test', +this.question.id + 1]);
+    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);
     // window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+
+    
   }
 
 }

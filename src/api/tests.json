@@ -5,7 +5,7 @@
     "points": 30,
     "questions": [
       {
-        "id": "1",
+        "id": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
@@ -21,7 +21,7 @@
         "timeLimit": "00:00:20"
       }, 
       {
-        "id": "2",
+        "id": 2,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
@@ -36,7 +36,7 @@
         "timeLimit": "00:00:25"
       },
       {
-        "id": "3",
+        "id": 3,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the most common isotope of hydrogen?",
@@ -52,7 +52,7 @@
         "timeLimit": "00:00:15"
       }, 
       {
-        "id": "4",
+        "id": 4,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "You can't live without water! What is its chemical formula?",
@@ -67,7 +67,7 @@
         "timeLimit": "00:00:30"
       }, 
       {
-        "id": "5",
+        "id": 5,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
@@ -82,7 +82,7 @@
         "timeLimit": "00:00:30"
       },
       {
-        "id": "6",
+        "id": 6,
         "section": "Section 1",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
