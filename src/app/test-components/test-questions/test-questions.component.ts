@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
-import { Test } from '../test.model';
 
 
 @Component({

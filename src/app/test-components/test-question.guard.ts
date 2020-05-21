@@ -25,6 +25,8 @@ export class TestQuestionGuard implements CanActivate {
         if (!exists) { 
           this.router.navigate(['test-results'])
           observer.next(false); 
+        } else {
+          observer.next(true);
         }
       });
   

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
-import { Question } from '../question.model';
+
 
 @Component({
   selector: 'app-test',
