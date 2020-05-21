@@ -40,19 +40,32 @@ export class TestService {
   }
 
   questionBacktracker(
-    testId: string,
     questionId: number,
     seletedAnswers: string[],
     duration: number
   ): void {
-    this.getTest(testId).subscribe(test => {
-      const question = test.questions.find(question => question.id == questionId);
-      question.completed = true;
-      question.completionDuration = duration;
-      question.selectedAnswer = seletedAnswers;
+    let test: Test = JSON.parse(localStorage.getItem('Test Session'));
+    const question = test.questions.find(question => question.id == questionId);
 
-      localStorage.setItem('Test Session', JSON.stringify(test));
+    question.completed = true;
+    question.completionDuration = duration;
+    question.selectedAnswer = seletedAnswers;
+    localStorage.setItem('Test Session', JSON.stringify(test));
+  }
+
+  private gradeQuestions(): void {
+    const session: Test = JSON.parse(localStorage.getItem('Test Session'));
+    const questions = session.questions.filter(question => question.completed);
+
+    const approved = questions.filter(question => {
+      return question.correctAnswer.length == question.selectedAnswer.length &&
+        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
     });
+
+    const score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
+
+    console.log(approved);
+    console.log(score);
   }
 
 }

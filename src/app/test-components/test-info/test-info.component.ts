@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
@@ -13,8 +13,10 @@ import { Question } from '../question.model';
 export class TestInfoComponent implements OnInit {
   test: Test;
   loading: boolean = true;
+  private testId: string;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private ts: TestService
   ) { }
@@ -23,10 +25,36 @@ export class TestInfoComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.ts.getTest(params.get('testId')).subscribe(test => {
         this.test = test;
+        this.testId = params.get('testId');
         this.loading = false;
       });
     });
+
+    this.gradeQuestions();
   }
 
+  private startTestSession(): void {
+    localStorage.setItem('Test Session', JSON.stringify(this.test));
+  }
+
+  onClick(): void {
+    this.startTestSession();
+    this.router.navigate(['/test', this.testId, 1]);
+  }
+
+  private gradeQuestions(): void {
+    const session: Test = JSON.parse(localStorage.getItem('Test Session'));
+    const questions = session.questions.filter(question => question.completed);
+
+    const approved = questions.filter(question => {
+      return question.correctAnswer.length == question.selectedAnswer.length &&
+        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
+    });
+
+    const score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
+
+    console.log(approved);
+    console.log(score);
+  }
 
 }

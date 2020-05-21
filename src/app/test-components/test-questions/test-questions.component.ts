@@ -74,7 +74,6 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
 
   private questionTimeout(): void {
     this.ts.questionBacktracker(
-      this.testId,
       this.question.id,
       this.getSelectedAnswers(), 
       this.duration
@@ -83,11 +82,9 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
 
   changeQuestion(): void {
     this.questionTimeout();
-    // this.loading = true;
-    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);
+    this.loading = true;
+    this.router.navigate(['/test', this.testId, +this.question.id + 1]);
     // window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
-
-    
   }
 
 }

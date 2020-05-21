@@ -16,7 +16,7 @@
           "Practically none", 
           "1 gram"
         ],
-        "correctAnswer": "250 grams",
+        "correctAnswer": ["250 grams"],
         "image": "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
         "timeLimit": "00:00:20"
       }, 
@@ -32,7 +32,7 @@
           "Neutral", 
           "Milk does not have a pH"
         ],
-        "correctAnswer": "Slightly Acidic",
+        "correctAnswer": ["Slightly Acidic"],
         "timeLimit": "00:00:25"
       },
       {
@@ -47,7 +47,7 @@
           "Hydrogen only has one isotope!", 
           "None of the above"
         ],
-        "correctAnswer": "Protium",
+        "correctAnswer": ["Protium"],
         "image": "https://physicsworld.com/wp-content/uploads/2019/11/Illustration-of-an-atomic-nucleus.jpg",
         "timeLimit": "00:00:15"
       }, 
@@ -63,7 +63,7 @@
           "H2O2", 
           "CO2"
         ],
-        "correctAnswer": "H2O",
+        "correctAnswer": ["H2O"],
         "timeLimit": "00:00:30"
       }, 
       {
@@ -78,7 +78,7 @@
           "No defined volume or shape", 
           "Water isn't a state of matter"
         ],
-        "correctAnswer": "A defined volume, but not a defined shape",
+        "correctAnswer": ["A defined volume, but not a defined shape"],
         "timeLimit": "00:00:30"
       },
       {
