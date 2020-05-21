@@ -77,14 +77,15 @@ export class TestQuestionsComponent implements OnInit, AfterViewInit {
       this.question.id,
       this.getSelectedAnswers(), 
       this.duration
-    );
+    );    
+    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
   }
 
   changeQuestion(): void {
     this.questionTimeout();
-    this.loading = true;
-    this.router.navigate(['/test', this.testId, +this.question.id + 1]);
-    // window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+    window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
+    // this.loading = true;
+    // this.router.navigate(['/test', this.testId, +this.question.id + 1])
   }
 
 }

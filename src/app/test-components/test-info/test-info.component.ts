@@ -29,8 +29,6 @@ export class TestInfoComponent implements OnInit {
         this.loading = false;
       });
     });
-
-    this.gradeQuestions();
   }
 
   private startTestSession(): void {
@@ -40,21 +38,6 @@ export class TestInfoComponent implements OnInit {
   onClick(): void {
     this.startTestSession();
     this.router.navigate(['/test', this.testId, 1]);
-  }
-
-  private gradeQuestions(): void {
-    const session: Test = JSON.parse(localStorage.getItem('Test Session'));
-    const questions = session.questions.filter(question => question.completed);
-
-    const approved = questions.filter(question => {
-      return question.correctAnswer.length == question.selectedAnswer.length &&
-        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
-    });
-
-    const score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
-
-    console.log(approved);
-    console.log(score);
   }
 
 }
