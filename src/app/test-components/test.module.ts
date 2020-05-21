@@ -7,13 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
 import { TimerComponent } from './timer/timer.component';
 import { TestInfoComponent } from './test-info/test-info.component';
+import { TestResultsComponent } from './test-results/test-results.component';
 
 
 @NgModule({
   declarations: [
     TestQuestionsComponent,
     TimerComponent,
-    TestInfoComponent
+    TestInfoComponent,
+    TestResultsComponent
   ],
   imports: [
     TestRoutingModule,
