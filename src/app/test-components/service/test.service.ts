@@ -68,24 +68,4 @@ export class TestService {
     });
   }
 
-  gradeTest(): Observable<any> {
-    const session: Test = JSON.parse(localStorage.getItem('Test Session'));
-    const questions = session.questions.filter(question => question.completed);
-
-    const approved = questions.filter(question => {
-      return question.correctAnswer.length == question.selectedAnswer.length &&
-        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
-    });
-    const score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
-
-    return new Observable(observer => {
-      observer.next({
-        correct: approved.length,
-        wrong: questions.length - approved.length,
-        score: score
-      });
-      return { unsubscribe() {} }
-    })
-  }
-
 }

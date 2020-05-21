@@ -17,15 +17,20 @@ export class TestResultsComponent implements OnInit {
   constructor(private ts: TestService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  setResultSheet(): void {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
-
-    this.ts.gradeTest().subscribe(val => {
-      this.correct = val.correct;
-      this.wrong = val.wrong;
-      this.score = val.score;
-
-      localStorage.removeItem('Test Session');
+    
+    const approved = this.test.questions.filter(question => {
+      return question.correctAnswer.length == question.selectedAnswer.length &&
+        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
     });
+
+    this.correct = approved.length;
+    this.wrong = this.test.questions.length - approved.length;
+    this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
   }
 
 }
