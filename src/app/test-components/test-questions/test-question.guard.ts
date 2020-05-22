@@ -28,35 +28,34 @@ export class TestQuestionGuard implements CanActivate {
       const sub = this.ts.getTest(testId).subscribe(test => {
         const session: Test = JSON.parse(localStorage.getItem('Test Session'));
 
-        if (!session) {
-          localStorage.setItem('Test Session', JSON.stringify(test));
-          observer.next(true);
-        }
-        else if (session && !session.sessionCompleted) {
-          let missingQuestion = session.questions.find(question => !question.completed).id;
-         
-          if (questionId == missingQuestion) {
+        switch (true) {
+          case (!session):
+            localStorage.setItem('Test Session', JSON.stringify(test));
             observer.next(true);
-          } else {
-            this.router.navigate(['/test', testId, missingQuestion]);
+            break;
+
+          case (session && !session.sessionCompleted):
+            let missingQuestion = session.questions.find(question => !question.completed).id;
+         
+            if (questionId == missingQuestion) {
+              observer.next(true);
+            } else {
+              this.router.navigate(['/test', testId, missingQuestion]);
+              observer.next(false);
+            }
+            break;
+
+          default:
+            this.router.navigate(['/test-results']);
             observer.next(false);
-          }
-        }
-        else if (session && session.sessionCompleted) {
-          this.router.navigate(['/test-results']);
-          observer.next(false);
+            break;
         }
       });
+
       return {
         unsubscribe() { sub.unsubscribe(); }
       }
-
     });
-  }
-
-  private isCompleted(questionId: number): boolean {
-    const testSession: Test = JSON.parse(localStorage.getItem('Test Session'));
-    return testSession.questions.find(question => question.id == questionId).completed;
   }
   
 }
