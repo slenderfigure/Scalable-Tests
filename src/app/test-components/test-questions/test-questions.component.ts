@@ -79,11 +79,9 @@ export class TestQuestionsComponent implements OnInit {
       if (!testCompleted) {
         window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
       } else {
-        this.router.navigate(['test-results']);
+        window.location.href = 'test-results';
       }
-    })
-    // this.loading = true;
-    // this.router.navigate(['/test', this.testId, +this.question.id + 1]);   
+    });  
   }
 
   changeQuestion(): void {

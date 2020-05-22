@@ -6,6 +6,7 @@ import { TestInfoComponent } from './test-info/test-info.component';
 import { TestResultsComponent } from './test-results/test-results.component';
 
 import { TestQuestionGuard } from './test-questions/test-question.guard';
+import { TestResultsGuard } from './test-results/test-results.guard';
 
 
 const routes: Route[] = [
@@ -13,9 +14,13 @@ const routes: Route[] = [
   { 
     path: 'test/:testId/:questionId', 
     component: TestQuestionsComponent,
-    canActivate: [TestQuestionGuard]
+    // canActivate: [TestQuestionGuard]
   },
-  { path: 'test-results', component: TestResultsComponent }
+  { 
+    path: 'test-results', 
+    component: TestResultsComponent,
+    canActivate: [TestResultsGuard]
+  }
 ];
 
 @NgModule({

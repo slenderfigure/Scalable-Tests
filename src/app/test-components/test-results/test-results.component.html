@@ -44,7 +44,11 @@
         <div class="thumbnail-wrapper">
           <button 
             *ngFor="let question of questions; index as index"
-            class="thumbnail"></button>
+            class="thumbnail"
+            [title]="question.title">
+            <span>{{ index + 1 }}. {{ question.title }}</span>
+            <img src="assets/img/thumbnail.jpg">
+          </button>
         </div>
       </div>
     </section>

@@ -26,6 +26,7 @@ export class TestResultsComponent implements OnInit {
   setDefaults(): void {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
     this.questions = this.test.questions;
+    
     const approved = this.questions.filter(question => {
       return question.correctAnswer.length == question.selectedAnswer.length &&
         question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
@@ -34,7 +35,10 @@ export class TestResultsComponent implements OnInit {
     this.correct = approved.length;
     this.wrong = this.questions.length - approved.length;
     this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
-    this.socorePercent = Math.floor(this.correct / this.questions.length) * 100;
+    this.socorePercent = Math.round((this.correct / this.questions.length) * 100);
   }
 
 }
+
+const nearest = Math.round((0.42546 * 100) / 10);
+console.log(nearest);

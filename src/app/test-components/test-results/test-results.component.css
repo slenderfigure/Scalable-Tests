@@ -64,12 +64,12 @@
 
 .row-group span:first-of-type {
   width: 130px;
-  color: #888;
+  color: #999;
   font-size: 1rem;
 }
 
 .row-group span:last-of-type {
-  color: #ddd;
+  color: #fff;
   font-size: 1rem;
 }
 
@@ -96,16 +96,34 @@
 }
 
 .thumbnail {
-  position: relative;
   flex-shrink: 0;
   width: 260px;
-  height: 200px;
+  height: auto;
   margin-bottom: 2.2rem;
-  border-radius: 4px;
-  background: url('/assets/img/thumbnail.jpg') center center/cover no-repeat;
   box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);
   transition: filter 0.4s ease;
   overflow: hidden;
+}
+
+.thumbnail span, 
+.thumbnail img {
+  display: block;
+  width: 100%;
+}
+
+.thumbnail span {
+  padding: 0.6rem 0;
+  color: #fff;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  height: 180px;
+  object-fit: cover;
 }
 
 .thumbnail:hover {
