@@ -23,7 +23,7 @@ export class TestQuestionGuard implements CanActivate {
   ): Observable<boolean> | boolean {
     return new Observable(observer => {
       const testId = next.paramMap.get('testId');
-      const questionId = next.paramMap.get('questionId');
+      const questionId = +next.paramMap.get('questionId');
     
       const sub = this.ts.getTest(testId).subscribe(test => {
         const session: Test = JSON.parse(localStorage.getItem('Test Session'));
@@ -32,15 +32,15 @@ export class TestQuestionGuard implements CanActivate {
           localStorage.setItem('Test Session', JSON.stringify(test));
           observer.next(true);
         }
-        // else if (session && !session.sessionCompleted) {
-        //   let curId = session.questions.find(question => !question.completed).id;
-        //   this.router.navigate(['/test', testId, curId]);
-        //   observer.next(true);
-        // }
         else if (session && !session.sessionCompleted) {
-          //let curId = session.questions.find(question => !question.completed).id;
-          // this.router.navigate(['/test', testId, curId]);
-          observer.next(true);
+          let missingQuestion = session.questions.find(question => !question.completed).id;
+         
+          if (questionId == missingQuestion) {
+            observer.next(true);
+          } else {
+            this.router.navigate(['/test', testId, missingQuestion]);
+            observer.next(false);
+          }
         }
         else if (session && session.sessionCompleted) {
           this.router.navigate(['/test-results']);

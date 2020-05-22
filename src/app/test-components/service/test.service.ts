@@ -56,9 +56,17 @@ export class TestService {
     const totalCompleted = session.questions.filter(question => question.completed);
 
     session.sessionCompleted = session.questions.length == totalCompleted.length;
+    session.modifiedDate = new Date();
     localStorage.setItem('Test Session', JSON.stringify(session));
       
     window.location.href = `/test/${testId}/${questionId + 1}`;
+  }
+
+  autoFailTest(): void {
+    const session: Test = JSON.parse(localStorage.getItem('Test Session'));  
+    session.questions.map(question => question.completed = true);
+    session.sessionCompleted = true;
+    session.modifiedDate = new Date();
   }
 
 }
