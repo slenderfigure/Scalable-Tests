@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
+import { Observable, fromEvent } from 'rxjs';
 
 
 @Component({
@@ -44,6 +45,10 @@ export class TestQuestionsComponent implements OnInit {
       next: duration => this.duration = duration,
       complete: () => this.questionTimeout()
     });
+
+    // fromEvent(window, 'beforeunload').subscribe(e => {
+    //   e.returnValue = this.sessionInProgress;
+    // });
   }
 
   private initQuestion(question: Question): void {
@@ -72,20 +77,19 @@ export class TestQuestionsComponent implements OnInit {
 
   private questionTimeout(): void {
     this.ts.questionBacktracker(
+      this.testId,
       this.question.id,
       this.getSelectedAnswers(), 
       this.duration
-    ).subscribe(testCompleted => {
-      if (!testCompleted) {
-        window.location.href = `/test/${this.testId}/${+this.questionId + 1}`;
-      } else {
-        window.location.href = 'test-results';
-      }
-    });  
+    ); 
   }
 
   changeQuestion(): void {
     this.questionTimeout(); 
+  }
+
+  get sessionInProgress(): boolean {
+    return !this.question.completed;
   }
 
 }

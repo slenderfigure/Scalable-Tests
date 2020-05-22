@@ -39,6 +39,3 @@ export class TestResultsComponent implements OnInit {
   }
 
 }
-
-const nearest = Math.round((0.42546 * 100) / 10);
-console.log(nearest);

@@ -40,32 +40,30 @@ export class TestService {
   }
 
   questionBacktracker(
+    testId: string,
     questionId: number,
     seletedAnswers: string[],
     duration: number
-  ): Observable<any> {   
-    return new Observable(observer => {
-      const session: Test = JSON.parse(localStorage.getItem('Test Session'));
+  ): void {   
+    const session: Test = JSON.parse(localStorage.getItem('Test Session'));  
+    const question = session.questions.find(question => question.id == questionId);
+
+    question.completed = true;
+    question.completionDuration = duration;
+    question.selectedAnswer = seletedAnswers;
+    localStorage.setItem('Test Session', JSON.stringify(session));
+
+    const totalCompleted = session.questions.filter(question => question.completed);
+
+    session.sessionCompleted = session.questions.length == totalCompleted.length;
+    localStorage.setItem('Test Session', JSON.stringify(session));
       
-      if (!session) {
-        observer.unsubscribe();
-      } else {
-        const question = session.questions.find(question => question.id == questionId);
-
-        question.completed = true;
-        question.completionDuration = duration;
-        question.selectedAnswer = seletedAnswers;
-        localStorage.setItem('Test Session', JSON.stringify(session));
-
-        const totalCompleted = session.questions.filter(question => question.completed);
-
-        session.sessionCompleted = session.questions.length == totalCompleted.length;
-        observer.next(session.sessionCompleted);
-        localStorage.setItem('Test Session', JSON.stringify(session));
-      }
-      
-      return { unsubscribe() {} }
-    });
+    if (!session.sessionCompleted) {
+      window.location.href = `/test/${testId}/${questionId + 1}`;
+    } else {
+      window.location.href = 'test-results';
+    }
+    
   }
 
 }
