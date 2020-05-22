@@ -5,7 +5,7 @@ import { TestQuestionsComponent } from './test-questions/test-questions.componen
 import { TestInfoComponent } from './test-info/test-info.component';
 import { TestResultsComponent } from './test-results/test-results.component';
 
-import { TestQuestionGuard } from './test-question.guard';
+import { TestQuestionGuard } from './test-questions/test-question.guard';
 
 
 const routes: Route[] = [
@@ -13,7 +13,7 @@ const routes: Route[] = [
   { 
     path: 'test/:testId/:questionId', 
     component: TestQuestionsComponent,
-    // canActivate: [TestQuestionGuard]
+    canActivate: [TestQuestionGuard]
   },
   { path: 'test-results', component: TestResultsComponent }
 ];

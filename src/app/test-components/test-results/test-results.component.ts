@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
+import { Question } from '../question.model';
 
 @Component({
   selector: 'app-test-results',
@@ -11,7 +12,7 @@ import { Test } from '../test.model';
 export class TestResultsComponent implements OnInit {
   test: Test;
   correct: number;
-  totalQuestions: number;
+  questions: Question[];
   wrong: number;
   score: number;
   socorePercent: number;
@@ -24,17 +25,16 @@ export class TestResultsComponent implements OnInit {
 
   setDefaults(): void {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
-    
-    const approved = this.test.questions.filter(question => {
+    this.questions = this.test.questions;
+    const approved = this.questions.filter(question => {
       return question.correctAnswer.length == question.selectedAnswer.length &&
         question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
     });
 
-    this.totalQuestions = this.test.questions.length;
     this.correct = approved.length;
-    this.wrong = this.totalQuestions - approved.length;
+    this.wrong = this.questions.length - approved.length;
     this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
-    this.socorePercent = Math.floor(this.correct / this.totalQuestions) * 100;
+    this.socorePercent = Math.floor(this.correct / this.questions.length) * 100;
   }
 
 }

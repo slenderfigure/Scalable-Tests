@@ -91,21 +91,19 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  padding: 3rem 2rem 2rem;
-  user-select: none;
+  padding: 3rem;
   background-color: #161516;
 }
 
 .thumbnail {
   position: relative;
   flex-shrink: 0;
-  width: 280px;
+  width: 260px;
   height: 200px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem;
   border-radius: 4px;
-  background: url('/assets/img/thumbnail.jpg') center center/115% no-repeat;
+  background: url('/assets/img/thumbnail.jpg') center center/cover no-repeat;
   box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);
-  cursor: pointer;
   transition: filter 0.4s ease;
   overflow: hidden;
 }

@@ -17,7 +17,7 @@
 
         <div class="row-group">
           <span>Total questions: </span>
-          <span>{{ totalQuestions }}</span>
+          <span>{{ questions.length }}</span>
         </div>
 
         <div class="row-group">
@@ -42,12 +42,9 @@
 
       <div class="answers-review">
         <div class="thumbnail-wrapper">
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
-          <div class="thumbnail"></div>
+          <button 
+            *ngFor="let question of questions; index as index"
+            class="thumbnail"></button>
         </div>
       </div>
     </section>
