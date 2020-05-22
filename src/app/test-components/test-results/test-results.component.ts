@@ -11,8 +11,10 @@ import { Test } from '../test.model';
 export class TestResultsComponent implements OnInit {
   test: Test;
   correct: number;
+  totalQuestions: number;
   wrong: number;
   score: number;
+  socorePercent: number;
 
   constructor(private ts: TestService) { }
 
@@ -28,9 +30,11 @@ export class TestResultsComponent implements OnInit {
         question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
     });
 
+    this.totalQuestions = this.test.questions.length;
     this.correct = approved.length;
-    this.wrong = this.test.questions.length - approved.length;
+    this.wrong = this.totalQuestions - approved.length;
     this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
+    this.socorePercent = Math.floor(this.correct / this.totalQuestions) * 100;
   }
 
 }

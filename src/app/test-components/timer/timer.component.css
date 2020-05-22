@@ -8,7 +8,7 @@
 }
 
 .inner {
-  stroke: #0D1019;
+  stroke: #161516;
   stroke-width: 7px;
 }
 
@@ -21,7 +21,7 @@
 
 .count-down {
   font-size: 1rem;
-  fill: #9eaec2;
+  fill: #ddd;
   transition: fill 0.3s linear;
 }
 

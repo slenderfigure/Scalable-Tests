@@ -1,30 +1,60 @@
-
-  <!-- <div style="color: #fff">
-    Test: {{ test.subject }} test
-    <br><br>
-    Points: {{ test.points }}
-    <br><br>
-    Total questions: {{ test.questions.length }}
-    <br><br>
-    Correct: {{ correct }}
-    <br><br>
-    Wrong: {{ wrong }}
-    <br><br>
-    <br><br>
-    Final score: {{ score }}
-  </div> -->
-
+<div class="view-container">
   <div class="wrapper">
-    
-    <section class="question-review-section">
-      <div class="thumbnail-wrapper">
-        <div class="thumbnail"></div>
-        <div class="thumbnail"></div>
-        <div class="thumbnail"></div>
-        <div class="thumbnail"></div>
-        <div class="thumbnail"></div>
-        <div class="thumbnail"></div>
+    <section class="section">
+      <div class="test-information">
+        <h3>Test Results</h3>
+        <span class="date">May 21 2020</span>
+
+        <div class="row-group">
+          <span>Subject: </span>
+          <span>{{ test.subject }}</span>
+        </div>
+
+        <div class="row-group">
+          <span>Points: </span>
+          <span>{{ test.points }}</span>
+        </div>
+
+        <div class="row-group">
+          <span>Total questions: </span>
+          <span>{{ totalQuestions }}</span>
+        </div>
+
+        <div class="row-group">
+          <span>Correct answers: </span>
+          <span>{{ correct }}</span>
+        </div>
+
+        <div class="row-group">
+          <span>Wrong answers: </span>
+          <span>{{ wrong }}</span>
+        </div>
+
+        <div class="row-group">
+          <span>Score percent: </span>
+          <span>{{ this.socorePercent }}%</span>
+        </div>
+
+        <div class="row-group-2">
+          <span>Review your answers</span>
+        </div>
+      </div>
+
+      <div class="answers-review">
+        <div class="thumbnail-wrapper">
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+          <div class="thumbnail"></div>
+        </div>
       </div>
     </section>
+
     
   </div>
+
+</div>
+
+  

@@ -1,29 +1,110 @@
 .wrapper {
+  padding: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: #292929;
 }
 
-.question-review-section {
+.section {
   width: 100%;
+}
+
+.section:not(:last-of-type) {
+  margin-bottom: 3rem;
+}
+
+.test-information {
+  position: relative;
+  width: 100%;
+  padding: 4rem 2rem 2rem;
+}
+
+.test-information h3 {
+  display: block;
+  width: fit-content;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #e00366;
+}
+
+.test-information::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #292929 transparent transparent transparent;
+}
+
+.date {
+  display: block;
+  width: fit-content;
+  color: #ddd;
+  font-size: 0.8rem;
+  user-select: none;
+}
+
+.row-group {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.row-group:not(:last-of-type) {
+  margin: 2rem 0;
+}
+
+.row-group span {
+  display: block;
+  width: 16%;
+}
+
+.row-group span:first-of-type {
+  color: #888;
+  font-size: 1rem;
+}
+
+.row-group span:last-of-type {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+.row-group-2 span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  color: #85a4ff;
+  font-size: 1rem;
+  border-radius: 20px;
+  background-color: #444;
+  user-select: none;  
 }
 
 .thumbnail-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
-  margin: auto;
-  padding: 2rem 0;
+  padding: 3rem 2rem 2rem;
   user-select: none;
+  background-color: #161516;
 }
 
 .thumbnail {
   position: relative;
   flex-shrink: 0;
-  width: 300px;
+  width: 280px;
   height: 200px;
-  margin: 1rem;
-  border-radius: 10px;
-  background: url('/assets/img/thumbnail.jpg') top center/cover no-repeat;
-  box-shadow: 0 0 20px rgba(13, 16, 25, 0.2);
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  background: url('/assets/img/thumbnail.jpg') center center/110% no-repeat;
+  box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);
+  cursor: pointer;
   transition: filter 0.4s ease;
   overflow: hidden;
 }
