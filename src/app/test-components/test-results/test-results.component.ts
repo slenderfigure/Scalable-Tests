@@ -17,10 +17,10 @@ export class TestResultsComponent implements OnInit {
   constructor(private ts: TestService) { }
 
   ngOnInit(): void {
-    
+    this.setDefaults();
   }
 
-  setResultSheet(): void {
+  setDefaults(): void {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
     
     const approved = this.test.questions.filter(question => {
