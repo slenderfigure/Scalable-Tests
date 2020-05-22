@@ -38,14 +38,15 @@ export class TestQuestionsComponent implements OnInit {
           this.initQuestion(question);
           this.loading = false;
         }
+
+        this.ts.durationTracker$.subscribe({
+          next: duration => this.duration = duration,
+          complete: () => this.questionTimeout()
+        });
       });
     });
 
-    this.ts.durationTracker$.subscribe({
-      next: duration => this.duration = duration,
-      complete: () => this.questionTimeout()
-    });
-
+    
     // fromEvent(window, 'beforeunload').subscribe(e => {
     //   e.preventDefault();
     //   e.returnValue = false;
