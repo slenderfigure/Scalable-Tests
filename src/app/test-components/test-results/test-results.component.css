@@ -50,7 +50,7 @@
 .row-group {
   display: flex;
   align-items: center;
-  border-radius: 6px;
+  width: 100%;
 }
 
 .row-group:not(:last-of-type) {
@@ -58,11 +58,12 @@
 }
 
 .row-group span {
+  flex-shrink: 0;
   display: block;
-  width: 16%;
 }
 
 .row-group span:first-of-type {
+  width: 130px;
   color: #888;
   font-size: 1rem;
 }
@@ -101,8 +102,8 @@
   width: 280px;
   height: 200px;
   margin-bottom: 2rem;
-  border-radius: 2px;
-  background: url('/assets/img/thumbnail.jpg') center center/110% no-repeat;
+  border-radius: 4px;
+  background: url('/assets/img/thumbnail.jpg') center center/115% no-repeat;
   box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);
   cursor: pointer;
   transition: filter 0.4s ease;
