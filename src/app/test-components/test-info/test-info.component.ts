@@ -32,12 +32,24 @@ export class TestInfoComponent implements OnInit {
   }
 
   private startTestSession(): void {
-    localStorage.setItem('Test Session', JSON.stringify(this.test));
+    const session: Test = JSON.parse(localStorage.getItem('Test Session'));
+
+    if (!session) {
+      localStorage.setItem('Test Session', JSON.stringify(this.test));
+      this.router.navigate(['/test', this.testId, 1]);
+    }
+    else {
+      if (!session.sessionCompleted) {
+        let questionId = session.questions.find(question => !question.completed).id;
+        this.router.navigate(['/test', this.testId, questionId]);
+      } else {
+        this.router.navigate(['/test-results']);
+      }
+    } 
   }
 
   onClick(): void {
     this.startTestSession();
-    this.router.navigate(['/test', this.testId, 1]);
   }
 
 }
