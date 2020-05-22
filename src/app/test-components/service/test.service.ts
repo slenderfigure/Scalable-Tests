@@ -62,11 +62,14 @@ export class TestService {
     window.location.href = `/test/${testId}/${questionId + 1}`;
   }
 
-  autoFailTest(): void {
-    const session: Test = JSON.parse(localStorage.getItem('Test Session'));  
-    session.questions.map(question => question.completed = true);
-    session.sessionCompleted = true;
-    session.modifiedDate = new Date();
+  autoFailTest(): Observable<boolean> {
+    return new Observable(observer => {
+      if (!confirm('Leaving the page will affect your final test score. Are you sure?')) {
+        observer.next(false);
+      } else {
+        observer.next(true);
+      }
+    });
   }
 
 }

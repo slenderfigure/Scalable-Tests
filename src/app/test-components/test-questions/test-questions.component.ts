@@ -47,7 +47,8 @@ export class TestQuestionsComponent implements OnInit {
     });
 
     // fromEvent(window, 'beforeunload').subscribe(e => {
-    //   e.returnValue = this.sessionInProgress;
+    //   e.preventDefault();
+    //   e.returnValue = false;
     // });
   }
 
@@ -86,10 +87,6 @@ export class TestQuestionsComponent implements OnInit {
 
   changeQuestion(): void {
     this.questionTimeout(); 
-  }
-
-  get sessionInProgress(): boolean {
-    return !this.question.completed;
   }
 
 }
