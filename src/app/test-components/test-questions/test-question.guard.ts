@@ -19,34 +19,39 @@ export class TestQuestionGuard implements CanActivate {
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | boolean {
+    state: RouterStateSnapshot
+  ): Observable<boolean> | boolean {
+    return new Observable(observer => {
+      const testId = next.paramMap.get('testId');
+      const questionId = next.paramMap.get('questionId');
+    
+      const sub = this.ts.getTest(testId).subscribe(test => {
+        const session: Test = JSON.parse(localStorage.getItem('Test Session'));
 
-    return new Observable<boolean>(observer => {
-      const subs = this.ts.getTest(next.paramMap.get('testId')).subscribe((test: Test) => {
-        const questionId = +next.paramMap.get('questionId');
-        const exists = test.questions.some(question => question.id == questionId);        
-        
-        if (!exists) { 
-          this.router.navigate(['test-results']);
-          observer.next(false); 
-        } 
-        else {
-          if (this.isCompleted(questionId)) {
-            this.location.back();
-            observer.next(false);
-          } else {
-            observer.next(true);
-          }
+        if (!session) {
+          localStorage.setItem('Test Session', JSON.stringify(test));
+          observer.next(true);
+        }
+        // else if (session && !session.sessionCompleted) {
+        //   let curId = session.questions.find(question => !question.completed).id;
+        //   this.router.navigate(['/test', testId, curId]);
+        //   observer.next(true);
+        // }
+        else if (session && !session.sessionCompleted) {
+          //let curId = session.questions.find(question => !question.completed).id;
+          // this.router.navigate(['/test', testId, curId]);
+          observer.next(true);
+        }
+        else if (session && session.sessionCompleted) {
+          this.router.navigate(['/test-results']);
+          observer.next(false);
         }
       });
-  
       return {
-        unsubscribe() {
-          subs.unsubscribe();
-        }
+        unsubscribe() { sub.unsubscribe(); }
       }
-    });
 
+    });
   }
 
   private isCompleted(questionId: number): boolean {

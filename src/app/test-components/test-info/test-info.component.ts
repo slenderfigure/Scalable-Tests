@@ -49,7 +49,8 @@ export class TestInfoComponent implements OnInit {
   }
 
   onClick(): void {
-    this.startTestSession();
+    // this.startTestSession();
+    this.router.navigate(['/test', this.testId, 1]);
   }
 
 }

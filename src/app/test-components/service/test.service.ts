@@ -58,12 +58,7 @@ export class TestService {
     session.sessionCompleted = session.questions.length == totalCompleted.length;
     localStorage.setItem('Test Session', JSON.stringify(session));
       
-    if (!session.sessionCompleted) {
-      window.location.href = `/test/${testId}/${questionId + 1}`;
-    } else {
-      window.location.href = 'test-results';
-    }
-    
+    window.location.href = `/test/${testId}/${questionId + 1}`;
   }
 
 }

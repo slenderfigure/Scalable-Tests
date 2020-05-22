@@ -15,7 +15,7 @@ const routes: Route[] = [
   { 
     path: 'test/:testId/:questionId', 
     component: TestQuestionsComponent,
-    // canActivate: [TestQuestionGuard]
+    canActivate: [TestQuestionGuard],
     canDeactivate: [CanDeactivateGuard]
   },
   { 
