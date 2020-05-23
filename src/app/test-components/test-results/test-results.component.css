@@ -77,14 +77,19 @@
   margin-left: 1rem;
 }
 
-.row-group-2 span {
+.answers-review {
+  width: 100%;
+  padding: 3rem;
+  background-color: #161516;
+}
+
+.badge {
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
   padding: 0.3rem 0.7rem;
   color: #85a4ff;
-  font-size: 1rem;
   border-radius: 20px;
   background-color: #444;
   user-select: none;  
@@ -93,18 +98,19 @@
 .thumbnail-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  padding: 3rem;
-  background-color: #161516;
+  justify-content: space-evenly;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: 2rem; */
+  width: 100%; 
+  padding-top: 2rem;
 }
 
 .thumbnail {
-  flex-shrink: 0;
   width: 260px;
   height: auto;
-  margin-bottom: 2.2rem;
-  border-bottom: 0.3rem solid transparent;
+  margin: 0 0.6rem;
+  margin-bottom: 4rem;
   border-radius: 6px;
   background-color: #292929;
   box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);  
@@ -112,18 +118,22 @@
   overflow: hidden;
 }
 
-.thumbnail.correct {
-  border-color: #2cda74;
-}
-
-.thumbnail.wrong {
-  border-color: #fd4242;
-}
-
 .thumbnail span, 
 .thumbnail img {
   display: block;
   width: 100%;
+}
+
+.thumbnail img {
+  border-bottom: 0.3rem solid transparent;
+}
+
+.thumbnail img.correct {
+  border-color: #2cda74;
+}
+
+.thumbnail img.wrong {
+  border-color: #fd4242;
 }
 
 .thumbnail span {

@@ -16,20 +16,20 @@
             class="icon"></i>
         </div>
 
-        <div class="row-group-2">
-          <span>Review your answers</span>
-        </div>
+        
       </div>
 
       <div class="answers-review">
+        <span class="badge">Review your answers</span>
         <div class="thumbnail-wrapper">
           <button 
             *ngFor="let question of questions; index as index"
-            class="thumbnail"
-            [class]="question?.isWrong ? 'wrong' : 'correct'"
+            class="thumbnail"            
             [title]="question.title">
             <span>{{ index + 1 }}. {{ question.title }}</span>
-            <img src="assets/img/thumbnail.jpg">
+            <img 
+              src="assets/img/thumbnail.jpg"
+              [class]="question?.isWrong ? 'wrong' : 'correct'">
           </button>
         </div>
       </div>
