@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 
-import { TestService } from '../service/test.service';
+import { TestService } from '../../service/test.service';
 
 @Component({
   selector: 'timer',
@@ -26,7 +26,7 @@ export class TimerComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.setDefaults();
-    // this.initTimer();
+    this.initTimer();
   }
 
   private setDefaults(): void {
