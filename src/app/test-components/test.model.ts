@@ -11,7 +11,7 @@ export class Test {
   //   completed?: boolean
   // }[];  
   timeLimit: number; // Must be specified in seconds
-  difficulty: number; // Ranges from 1 to 3
+  difficulty: string; // Ranges from 1 to 3
   score: number;
   creationDate: Date;
   modifiedDate: Date;
@@ -28,7 +28,7 @@ export class Test {
     //   completed?: boolean
     // }[],
     timeLimit: number,
-    difficulty: number
+    difficulty: string
   }) {
     this.id = params.id;
     this.subject = params.subject;
