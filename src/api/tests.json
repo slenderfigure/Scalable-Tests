@@ -17,7 +17,7 @@
           "1 gram"
         ],
         "correctAnswer": ["250 grams"],
-        "image": "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
+        "image": "assets/img/test-img1.jpg",
         "timeLimit": "00:00:20"
       }, 
       {
@@ -48,7 +48,7 @@
           "None of the above"
         ],
         "correctAnswer": ["Protium"],
-        "image": "https://physicsworld.com/wp-content/uploads/2019/11/Illustration-of-an-atomic-nucleus.jpg",
+        "image": "assets/img/test-img2.jpg",
         "timeLimit": "00:00:20"
       }, 
       {
