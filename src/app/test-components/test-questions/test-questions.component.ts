@@ -19,7 +19,6 @@ export class TestQuestionsComponent implements OnInit {
   private questionId: number;
   private duration: number;
   testSubject: string;
-  testProgress: number = 0;
   question: Question;
   questionNumber: number;
   loading: boolean = true;
@@ -39,7 +38,6 @@ export class TestQuestionsComponent implements OnInit {
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
 
       this.testSubject = test.subject;
-      this.testProgress = this.setTestProgress(test);
       this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
       this.initQuestion(test.questions.find(cur => cur.id == this.questionId));
       this.loading = false;
@@ -48,12 +46,6 @@ export class TestQuestionsComponent implements OnInit {
         this.duration = duration;
       });
     });
-  }
-
-  setTestProgress(test: Test): number {
-    const totalQuestions = test.questions.length;
-    const completed = test.questions.filter(question => question.completed).length;
-    return Math.round((completed / totalQuestions) * 100);
   }
 
   private initQuestion(question: Question): void {
