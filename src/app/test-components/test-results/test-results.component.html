@@ -28,7 +28,7 @@
             <span>{{ index + 1 }}. {{ question.title }}</span>
             <img 
               src="assets/img/thumbnail.jpg"
-              [class]="question?.isWrong ? 'wrong' : 'correct'">
+              [class]="!question?.isCorrect ? 'wrong' : 'correct'">
           </button>
         </div>
       </div>

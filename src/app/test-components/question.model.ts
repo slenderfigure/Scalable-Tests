@@ -8,11 +8,9 @@ export interface Question {
   hasVariousAnswers?: boolean;
   correctAnswer: string[];
   selectedAnswer?: string[];  
+  isCorrect?: boolean;
   image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;
   completed?: boolean;
 }
-
-// You should change the answers from buttons to checkboxes to allow 
-// Multiple question with multiple answers

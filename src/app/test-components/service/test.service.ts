@@ -52,9 +52,31 @@ export class TestService {
     question.selectedAnswer = seletedAnswers;
     localStorage.setItem('Test Session', JSON.stringify(session));
 
+    this.endCurrentSession(session);
+  }
+
+  private endCurrentSession(session: Test): void {
     const totalCompleted = session.questions.filter(question => question.completed);
 
     session.sessionCompleted = session.questions.length == totalCompleted.length;
+
+    if (session.sessionCompleted) {
+      this.gradeTest(session);
+    }
+  }
+
+  private gradeTest(session: Test): void {
+    session.questions.map(question => {
+      if (question.correctAnswer.length == question.selectedAnswer.length &&
+        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer))) {
+        question.isCorrect = true;
+      } else {
+        question.isCorrect = false;
+      }
+    });
+
+    session.score = session.questions.filter(question => question.isCorrect).map(question => question.points).reduce((a, b) => a + b, 0);
+
     session.modifiedDate = new Date();
     localStorage.setItem('Test Session', JSON.stringify(session));
   }

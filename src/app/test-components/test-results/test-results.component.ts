@@ -38,7 +38,7 @@ export class TestResultsComponent implements OnInit {
         value: this.wrong,
         icon: `<svg height="24" viewBox="0 0 24 24" width="24" fill="#fd4242"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`
       },
-      { label: 'Your score', value: `${this.score} (${this.socorePercent}%)` },
+      { label: 'Your score', value: `${this.test.score} (${this.socorePercent}%)` },
     ];
   }
 
@@ -61,24 +61,9 @@ export class TestResultsComponent implements OnInit {
     this.timeLimit = Math.round(this.test.timeLimit / 60);
     this.duration = Math.round(this.questions.map(val => val.completionDuration).reduce((a, b) => a + b, 0) / 60);
     
-    const approved = this.questions.filter(question => {
-      return question.correctAnswer.length == question.selectedAnswer.length &&
-        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer));
-    });
-
-    this.correct = approved.length;
-    this.wrong = this.questions.length - approved.length;
-    this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
-    this.socorePercent = Math.round((this.correct / this.questions.length) * 100);
-
-    this.questions = this.questions.map(question => {
-      if (!approved.some(cur => cur.id == question.id)) {
-        question['isWrong'] = true;
-      }
-      return question;
-    });
-
-    console.log(this.questions);
+    this.correct = this.questions.filter(question => question.isCorrect).length;
+    this.wrong = this.questions.length - this.correct;
+    this.socorePercent = Math.round((this.test.score / this.test.points) * 100);
   }
 
 }
