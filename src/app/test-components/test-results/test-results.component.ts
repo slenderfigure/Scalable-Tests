@@ -14,6 +14,7 @@ export class TestResultsComponent implements OnInit {
   test: Test;
   timeLimit: number;
   questions: Question[];
+  duration: number;
   correct: number;  
   wrong: number;
   score: number;
@@ -22,10 +23,11 @@ export class TestResultsComponent implements OnInit {
   get groups(): { label: string, value: any, icon?: string }[] {
     return [
       { label: 'Subject', value: this.test.subject },
+      { label: 'Time limit', value: `${this.timeLimit} min(s)` },
       { label: 'Points', value: this.test.points },
       { label: 'Difficulty', value: this.test.difficulty },
       { label: 'Total questions', value: this.questions.length },
-      { label: 'Time limit', value: `${this.timeLimit} min(s)` },
+      { label: 'Completion Duration ', value: `${this.duration} min(s)` },
       { 
         label: 'Correct answers', 
         value: this.correct,
@@ -40,9 +42,10 @@ export class TestResultsComponent implements OnInit {
     ];
   }
 
-
-
-  constructor(private sanitizer: DomSanitizer, private ts: TestService) { }
+  constructor(
+    private sanitizer: DomSanitizer, 
+    private ts: TestService
+  ) { }
 
   ngOnInit(): void {
     this.setDefaults();
@@ -56,6 +59,7 @@ export class TestResultsComponent implements OnInit {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
     this.questions = this.test.questions;
     this.timeLimit = Math.round(this.test.timeLimit / 60);
+    this.duration = Math.round(this.questions.map(val => val.completionDuration).reduce((a, b) => a + b, 0) / 60);
     
     const approved = this.questions.filter(question => {
       return question.correctAnswer.length == question.selectedAnswer.length &&
@@ -74,8 +78,6 @@ export class TestResultsComponent implements OnInit {
       return question;
     });
 
-    
   }
 
 }
-
