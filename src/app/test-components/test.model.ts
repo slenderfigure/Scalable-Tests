@@ -5,14 +5,10 @@ export class Test {
   subject: string;
   points: number;
   questions: Question[];
-  // sections: {
-  //   title: string, 
-  //   questions: Question[],
-  //   completed?: boolean
-  // }[];  
   timeLimit: number; // Must be specified in seconds
   difficulty: string; // Ranges from 1 to 3
   score: number;
+  duration: number;
   creationDate: Date;
   modifiedDate: Date;
   sessionCompleted: boolean;
@@ -22,23 +18,18 @@ export class Test {
     subject: string,
     points: number,
     questions: Question[],
-    // sections: {
-    //   title: string, 
-    //   questions: Question[],
-    //   completed?: boolean
-    // }[],
     timeLimit: number,
     difficulty: string
   }) {
     this.id = params.id;
     this.subject = params.subject;
     this.points = params.points;
-    this.questions = params.questions;
-    // this.sections = params.sections;    
+    this.questions = params.questions;  
     this.timeLimit = params.timeLimit;
-    this.difficulty = params.difficulty;
-    this.creationDate = new Date();
+    this.difficulty = params.difficulty;    
     this.score = 0;
+    this.duration = 0;
+    this.creationDate = new Date();
     this.sessionCompleted = false;
   }
   

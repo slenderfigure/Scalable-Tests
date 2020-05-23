@@ -12,9 +12,9 @@ import { Question } from '../question.model';
 })
 export class TestResultsComponent implements OnInit {
   test: Test;
-  timeLimit: number;
+  timeLimit: string;
   questions: Question[];
-  duration: number;
+  duration: string;
   correct: number;  
   wrong: number;
   score: number;
@@ -23,11 +23,11 @@ export class TestResultsComponent implements OnInit {
   get groups(): { label: string, value: any, icon?: string }[] {
     return [
       { label: 'Subject', value: this.test.subject },
-      { label: 'Time limit', value: `${this.timeLimit} min(s)` },
+      { label: 'Time limit', value: `${this.timeLimit}` },
       { label: 'Points', value: this.test.points },
       { label: 'Difficulty', value: this.test.difficulty },
       { label: 'Total questions', value: this.questions.length },
-      { label: 'Completion Duration ', value: `${this.duration} min(s)` },
+      { label: 'Completion Duration ', value: `${this.duration}` },
       { 
         label: 'Correct answers', 
         value: this.correct,
@@ -58,12 +58,17 @@ export class TestResultsComponent implements OnInit {
   private setDefaults(): void {
     this.test = JSON.parse(localStorage.getItem('Test Session'));
     this.questions = this.test.questions;
-    this.timeLimit = Math.round(this.test.timeLimit / 60);
-    this.duration = Math.round(this.questions.map(val => val.completionDuration).reduce((a, b) => a + b, 0) / 60);
+    this.timeLimit = this.timeFormatter(this.test.timeLimit);
+    this.duration = this.timeFormatter(this.test.duration);
     
     this.correct = this.questions.filter(question => question.isCorrect).length;
     this.wrong = this.questions.length - this.correct;
     this.socorePercent = Math.round((this.test.score / this.test.points) * 100);
   }
 
+  private timeFormatter(time: number): string {
+    let formatted: string = time >= 60 ? Math.round(time / 60).toString() : time.toString();
+
+    return (time >= 3600) ? `${formatted} hr(s)` : (time < 3600 && time >= 60) ? `${formatted} min(s)` : `${formatted} sec(s)`;
+  }
 }

@@ -76,6 +76,9 @@ export class TestService {
     });
 
     session.score = session.questions.filter(question => question.isCorrect).map(question => question.points).reduce((a, b) => a + b, 0);
+    
+    session.duration = session.questions.map(question => question.completionDuration)
+      .reduce((a, b) => a + b, 0);
 
     session.modifiedDate = new Date();
     localStorage.setItem('Test Session', JSON.stringify(session));
