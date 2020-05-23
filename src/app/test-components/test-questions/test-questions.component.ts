@@ -79,8 +79,4 @@ export class TestQuestionsComponent implements OnInit {
     window.location.href = `/test/${this.testId}/${this.questionId + 1}`;
   }
 
-  changeQuestion(): void {
-    this.onTimeout(); 
-  }
-
 }
