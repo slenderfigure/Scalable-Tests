@@ -20,6 +20,7 @@ export class TestQuestionsComponent implements OnInit {
   private duration: number;
   testSubject: string;
   question: Question;
+  questionNumber: number;
   loading: boolean = true;
   selected: number;
   
@@ -37,12 +38,14 @@ export class TestQuestionsComponent implements OnInit {
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
 
       this.testSubject = test.subject;
-      this.initQuestion(test.questions.find(cur => cur.id = this.questionId));
+      this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
+      this.initQuestion(test.questions.find(cur => cur.id == this.questionId));
       this.loading = false;
-
+      
       this.ts.durationTracker$.subscribe(duration => {
         this.duration = duration;
       });
+      
     });
   }
 
