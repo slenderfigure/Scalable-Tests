@@ -18,7 +18,7 @@
         ],
         "correctAnswer": ["250 grams"],
         "image": "https://www.healthy-holistic-living.com/wp-content/uploads/2014/07/salt-728x381.gif",
-        "timeLimit": "00:00:20"
+        "timeLimit": "00:00:15"
       }, 
       {
         "id": 2,
@@ -33,7 +33,7 @@
           "Milk does not have a pH"
         ],
         "correctAnswer": ["Slightly Acidic"],
-        "timeLimit": "00:00:20"
+        "timeLimit": "00:00:10"
       },
       {
         "id": 3,

@@ -40,7 +40,6 @@ export class TestService {
   }
 
   questionBacktracker(
-    testId: string,
     questionId: number,
     seletedAnswers: string[],
     duration: number
@@ -58,8 +57,6 @@ export class TestService {
     session.sessionCompleted = session.questions.length == totalCompleted.length;
     session.modifiedDate = new Date();
     localStorage.setItem('Test Session', JSON.stringify(session));
-      
-    window.location.href = `/test/${testId}/${questionId + 1}`;
   }
 
   autoFailTest(): Observable<boolean> {

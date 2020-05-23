@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 import { TestService } from '../service/test.service';
 
@@ -9,6 +9,8 @@ import { TestService } from '../service/test.service';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit, OnChanges {
+  @Output('timeout') notifyTimeout: EventEmitter<boolean> = new EventEmitter();
+  @Input() resetTimer: boolean;
   @Input() time: string;
   private questionTimer: any;
   isEnding: boolean = false;
@@ -47,6 +49,7 @@ export class TimerComponent implements OnInit, OnChanges {
     this.questionTimer = setInterval(() => {
       if ((elapsed -= 1) == 0) { 
         this.ts.stopDurationTracker();
+        this.notifyTimeout.emit(true);
         clearInterval(this.questionTimer);
       }
       if (hours > 0) {

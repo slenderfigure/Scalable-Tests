@@ -8,6 +8,7 @@ import { TestQuestionsComponent } from './test-questions/test-questions.componen
 import { TimerComponent } from './timer/timer.component';
 import { TestInfoComponent } from './test-info/test-info.component';
 import { TestResultsComponent } from './test-results/test-results.component';
+import { TestComponent } from './test.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TestResultsComponent } from './test-results/test-results.component';
     TestQuestionsComponent,
     TimerComponent,
     TestInfoComponent,
-    TestResultsComponent
+    TestResultsComponent,
+    TestComponent
   ],
   imports: [
     TestRoutingModule,

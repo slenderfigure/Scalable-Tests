@@ -5,7 +5,7 @@
         <h3>{{ question.section }}. {{ question.problem }}</h3>
       </div>
 
-      <timer [time]="question.timeLimit"></timer>
+      <timer [time]="question.timeLimit" (timeout)="onTimeout()"></timer>
     </section>
   
     <section 

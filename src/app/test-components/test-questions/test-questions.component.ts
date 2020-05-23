@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
-import { Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent, Subscription } from 'rxjs';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class TestQuestionsComponent implements OnInit {
   question: Question;
   loading: boolean = true;
   selected: number;
+  subscription: Subscription;
 
   
   constructor(
@@ -38,14 +39,12 @@ export class TestQuestionsComponent implements OnInit {
           this.initQuestion(question);
           this.loading = false;
         }
-
-        this.ts.durationTracker$.subscribe({
-          next: duration => this.duration = duration,
-          complete: () => this.questionTimeout()
-        });
       });
     });
 
+    this.subscription = this.ts.durationTracker$.subscribe({
+      next: duration => this.duration = duration
+    });
     
     // fromEvent(window, 'beforeunload').subscribe(e => {
     //   e.preventDefault();
@@ -77,17 +76,17 @@ export class TestQuestionsComponent implements OnInit {
     return selected;
   }
 
-  private questionTimeout(): void {
+  onTimeout(): void {
     this.ts.questionBacktracker(
-      this.testId,
       this.question.id,
       this.getSelectedAnswers(), 
       this.duration
     ); 
+    window.location.href = `/test/${this.testId}/${this.questionId + 1}`;
   }
 
   changeQuestion(): void {
-    this.questionTimeout(); 
+    this.onTimeout(); 
   }
 
 }
