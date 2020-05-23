@@ -9,7 +9,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
-        "points": 5,
+        "points": 3,
         "answers": [
           "1 kilogram", 
           "500 grams", 
@@ -25,7 +25,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
-        "points": 5,
+        "points": 3,
         "answers": [
           "Strong Acid", 
           "Slightly Basic", 
@@ -40,7 +40,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the most common isotope of hydrogen?",
-        "points": 5,
+        "points": 3,
         "answers": [
           "Deuterium", 
           "Tritum", 
@@ -49,14 +49,14 @@
         ],
         "correctAnswer": ["Protium"],
         "image": "assets/img/test-img2.jpg",
-        "timeLimit": "00:00:20"
+        "timeLimit": "00:00:15"
       }, 
       {
         "id": 4,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "You can't live without water! What is its chemical formula?",
-        "points": 5,
+        "points": 3,
         "answers": [
           "H2", 
           "O2",
@@ -71,7 +71,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
-        "points": 5,
+        "points": 3,
         "answers": [
           "A definite shape, but no defined volume", 
           "A definite volume and shape", 
@@ -86,7 +86,7 @@
         "section": "Section 2",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
-        "points": 5,
+        "points": 3,
         "answers": [
           "Fire",
           "Electricity"
@@ -99,33 +99,62 @@
         "id": 7,
         "section": "Section 2",
         "problem": "Choose the correct answer",
+        "title": "A mole contains Avogadro's number of items. What is Avogadro's number?",
+        "points": 3,
+        "answers": [
+          "6023",
+          "3 x 10^8",
+          "6.02 x 10^-23",
+          "62 - 10^8"
+        ],
+        "correctAnswer": ["6.023 x 10^23"],
+        "timeLimit": "00:00:30"
+      },
+      {
+        "id": 8,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
         "title": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
-        "points": 5,
+        "points": 3,
         "answers": [
           "Helium",
           "Krypton",
           "Argon",
           "Neon"
         ],
-        "hasVariousAnswers": true,
         "correctAnswer": ["Chlorine"],
         "timeLimit": "00:00:20"
       },
       {
-        "id": 8,
+        "id": 9,
         "section": "Section 2",
         "problem": "Choose the correct answer",
-        "title": "A drop of food coloring spreading out in a cup of water is an example of which transport process?",
-        "points": 5,
+        "title": "All of the following elements are liquids around room temperature except which one?",
+        "points": 3,
         "answers": [
-          "Vapor Pressure",
-          "Osmosis",
-          "Effusion",
-          "Hydrology"
+          "Gallium",
+          "Bromine",
+          "Mercury",
+          "Gold"
         ],
-        "hasVariousAnswers": true,
-        "correctAnswer": ["Diffusion"],
-        "image": "assets/img/test-img3.jpg",
+        "correctAnswer": ["Magnesium"],
+        "image": "assets/img/test-img4.jpg",
+        "timeLimit": "00:00:22"
+      },
+      {
+        "id": 10,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "What do you call an atom that has more protons than electrons?",
+        "points": 3,
+        "answers": [
+          "A molecule",
+          "An isotope",
+          "An anion",
+          "A neutron"
+        ],
+        "correctAnswer": ["A cation"],
+        "image": "assets/img/test-img5.jpg",
         "timeLimit": "00:00:20"
       }
     ],
