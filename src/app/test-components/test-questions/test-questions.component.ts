@@ -19,6 +19,7 @@ export class TestQuestionsComponent implements OnInit {
   private questionId: number;
   private duration: number;
   testSubject: string;
+  testProgress: number = 12;
   question: Question;
   questionNumber: number;
   loading: boolean = true;

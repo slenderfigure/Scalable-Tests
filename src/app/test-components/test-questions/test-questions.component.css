@@ -12,13 +12,12 @@
 
 .test-information h3 {
   padding-bottom: 2rem;
-  color: #888;
+  color: #999;
   font-size: 1.6rem;
   font-weight: 400;
 }
 
 .test-information p {
-
   color: #fff;
   font-size: 1.2rem;
   font-weight: 400;
@@ -35,9 +34,22 @@
 }
 
 .top-content {
+  position: relative;
   width: 100%;
   padding: 2rem 2rem 1.5rem;
   background-color: #292929;
+}
+
+.progress-bar {
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 5px;
+  background: 
+  linear-gradient(90deg, rgba(224, 3, 102, 0.7), rgba(133, 163, 255, 0.7));
+  transition: width 0.3s ease;
 }
 
 .top-content h3 {
