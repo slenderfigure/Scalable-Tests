@@ -1,10 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { fromEvent } from 'rxjs';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
-import { Observable, fromEvent, Subscription } from 'rxjs';
 import { Test } from '../test.model';
 
 
@@ -22,8 +22,6 @@ export class TestQuestionsComponent implements OnInit {
   question: Question;
   loading: boolean = true;
   selected: number;
-  subscription: Subscription;
-
   
   constructor(
     private router: Router,
@@ -42,7 +40,7 @@ export class TestQuestionsComponent implements OnInit {
       this.initQuestion(test.questions.find(cur => cur.id = this.questionId));
       this.loading = false;
 
-      this.subscription = this.ts.durationTracker$.subscribe(duration => {
+      this.ts.durationTracker$.subscribe(duration => {
         this.duration = duration;
       });
     });
