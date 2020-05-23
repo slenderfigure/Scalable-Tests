@@ -1,14 +1,26 @@
 .top-section {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   width: 100%;
   padding: 2rem 0;
 }
 
+.test-information {
+  align-self: flex-end;
+}
+
 .test-information h3 {
+  padding-bottom: 2rem;
+  color: #999;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.test-information p {
+
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 

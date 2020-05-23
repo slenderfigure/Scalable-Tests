@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
 import { Observable, fromEvent, Subscription } from 'rxjs';
+import { Test } from '../test.model';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class TestQuestionsComponent implements OnInit {
   private testId: string;
   private questionId: number;
   private duration: number;
+  testSubject: string;
   question: Question;
   loading: boolean = true;
   selected: number;
@@ -34,22 +36,16 @@ export class TestQuestionsComponent implements OnInit {
       this.testId = params.get('testId');
       this.questionId = +params.get('questionId');
 
-      this.ts.getNextQuestion(this.testId, this.questionId).subscribe(question => {
-        if (question) {
-          this.initQuestion(question);
-          this.loading = false;
-        }
+      const test: Test = JSON.parse(localStorage.getItem('Test Session'));
+
+      this.testSubject = test.subject;
+      this.initQuestion(test.questions.find(cur => cur.id = this.questionId));
+      this.loading = false;
+
+      this.subscription = this.ts.durationTracker$.subscribe(duration => {
+        this.duration = duration;
       });
     });
-
-    this.subscription = this.ts.durationTracker$.subscribe({
-      next: duration => this.duration = duration
-    });
-    
-    // fromEvent(window, 'beforeunload').subscribe(e => {
-    //   e.preventDefault();
-    //   e.returnValue = false;
-    // });
   }
 
   private initQuestion(question: Question): void {
