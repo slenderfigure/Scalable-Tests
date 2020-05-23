@@ -21,6 +21,7 @@
         <span class="badge">Review your answers</span>
         <div class="thumbnail-wrapper">
           <button 
+            [routerLink]="['/test-review']"
             *ngFor="let question of questions; index as index"
             class="thumbnail"            
             [title]="question.title">
@@ -34,3 +35,5 @@
     </section>
   </div>
 </div>
+<router-outlet></router-outlet>
+

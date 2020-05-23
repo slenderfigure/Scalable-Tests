@@ -9,6 +9,7 @@ import { TestResultsComponent } from './test-results/test-results.component';
 import { TestQuestionGuard } from './test-questions/can-activate.guard';
 import { TestResultsGuard } from './test-results/test-results.guard';
 import { CanDeactivateGuard } from './test-questions/can-deactivate.guard';
+import { AnswersReviewComponent } from './test-results/answers-review/answers-review.component';
 
 
 const routes: Route[] = [
@@ -24,7 +25,8 @@ const routes: Route[] = [
     path: 'test-results', 
     component: TestResultsComponent,
     canActivate: [TestResultsGuard]
-  }
+  },
+  { path: 'test-review', component: AnswersReviewComponent }
 ];
 
 @NgModule({

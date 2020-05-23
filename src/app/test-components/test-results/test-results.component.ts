@@ -78,6 +78,7 @@ export class TestResultsComponent implements OnInit {
       return question;
     });
 
+    console.log(this.questions);
   }
 
 }
