@@ -12,23 +12,33 @@ import { Question } from '../question.model';
 })
 export class TestResultsComponent implements OnInit {
   test: Test;
-  correct: number;
   questions: Question[];
+  correct: number;  
   wrong: number;
   score: number;
   socorePercent: number;
 
-  get groups(): { key: string, value: any, icon?: string }[] {
+  get groups(): { label: string, value: any, icon?: string }[] {
     return [
-      { key: 'Subject', value: this.test.subject },
-      { key: 'Points', value: this.test.points },
-      { key: 'Difficulty', value: this.test.difficulty },
-      { key: 'Total questions', value: this.questions.length },
-      { key: 'Correct answers', value: this.questions.length },
+      { label: 'Subject', value: this.test.subject },
+      { label: 'Points', value: this.test.points },
+      { label: 'Difficulty', value: this.test.difficulty },
+      { label: 'Total questions', value: this.questions.length },
+      { 
+        label: 'Correct answers', 
+        value: this.correct,
+        icon: `<svg height="24" viewBox="0 0 24 24" width="24" fill="#2cda74"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>`
+      },
+      { 
+        label: 'Wrong answers', 
+        value: this.wrong,
+        icon: `<svg height="24" viewBox="0 0 24 24" width="24" fill="#fd4242"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>`
+      },
+      { label: 'Score percent', value: `${this.socorePercent}%` },
     ];
   }
 
-  icon = `<svg class="icon" height="24" viewBox="0 0 24 24" width="24" fill="#2cda74"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>`;
+
 
   constructor(private sanitizer: DomSanitizer, private ts: TestService) { }
 
@@ -36,7 +46,7 @@ export class TestResultsComponent implements OnInit {
     this.setDefaults();
   }
 
-  private transformYourHtml(param) {
+  validatedAsTrusted(param) {
     return this.sanitizer.bypassSecurityTrustHtml(param);
   }
 
@@ -53,6 +63,20 @@ export class TestResultsComponent implements OnInit {
     this.wrong = this.questions.length - approved.length;
     this.score = approved.map(question => question.points).reduce((a, b) => a + b, 0);
     this.socorePercent = Math.round((this.correct / this.questions.length) * 100);
+
+    this.questions = this.questions.map(question => {
+      if (!approved.some(cur => cur.id == question.id)) {
+        question['isWrong'] = true;
+      }
+      return question;
+    });
+
+    const user1 = { name: 'Raimer', age: 27, status: 'active' };
+    const user3 = { name: 'Raimer', age: 27, status: 'active' };
+
+    let arr1 = [];
+
+    
   }
 
 }

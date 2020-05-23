@@ -5,43 +5,15 @@
         <h3>Test Results</h3>
         <span class="date">{{ test.modifiedDate | date:'MMM d, y - h:mm' }}</span>
 
-        <div class="row-group">
-          <span>Subject: </span>
-          <span>{{ test.subject }}</span>
-        </div>
-
-        <div class="row-group">
-          <span>Subject: </span>
-          <span>{{ test.subject }}</span>
-        </div>
-
-        <div class="row-group">
-          <span>Points: </span>
-          <span>{{ test.points }}</span>
-        </div>
-
-        <div class="row-group">
-          <span>Total questions: </span>
-          <span>{{ questions.length }}</span>
-        </div>
-
-        <div class="row-group">
-          <span>Correct answers: </span>
-          <span>{{ correct }}</span>
-
-          <svg class="icon" height="24" viewBox="0 0 24 24" width="24" fill="#2cda74"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-        </div>
-
-        <div class="row-group">
-          <span>Wrong answers: </span>
-          <span>{{ wrong }}</span>
-          
-          <svg class="icon" height="24" viewBox="0 0 24 24" width="24" fill="#fd4242"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-        </div>
-
-        <div class="row-group">
-          <span>Score percent: </span>
-          <span>{{ this.socorePercent }}%</span>
+        <div 
+          *ngFor="let group of groups"
+          class="row-group">
+          <span>{{ group.label }}: </span>
+          <span>{{ group.value }}</span>
+          <i 
+            *ngIf="group.icon" 
+            [innerHTML]="validatedAsTrusted(group.icon)"
+            class="icon"></i>
         </div>
 
         <div class="row-group-2">
@@ -54,7 +26,7 @@
           <button 
             *ngFor="let question of questions; index as index"
             class="thumbnail"
-            [class]=""
+            [class]="question?.isWrong ? 'wrong' : 'correct'"
             [title]="question.title">
             <span>{{ index + 1 }}. {{ question.title }}</span>
             <img src="assets/img/thumbnail.jpg">
@@ -62,10 +34,5 @@
         </div>
       </div>
     </section>
-
-    
   </div>
-
 </div>
-
-  
