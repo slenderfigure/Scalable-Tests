@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <ul>
+    <li *ngFor="let test of testList$ | async">
+      <a [routerLink]="['/test', test.id]">{{ test.subject }}</a>
+    </li>
+  </ul>
+</div>

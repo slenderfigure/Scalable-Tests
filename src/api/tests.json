@@ -83,7 +83,7 @@
       },
       {
         "id": 6,
-        "section": "Section 1",
+        "section": "Section 2",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
         "points": 5,
@@ -93,7 +93,40 @@
         ],
         "hasVariousAnswers": true,
         "correctAnswer": ["Solid", "Liquid", "Gas", "Plasma"],
-        "timeLimit": "00:00:30"
+        "timeLimit": "00:00:25"
+      },
+      {
+        "id": 7,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
+        "points": 5,
+        "answers": [
+          "Helium",
+          "Krypton",
+          "Argon",
+          "Neon"
+        ],
+        "hasVariousAnswers": true,
+        "correctAnswer": ["Chlorine"],
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 8,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "A drop of food coloring spreading out in a cup of water is an example of which transport process?",
+        "points": 5,
+        "answers": [
+          "Vapor Pressure",
+          "Osmosis",
+          "Effusion",
+          "Hydrology"
+        ],
+        "hasVariousAnswers": true,
+        "correctAnswer": ["Diffusion"],
+        "image": "assets/img/test-img3.jpg",
+        "timeLimit": "00:00:20"
       }
     ],
     "timeLimit": 120,

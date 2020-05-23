@@ -15,8 +15,12 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
+  getAllTests(): Observable<Test[]> {
+    return this.http.get<Test[]>(this.testUrl);
+  }
+
   getTest(id: string): Observable<Test> {
-    return this.http.get<Test[]>(this.testUrl).pipe(
+    return this.getAllTests().pipe(
       map(tests => {
         return tests.find(test => test.id == id);
       })
