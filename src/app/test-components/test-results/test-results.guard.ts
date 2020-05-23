@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Test } from '../test.model';
 
@@ -16,16 +16,18 @@ export class TestResultsGuard implements CanActivate {
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const test: Test = JSON.parse(localStorage.getItem('Test Session'));
+    state: RouterStateSnapshot): Observable<boolean> | boolean {
+    return new Observable<boolean>(observer => {
+      const test: Test = JSON.parse(localStorage.getItem('Test Session'));
     
-    if (!test || !test?.sessionCompleted) {
-      this.location.back();
-      return false;
-    } 
-    else {
-      return true;
-    }
+      if (!test || !test?.sessionCompleted) {
+        this.location.back();
+        observer.next(false);
+      } 
+      else {
+        observer.next(true);
+      }
+    });
   }
   
 }
