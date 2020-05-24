@@ -3,6 +3,7 @@ import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 import { Question } from '../../question.model';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'question-answers',
@@ -13,6 +14,7 @@ export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
+  formGroup: FormGroup;
   
   constructor() { }
 
@@ -25,11 +27,20 @@ export class AnswersStructureComponent implements OnChanges {
     // !this.question.hasVariousAnswers ? 
     //   this.question.answers.push(this.question.correctAnswer) :      
     //   this.question.answers = this.question.answers.concat(this.question.correctAnswer);
-    
-    this.question.answers = this.shuffleAnswers(this.question.answers);
+ 
+    this.formGroup = this.createFormGroup();
   }
 
-  private shuffleAnswers(answers: any[]): any[] {
+  createFormGroup(): FormGroup {
+    let group: any = {};
+
+    this.shuffledAnswers(this.question.answers).forEach((answer) => {
+      group['answer'] = new FormControl();
+    });
+    return new FormGroup(group);
+  }
+
+  private shuffledAnswers(answers: any[]): any[] {
     for (let i = answers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [answers[i], answers[j]] = [answers[j], answers[i]];
@@ -38,9 +49,10 @@ export class AnswersStructureComponent implements OnChanges {
   }
 
   getSelectedAnswers(): void {
-    const answers  = this.answerInput.map(val => <HTMLInputElement>val.nativeElement);
-    const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
-    this.notifySelected.emit(selected);
+    // const answers  = this.answerInput.map(val => <HTMLInputElement>val.nativeElement);
+    // const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
+    // this.notifySelected.emit(selected);
+    console.log(this.formGroup.get('answer').value);
   }
 
 }

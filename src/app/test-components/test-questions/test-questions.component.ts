@@ -24,7 +24,6 @@ export class TestQuestionsComponent implements OnInit {
 
   private _selectedAnswers: any[] = [];
   set sectedAnswers(answers: any[]) { 
-    console.log(answers);
     this._selectedAnswers = answers;
   }
   get sectedAnswers(): any[] { 
