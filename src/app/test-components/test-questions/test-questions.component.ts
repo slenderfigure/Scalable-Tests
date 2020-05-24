@@ -78,7 +78,11 @@ export class TestQuestionsComponent implements OnInit {
       this.getSelectedAnswers(), 
       this.duration
     ); 
-    window.location.href = `/test/${this.testId}/${this.questionId + 1}`;
+    // window.location.href = `/test/${this.testId}/${this.questionId + 1}`;
+    setTimeout(() => {
+      this.router.navigate(['test', this.testId, this.questionId + 1]);
+      this.loading = true;
+    }, 100);
   }
 
 }
