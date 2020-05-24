@@ -36,8 +36,7 @@ export class TestQuestionsComponent implements OnInit {
       this.testId = params.get('testId');
       this.questionId = +params.get('questionId');
 
-      this.initQuestion();
-      this.loading = false;
+      this.initQuestion(this.testId);
       
       this.ts.durationTracker$.subscribe(duration => {
         this.duration = duration;
@@ -45,19 +44,22 @@ export class TestQuestionsComponent implements OnInit {
     });
   }
 
-  private initQuestion(): void {
-    const test: Test = JSON.parse(localStorage.getItem('Test Session'));
+  private initQuestion(testId: string): void {
+    // const test: Test = JSON.parse(localStorage.getItem('Test Session'));
 
-    this.testSubject = test.subject;
-    this.question = test.questions.find(cur => cur.id == this.questionId);
-    this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
+    this.ts.getTest(testId).subscribe(test => {
+      this.testSubject = test.subject;
+      this.question = test.questions.find(cur => cur.id == this.questionId);
+      this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
 
-    if (!this.question.hasVariousAnswers) {
-      this.question.answers.push(this.question.correctAnswer);
-    } else {
-      this.question.answers = this.question.answers.concat(this.question.correctAnswer);
-    }
-    this.question.answers = this.shuffleAnswers(this.question.answers);
+      !this.question.hasVariousAnswers ? 
+        this.question.answers.push(this.question.correctAnswer) :      
+        this.question.answers = this.question.answers.concat(this.question.correctAnswer);
+      
+      this.question.answers = this.shuffleAnswers(this.question.answers);
+      this.finishedIntro = false;
+      this.loading = false;
+    });
   }
 
   private shuffleAnswers(answers: string[]): string[] {
