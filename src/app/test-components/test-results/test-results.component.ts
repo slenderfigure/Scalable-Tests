@@ -63,7 +63,7 @@ export class TestResultsComponent implements OnInit {
     
     this.correct = this.questions.filter(question => question.isCorrect).length;
     this.wrong = this.questions.length - this.correct;
-    this.socorePercent = Math.round((this.test.score / this.test.points) * 100);
+    this.socorePercent = Math.round((this.correct / this.questions.length) * 100);
   }
 
   private timeFormatter(time: number): string {

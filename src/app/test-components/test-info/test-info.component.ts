@@ -12,6 +12,7 @@ import { Test } from '../test.model';
 })
 export class TestInfoComponent implements OnInit {
   test: Test;
+  timeLimit: number;
   loading: boolean = true;
   private testId: string;
 
@@ -26,6 +27,7 @@ export class TestInfoComponent implements OnInit {
       this.ts.getTest(params.get('testId')).subscribe(test => {
         this.test = test;
         this.testId = params.get('testId');
+        this.timeLimit = Math.round(this.test.timeLimit / 60);
         this.loading = false;
       });
     });
