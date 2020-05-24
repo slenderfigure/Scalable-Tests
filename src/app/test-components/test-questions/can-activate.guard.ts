@@ -29,7 +29,7 @@ export class TestQuestionGuard implements CanActivate {
         const session: Test = JSON.parse(localStorage.getItem('Test Session'));
 
         switch (true) {
-          case (!session):
+          case (!session && questionId == 1):
             localStorage.setItem('Test Session', JSON.stringify(test));
             observer.next(true);
             break;
@@ -44,9 +44,14 @@ export class TestQuestionGuard implements CanActivate {
               observer.next(false);
             }
             break;
+          
+          case (session && session.sessionCompleted):
+            this.router.navigate(['/test-results']);
+            observer.next(false);
+            break;
 
           default:
-            this.router.navigate(['/test-results']);
+            this.location.back();
             observer.next(false);
             break;
         }

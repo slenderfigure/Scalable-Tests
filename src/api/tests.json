@@ -135,7 +135,7 @@
           "Gallium",
           "Bromine",
           "Mercury",
-          "Gold"
+          "Rubidium"
         ],
         "correctAnswer": ["Magnesium"],
         "image": "assets/img/test-img4.jpg",
@@ -159,9 +159,11 @@
       }
     ],
     "timeLimit": 207,
-    "difficulty": "Low",
+    "difficulty": "Low",    
+    "duration": 0,
+    "score": 0,
     "creationDate": "2020-05-20T05:37:26.346Z",
-    "score": 0
+    "sessionCompleted": false
   },
   {
     "id": "CTMYTU4BAoT2RXH",
@@ -174,7 +176,12 @@
         "problem": "Choose the correct answer",
         "title": "Mark Twain wrote about which of these characters?",
         "points": 5,
-        "answers": ["Little Boy Blue", "Red Riding Hood", "Dennis the Menace", "Yukon Territory"],
+        "answers": [
+          "Little Boy Blue", 
+          "Red Riding Hood", 
+          "Dennis the Menace", 
+          "Yukon Territory"
+        ],
         "correctAnswer": ["Tom Sawyer"],
         "image": "assets/img/test-img8.jpg",
         "timeLimit": "00:00:15"
@@ -185,7 +192,12 @@
         "problem": "Choose the correct answer",
         "title": "This character says, \"Please, sir, I want some more.\" Who is it?",
         "points": 5,
-        "answers": ["Atticus Finch", "Darth Vader", "Batman", "Pluto"],
+        "answers": [
+          "Atticus Finch", 
+          "Darth Vader", 
+          "Batman", 
+          "Pluto"
+        ],
         "correctAnswer": ["Oliver Twist"],
         "timeLimit": "00:00:15"
       }, 
@@ -195,7 +207,12 @@
         "problem": "Choose the correct answer",
         "title": "Who was the main character in J.D. Salinger's \"Catcher in the Rye?\"",
         "points": 5,
-        "answers": ["Bart Simpson", "Huckleberry Finn", "Clark Kent", "Saitama"],
+        "answers": [
+          "Bart Simpson", 
+          "Huckleberry Finn", 
+          "Clark Kent", 
+          "Saitama"
+        ],
         "correctAnswer": ["Holden Caulfield"],
         "timeLimit": "00:00:15"
       }, 
@@ -203,10 +220,15 @@
         "id": 4,
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
-        "title": "Animals/Communism best describes George Orwell's \"Animal Farm\"",
+        "title": "Which best describes George Orwell's \"Animal Farm\"",
         "points": 5,
-        "answers": [false],
-        "correctAnswer": [true],
+        "answers": [
+          "Women/Monthly cycles",
+          "Babe Ruth/Yankees",
+          "Dinosaurs/Barney",
+          "Gangs and the mafia"
+        ],
+        "correctAnswer": ["Animals/Communism"],
         "image": "assets/img/test-img7.jpg",
         "timeLimit": "00:00:15"
       }, 
@@ -216,7 +238,12 @@
         "problem": "Choose the correct answer",
         "title": "Which is the \"Scarlet Letter?\"",
         "points": 5,
-        "answers": ["X", "Y", "Z", "Q"],
+        "answers": [
+          "X", 
+          "Y", 
+          "Z", 
+          "Q"
+        ],
         "correctAnswer": ["A"],
         "timeLimit": "00:00:15"
       }, 
@@ -226,8 +253,29 @@
         "problem": "Choose the correct answer",
         "title": "Which person penned the Harry Potter novels?",
         "points": 5,
-        "answers": ["Mark Twain", "Oprah Winfrey", "Dan Brown", "Coyote Peterson"],
+        "answers": [
+          "Mark Twain", 
+          "Oprah Winfrey", 
+          "Dan Brown", 
+          "Coyote Peterson"
+        ],
         "correctAnswer": ["J.K. Rowling"],
+        "image": "assets/img/test-img6.jpg",
+        "timeLimit": "00:00:15"
+      },
+      {
+        "id": 7,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "Which story by Edgar Allan Poe has the main character confessing his sins because of a noise he's experiencing?",
+        "points": 5,
+        "answers": [
+          "Eldorado", 
+          "The Pit and the Pendulum", 
+          "The Gold Bug", 
+          "Don Quixote"
+        ],
+        "correctAnswer": ["Tell-Tale Heart"],
         "image": "assets/img/test-img6.jpg",
         "timeLimit": "00:00:15"
       }
