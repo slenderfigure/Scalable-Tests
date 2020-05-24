@@ -2,24 +2,31 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 
+import { Question } from '../../question.model';
+
 @Component({
   selector: 'question-answers',
   templateUrl: './answers-structure.component.html',
   styleUrls: ['./answers-structure.component.css']
 })
-export class AnswersStructureComponent implements OnInit, OnChanges {
+export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
-  @Input() answers: any[];
-  @Input() hasVariousAnswers: boolean;
+  @Input() question: Question;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
   
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
   ngOnChanges(): void {
-    this.answers = this.shuffleAnswers(this.answers);
+    this.setDefaults();
+  }
+
+  setDefaults(): void {
+    // !this.question.hasVariousAnswers ? 
+    //   this.question.answers.push(this.question.correctAnswer) :      
+    //   this.question.answers = this.question.answers.concat(this.question.correctAnswer);
+    
+    this.question.answers = this.shuffleAnswers(this.question.answers);
   }
 
   private shuffleAnswers(answers: any[]): any[] {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { fromEvent } from 'rxjs';
 
@@ -14,7 +13,6 @@ import { Test } from '../test.model';
   styleUrls: ['./test-questions.component.css']
 })
 export class TestQuestionsComponent implements OnInit {
-  @ViewChildren('answers') answers: QueryList<ElementRef>;
   private testId: string;
   private questionId: number;
   private duration: number;
@@ -23,6 +21,15 @@ export class TestQuestionsComponent implements OnInit {
   questionNumber: number;
   finishedIntro: boolean = false;
   loading: boolean = true;
+
+  private _selectedAnswers: any[] = [];
+  set sectedAnswers(answers: any[]) { 
+    console.log(answers);
+    this._selectedAnswers = answers;
+  }
+  get sectedAnswers(): any[] { 
+    return this._selectedAnswers;
+  }
   
   constructor(
     private router: Router,
@@ -49,34 +56,15 @@ export class TestQuestionsComponent implements OnInit {
       this.question = test.questions.find(cur => cur.id == this.questionId);
       this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
 
-      !this.question.hasVariousAnswers ? 
-        this.question.answers.push(this.question.correctAnswer) :      
-        this.question.answers = this.question.answers.concat(this.question.correctAnswer);
-      
-      this.question.answers = this.shuffleAnswers(this.question.answers);
       this.finishedIntro = false;
       this.loading = false;
     });
   }
 
-  private shuffleAnswers(answers: string[]): string[] {
-    for (let i = answers.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [answers[i], answers[j]] = [answers[j], answers[i]];
-    }
-    return answers;
-  }
-
-  private getSelectedAnswers(): string[] {
-    const answers  = this.answers.map(val => <HTMLInputElement>val.nativeElement);
-    const selected = answers.filter(answer => answer.checked).map(answer => answer.value);
-    return selected;
-  }
-
   onTimeout(): void {
     this.ts.questionBacktracker(
       this.question.id,
-      this.getSelectedAnswers(), 
+      this._selectedAnswers, 
       this.duration
     ); 
     setTimeout(() => {

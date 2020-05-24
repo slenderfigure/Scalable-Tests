@@ -32,14 +32,15 @@
         <img *ngIf="question.image" [src]="question.image">
 
         <question-answers
-          [answers]="question.answers"
-          [hasVariousAnswers]="question.hasVariousAnswers"></question-answers>
+          [question]="question"
+          (selected)="sectedAnswers = $event"></question-answers>
       </div>
       
       <div class="bottom-content">
         <button 
           (click)="onTimeout()" 
-          class="proceed-btn">
+          class="proceed-btn"
+          [disabled]="!sectedAnswers.length">
           <span>Next</span>
   
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.5rem" height="1.5rem"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>

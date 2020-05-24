@@ -1,11 +1,11 @@
 export interface Question {
   id: number;
+  type?: number; // default is multiple choice, 2 is more than one answer, 3 is true or false
   section?: string;
   problem: string;
   title: string;
   points: number;
   answers: any[];
-  hasVariousAnswers?: boolean;
   correctAnswer: any[];
   selectedAnswer?: any[]; 
   intro?: {

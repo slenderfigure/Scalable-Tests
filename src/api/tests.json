@@ -6,6 +6,7 @@
     "questions": [
       {
         "id": 1,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
@@ -23,6 +24,7 @@
       }, 
       {
         "id": 2,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
@@ -38,6 +40,7 @@
       },
       {
         "id": 3,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the most common isotope of hydrogen?",
@@ -54,6 +57,7 @@
       }, 
       {
         "id": 4,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "You can't live without water! What is its chemical formula?",
@@ -69,6 +73,7 @@
       }, 
       {
         "id": 5,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
@@ -84,6 +89,7 @@
       },
       {
         "id": 6,
+        "type": 2,
         "section": "Section 2",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
@@ -98,6 +104,7 @@
       },
       {
         "id": 7,
+        "type": 1,
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "A mole contains Avogadro's number of items. What is Avogadro's number?",
@@ -113,6 +120,7 @@
       },
       {
         "id": 8,
+        "type": 1,
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
@@ -128,6 +136,7 @@
       },
       {
         "id": 9,
+        "type": 1,
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "All of the following elements are liquids around room temperature except which one?",
@@ -144,6 +153,7 @@
       },
       {
         "id": 10,
+        "type": 1,
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "What do you call an atom that has more protons than electrons?",
@@ -173,6 +183,7 @@
     "questions": [
       {
         "id": 1,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Mark Twain wrote about which of these characters?",
@@ -189,6 +200,7 @@
       }, 
       {
         "id": 2,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "This character says, \"Please, sir, I want some more.\" Who is it?",
@@ -204,6 +216,7 @@
       }, 
       {
         "id": 3,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Who was the main character in J.D. Salinger's \"Catcher in the Rye?\"",
@@ -219,6 +232,7 @@
       }, 
       {
         "id": 4,
+        "type": 1,
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
         "title": "Which best describes George Orwell's \"Animal Farm\"",
@@ -235,6 +249,7 @@
       }, 
       {
         "id": 5,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which is the \"Scarlet Letter?\"",
@@ -250,6 +265,7 @@
       }, 
       {
         "id": 6,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which person penned the Harry Potter novels?",
@@ -266,6 +282,7 @@
       },
       {
         "id": 7,
+        "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which story by Edgar Allan Poe has the main character confessing his sins because of a noise he's experiencing?",

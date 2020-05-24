@@ -45,7 +45,7 @@ export class TestService {
 
   questionBacktracker(
     questionId: number,
-    seletedAnswers: string[],
+    seletedAnswers: any[],
     duration: number
   ): void {   
     const session: Test = JSON.parse(localStorage.getItem('Test Session'));  

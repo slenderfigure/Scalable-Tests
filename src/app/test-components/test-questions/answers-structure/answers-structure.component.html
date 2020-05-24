@@ -1,11 +1,32 @@
-<label 
-  *ngFor="let answer of answers; index as index"
-  tabindex="0" 
-  class="answer">
-  <input
-    #answers 
-    name="answer"
-    [value]="answer" 
-    [type]="hasVariousAnswers ? 'checkbox' : 'radio'">
-  <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
-</label>
+<div [ngSwitch]="question.type">
+  <div *ngSwitchCase="2">
+    <label 
+      *ngFor="let answer of question.answers; index as index"
+      tabindex="0" 
+      class="answer">
+      <input
+        #answers 
+        name="answer"
+        (change)="getSelectedAnswers()"
+        [value]="answer" 
+        type="checkbox">
+      <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
+    </label>
+  </div>
+  
+  <div *ngSwitchDefault>
+    <label 
+      *ngFor="let answer of question.answers; index as index"
+      tabindex="0" 
+      class="answer">
+      <input
+        #answers 
+        name="answer"
+        (change)="getSelectedAnswers()"
+        [value]="answer" 
+        type="radio">
+      <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
+    </label>
+  </div>
+</div>
+
