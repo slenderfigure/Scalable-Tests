@@ -1,7 +1,7 @@
 import { Question } from './question.model';
 
 export class Test {
-  id: string | number;
+  id: string;
   subject: string;
   points: number;
   questions: Question[];
@@ -14,14 +14,13 @@ export class Test {
   sessionCompleted: boolean;
 
   constructor(params: {
-    id: string | number,
     subject: string,
     points: number,
     questions: Question[],
     timeLimit: number,
     difficulty: string
   }) {
-    this.id = params.id;
+    this.id = this.uniqueId;
     this.subject = params.subject;
     this.points = params.points;
     this.questions = params.questions;  
@@ -33,4 +32,18 @@ export class Test {
     this.sessionCompleted = false;
   }
   
+  private get uniqueId(): string {
+    let uniqueId = '';
+
+    for (let i = 15; i > 0; i--) {
+      const arr = [
+        Math.floor((Math.random() * (57 - 48)) + 48),
+        Math.floor((Math.random() * (90 - 65)) + 65),
+        Math.floor((Math.random() * (122 - 97)) + 97)
+      ];
+      uniqueId += `${String.fromCharCode(arr[Math.round(Math.random() * 2)])}`;
+    }
+    return uniqueId;
+  }
+
 }
