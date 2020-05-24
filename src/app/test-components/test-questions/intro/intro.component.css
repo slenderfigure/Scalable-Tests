@@ -4,19 +4,24 @@
   width: 100%;
   margin: 5rem 0;
   border-radius: 4px;
-  background-color: #fff;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);  
   overflow: hidden;
 }
 
 .top-content {
-  padding: 3rem 2rem 0;
+  padding: 3rem 2rem;
+  background-color: #fff;
 }
  
 .top-content h3 {
-  color: #222;
-  font-size: 1.4rem;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 1rem;
+  color: #333;
+  font-size: 1.6rem;
   font-weight: 400;
+  border-bottom: 3px solid #e00366;
 }
 
 .content {
@@ -24,14 +29,20 @@
   justify-content: space-between;
   width: 100%;
   min-height: 500px;
-  padding: 3rem 2rem;
-  overflow-y: auto;
+  padding: 3rem;
+  background-color: #fff;
 }
 
 .content p {
-  padding-right: 2rem;
+  margin-right: 2rem;
   color: #555;
   line-height: 1.7rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.content p::-webkit-scrollbar {
+  display: none;
 }
 
 .content img {

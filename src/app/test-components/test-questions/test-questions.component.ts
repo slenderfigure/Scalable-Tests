@@ -83,7 +83,7 @@ export class TestQuestionsComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['test', this.testId, this.questionId + 1]);
       this.loading = true;
-    }, 300);
+    }, 500);
   }
 
 }
