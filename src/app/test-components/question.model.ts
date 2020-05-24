@@ -7,10 +7,11 @@ export interface Question {
   answers: any[];
   hasVariousAnswers?: boolean;
   correctAnswer: string[];
-  selectedAnswer?: string[];  
-  isCorrect?: boolean;
+  selectedAnswer?: string[]; 
+  hasIntro?: boolean;
   image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;
   completed?: boolean;
+  isCorrect?: boolean;
 }
