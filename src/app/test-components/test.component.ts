@@ -15,10 +15,6 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
     this.testList$ = this.ts.getAllTests();
-    this.ts.getAllTests().subscribe(tests =>  {
-
-      console.log(tests);
-    })
   }
 
 }
