@@ -1,4 +1,9 @@
-<div class="view-container">
+<question-intro 
+  *ngIf="question.intro && !finishedIntro"
+  [intro]="question.intro"
+  (finished)="finishedIntro = true"></question-intro>
+
+<div *ngIf="!question.intro || (question.intro && finishedIntro)" class="view-container">
   <div *ngIf="!loading && question" class="wrapper">
     <section class="top-section">
       <div class="test-information">

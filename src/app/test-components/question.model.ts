@@ -8,7 +8,11 @@ export interface Question {
   hasVariousAnswers?: boolean;
   correctAnswer: string[];
   selectedAnswer?: string[]; 
-  hasIntro?: boolean;
+  intro?: {
+    header: string;
+    body: string;
+    images?: string[]
+  }
   image?: string | string[];
   timeLimit: string; // 00:00:00
   completionDuration?: number;

@@ -21,7 +21,7 @@ export class TestQuestionsComponent implements OnInit {
   testSubject: string;
   question: Question;
   questionNumber: number;
-  hasIntro: boolean = false;
+  finishedIntro: boolean = false;
   loading: boolean = true;
   selected: number;
   
@@ -36,11 +36,7 @@ export class TestQuestionsComponent implements OnInit {
       this.testId = params.get('testId');
       this.questionId = +params.get('questionId');
 
-      const test: Test = JSON.parse(localStorage.getItem('Test Session'));
-
-      this.testSubject = test.subject;
-      this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
-      this.initQuestion(test.questions.find(cur => cur.id == this.questionId));
+      this.initQuestion();
       this.loading = false;
       
       this.ts.durationTracker$.subscribe(duration => {
@@ -49,14 +45,19 @@ export class TestQuestionsComponent implements OnInit {
     });
   }
 
-  private initQuestion(question: Question): void {
-    this.question = question;
+  private initQuestion(): void {
+    const test: Test = JSON.parse(localStorage.getItem('Test Session'));
+
+    this.testSubject = test.subject;
+    this.question = test.questions.find(cur => cur.id == this.questionId);
+    this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;
+
     if (!this.question.hasVariousAnswers) {
       this.question.answers.push(this.question.correctAnswer);
     } else {
       this.question.answers = this.question.answers.concat(this.question.correctAnswer);
     }
-    this.question.answers = this.shuffleAnswers(question.answers);
+    this.question.answers = this.shuffleAnswers(this.question.answers);
   }
 
   private shuffleAnswers(answers: string[]): string[] {
@@ -79,7 +80,6 @@ export class TestQuestionsComponent implements OnInit {
       this.getSelectedAnswers(), 
       this.duration
     ); 
-    // window.location.href = `/test/${this.testId}/${this.questionId + 1}`;
     setTimeout(() => {
       this.router.navigate(['test', this.testId, this.questionId + 1]);
       this.loading = true;
