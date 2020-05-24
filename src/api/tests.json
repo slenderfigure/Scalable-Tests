@@ -19,8 +19,8 @@
         "correctAnswer": ["250 grams"],
         "intro": {
           "header": "This is an intro before moving onto the question",
-          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odio consequatur libero voluptate labore odit perspiciatis cupiditate, ipsum doloremque hic, cum soluta quia vel voluptas? Repellat nemo dicta non aperiam vero quasi, iste perferendis. Harum maxime nesciunt eveniet distinctio consequuntur eligendi, illo culpa deleniti recusandae quibusdam, adipisci iure enim dolores autem ea ab accusantium consequatur possimus velit labore, numquam officia quia. Ullam sit, aliquam neque voluptatibus laborum consectetur nostrum a quis odit debitis nesciunt mollitia, illo harum eos ut perspiciatis eaque, ratione nisi ex laboriosam. Omnis, repudiandae quasi cupiditate nulla, esse maiores voluptate quaerat dignissimos aspernatur, fugit quae tempore amet!",
-          "images": []
+          "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odio consequatur libero voluptate labore odit perspiciatis cupiditate, ipsum doloremque hic, cum soluta quia vel voluptas? Repellat nemo dicta non aperiam vero quasi, iste perferendis. Harum maxime nesciunt eveniet distinctio consequuntur eligendi, illo culpa deleniti recusandae quibusdam, adipisci iure enim dolores autem ea ab accusantium consequatur possimus velit labore, numquam officia quia.<br><br>Ullam sit, aliquam neque voluptatibus laborum consectetur nostrum a quis odit debitis nesciunt mollitia, illo harum eos ut perspiciatis eaque, ratione nisi ex laboriosam. Omnis, repudiandae quasi cupiditate nulla, esse maiores voluptate quaerat dignissimos aspernatur, fugit quae tempore amet!",
+          "image": "https://miro.medium.com/max/2548/1*unMy79kvJ1w5yWEmStTtlw.jpeg"
         },
         "image": "assets/img/test-img1.jpg",
         "timeLimit": "00:00:20"

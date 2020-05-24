@@ -11,7 +11,7 @@ export interface Question {
   intro?: {
     header: string;
     body: string;
-    images?: string[]
+    image?: string
   }
   image?: string | string[];
   timeLimit: string; // 00:00:00

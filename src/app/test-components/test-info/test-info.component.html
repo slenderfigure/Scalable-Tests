@@ -5,9 +5,9 @@
     <p>Points: {{ test.points }} </p>
     <p>Total questions: {{ test.questions.length }} </p>
     <p>Time limit: {{ timeLimit }} minute(s)</p>
-    <p>Difficulty: Low</p>
+    <p>Difficulty: {{ test.difficulty }}</p>
   
-    <button (click)="onClick()" class="start-button">Begin Test</button>
+    <button (click)="onClick()" class="btn start-button">Begin Test</button>
   </div>
   
 </div>

@@ -1,6 +1,20 @@
 <div class="view-container">
-  
-  
-  <button (click)="onClick()">Understood</button>
+  <div class="wrapper">
+    <section class="intro-container">
+      <div class="top-content">
+        <h3>{{ question.intro.header }}</h3>
+      </div>
+      
+      <article class="content">
+        <p [innerHTML]="question.intro.body"></p>
+        <img [src]="question.intro.image" alt="">
+      </article>
+
+      <div class="bottom-content">
+        <button class="btn" (click)="onClick()">Continue</button>
+      </div>
+    </section>
+
+  </div>
 </div>
 
