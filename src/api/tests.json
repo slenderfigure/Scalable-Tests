@@ -176,6 +176,7 @@
         "points": 5,
         "answers": ["Little Boy Blue", "Red Riding Hood", "Dennis the Menace", "Yukon Territory"],
         "correctAnswer": ["Tom Sawyer"],
+        "image": "assets/img/test-img8.jpg",
         "timeLimit": "00:00:15"
       }, 
       {
@@ -201,6 +202,17 @@
       {
         "id": 4,
         "section": "Section 1",
+        "problem": "Select \"true\" or \"false\"",
+        "title": "Animals/Communism best describes George Orwell's \"Animal Farm\"",
+        "points": 5,
+        "answers": [false],
+        "correctAnswer": [true],
+        "image": "assets/img/test-img7.jpg",
+        "timeLimit": "00:00:15"
+      }, 
+      {
+        "id": 5,
+        "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which is the \"Scarlet Letter?\"",
         "points": 5,
@@ -209,13 +221,14 @@
         "timeLimit": "00:00:15"
       }, 
       {
-        "id": 5,
+        "id": 6,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which person penned the Harry Potter novels?",
         "points": 5,
         "answers": ["Mark Twain", "Oprah Winfrey", "Dan Brown", "Coyote Peterson"],
         "correctAnswer": ["J.K. Rowling"],
+        "image": "assets/img/test-img6.jpg",
         "timeLimit": "00:00:15"
       }
     ],
