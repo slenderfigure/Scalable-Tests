@@ -6,8 +6,8 @@ export interface Question {
   points: number;
   answers: any[];
   hasVariousAnswers?: boolean;
-  correctAnswer: string[];
-  selectedAnswer?: string[]; 
+  correctAnswer: any[];
+  selectedAnswer?: any[]; 
   intro?: {
     header: string;
     body: string;

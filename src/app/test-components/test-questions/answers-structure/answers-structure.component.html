@@ -1,1 +1,11 @@
-<p>answers-structure works!</p>
+<label 
+  *ngFor="let answer of answers; index as index"
+  tabindex="0" 
+  class="answer">
+  <input
+    #answers 
+    name="answer"
+    [value]="answer" 
+    [type]="hasVariousAnswers ? 'checkbox' : 'radio'">
+  <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
+</label>

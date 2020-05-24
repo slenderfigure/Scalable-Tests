@@ -23,7 +23,6 @@ export class TestQuestionsComponent implements OnInit {
   questionNumber: number;
   finishedIntro: boolean = false;
   loading: boolean = true;
-  selected: number;
   
   constructor(
     private router: Router,
@@ -45,8 +44,6 @@ export class TestQuestionsComponent implements OnInit {
   }
 
   private initQuestion(testId: string): void {
-    // const test: Test = JSON.parse(localStorage.getItem('Test Session'));
-
     this.ts.getTest(testId).subscribe(test => {
       this.testSubject = test.subject;
       this.question = test.questions.find(cur => cur.id == this.questionId);

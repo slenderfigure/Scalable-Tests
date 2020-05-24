@@ -11,7 +11,7 @@
         <p>{{ question.section }}. {{ question.problem }}</p>
       </div>
 
-      <timer [time]="question.timeLimit" (timeout)="onTimeout()"></timer>
+      <!-- <timer [time]="question.timeLimit" (timeout)="onTimeout()"></timer> -->
     </section>
   
     <section 
@@ -31,23 +31,13 @@
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
 
-        <label 
-          *ngFor="let answer of question.answers; index as index"
-          tabindex="0" 
-          class="answer">
-          <input
-            #answers 
-            (change)="selected = index"
-            name="answer"
-            [value]="answer" 
-            [type]="question.hasVariousAnswers ? 'checkbox' : 'radio'">
-          <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
-        </label>
+        <question-answers
+          [answers]="question.answers"
+          [hasVariousAnswers]="question.hasVariousAnswers"></question-answers>
       </div>
       
       <div class="bottom-content">
         <button 
-          [disabled]="selected == null"
           (click)="onTimeout()" 
           class="proceed-btn">
           <span>Next</span>
