@@ -15,7 +15,9 @@
           "1 kilogram", 
           "500 grams", 
           "Practically none", 
-          "1 gram"
+          "1 gram",
+          true,
+          1
         ],
         "correctAnswer": ["250 grams"],
         

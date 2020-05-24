@@ -15,29 +15,18 @@
   </div> -->
   
   <div *ngSwitchDefault>
-    <label 
+    <label
       *ngFor="let answer of question.answers; index as index"
       tabindex="0" 
       class="answer">
       <input
-        formControlName="answer"
+        formControlName="answers"
+        [value]="answers"
         #answers  
         (change)="getSelectedAnswers()"
-        [value]="answer" 
-        type="checkbox">
+        type="radio">
       <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
     </label>
-
-    <!-- <label 
-      tabindex="0" 
-      class="answer">
-      <input
-        #answers 
-        [formControl]="testControl"
-        (change)="getSelectedAnswers()"
-        type="radio">
-      <span>Test</span>
-    </label> -->
   </div>
 </div>
 
