@@ -168,14 +168,14 @@
   {
     "id": "CTMYTU4BAoT2RXH",
     "subject": "Literature",
-    "points": 25,
+    "points": 30,
     "questions": [
       {
         "id": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Mark Twain wrote about which of these characters?",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Little Boy Blue", 
           "Red Riding Hood", 
@@ -184,14 +184,14 @@
         ],
         "correctAnswer": ["Tom Sawyer"],
         "image": "assets/img/test-img8.jpg",
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:25"
       }, 
       {
         "id": 2,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "This character says, \"Please, sir, I want some more.\" Who is it?",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Atticus Finch", 
           "Darth Vader", 
@@ -199,14 +199,14 @@
           "Pluto"
         ],
         "correctAnswer": ["Oliver Twist"],
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       }, 
       {
         "id": 3,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Who was the main character in J.D. Salinger's \"Catcher in the Rye?\"",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Bart Simpson", 
           "Huckleberry Finn", 
@@ -214,14 +214,14 @@
           "Saitama"
         ],
         "correctAnswer": ["Holden Caulfield"],
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       }, 
       {
         "id": 4,
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
         "title": "Which best describes George Orwell's \"Animal Farm\"",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Women/Monthly cycles",
           "Babe Ruth/Yankees",
@@ -230,14 +230,14 @@
         ],
         "correctAnswer": ["Animals/Communism"],
         "image": "assets/img/test-img7.jpg",
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       }, 
       {
         "id": 5,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which is the \"Scarlet Letter?\"",
-        "points": 5,
+        "points": 4,
         "answers": [
           "X", 
           "Y", 
@@ -245,14 +245,14 @@
           "Q"
         ],
         "correctAnswer": ["A"],
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       }, 
       {
         "id": 6,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which person penned the Harry Potter novels?",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Mark Twain", 
           "Oprah Winfrey", 
@@ -261,14 +261,14 @@
         ],
         "correctAnswer": ["J.K. Rowling"],
         "image": "assets/img/test-img6.jpg",
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       },
       {
         "id": 7,
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Which story by Edgar Allan Poe has the main character confessing his sins because of a noise he's experiencing?",
-        "points": 5,
+        "points": 4,
         "answers": [
           "Eldorado", 
           "The Pit and the Pendulum", 
@@ -277,10 +277,10 @@
         ],
         "correctAnswer": ["Tell-Tale Heart"],
         "image": "assets/img/test-img9.jpg",
-        "timeLimit": "00:00:15"
+        "timeLimit": "00:00:20"
       }
     ],
-    "timeLimit": 75,
+    "timeLimit": 145,
     "difficulty": "Low",
     "score": 0,
     "duration": 0,
