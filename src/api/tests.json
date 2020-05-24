@@ -17,6 +17,7 @@
           "1 gram"
         ],
         "correctAnswer": ["250 grams"],
+        "hasIntro": true,
         "image": "assets/img/test-img1.jpg",
         "timeLimit": "00:00:20"
       }, 

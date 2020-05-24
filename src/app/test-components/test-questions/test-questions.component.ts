@@ -21,6 +21,7 @@ export class TestQuestionsComponent implements OnInit {
   testSubject: string;
   question: Question;
   questionNumber: number;
+  hasIntro: boolean = false;
   loading: boolean = true;
   selected: number;
   
