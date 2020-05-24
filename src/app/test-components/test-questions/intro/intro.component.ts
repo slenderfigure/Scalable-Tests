@@ -10,7 +10,7 @@ import { Question } from '../../question.model';
 })
 export class IntroComponent implements OnInit {
   @Input() question: Question;
-  @Output('finished') notifyIntroEnded: EventEmitter<boolean> = new EventEmitter();
+  @Output('viewed') notifyChange: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class IntroComponent implements OnInit {
   }
 
   onClick(): void {
-    this.notifyIntroEnded.emit(true);
+    this.notifyChange.emit(true);
   }
 
 }

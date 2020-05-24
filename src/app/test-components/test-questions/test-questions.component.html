@@ -1,7 +1,7 @@
 <question-intro 
   *ngIf="question.intro && !finishedIntro"
   [question]="question"
-  (finished)="finishedIntro = true"></question-intro>
+  (viewed)="finishedIntro = true"></question-intro>
 
 <div *ngIf="!question.intro || (question.intro && finishedIntro)" class="view-container">
   <div *ngIf="!loading && question" class="wrapper">
