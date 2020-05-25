@@ -15,7 +15,9 @@
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
         
-        <question-answers [question]="question"></question-answers>
+        <question-answers 
+          [readonly]="true"
+          [question]="question"></question-answers>
       </div>
     </section>
   </div>

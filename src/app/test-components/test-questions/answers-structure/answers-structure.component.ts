@@ -13,7 +13,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
-  @Input() readonly: boolean;
+  @Input('readonly') enableReadonly: boolean;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
   answers: any[];
   form: FormGroup;
@@ -41,7 +41,10 @@ export class AnswersStructureComponent implements OnChanges {
     let group: any = {};
 
     if (this.question.type <= 2) {
-      this.question.answers.forEach(() => group['answers'] = new FormControl());
+      this.question.answers.forEach(() => group['answers'] = new FormControl({
+        value: '',
+        disabled: this.enableReadonly
+      }));
       this.form = new FormGroup(group);
     } else {
       this.form = this.fb.group({ answers: []});

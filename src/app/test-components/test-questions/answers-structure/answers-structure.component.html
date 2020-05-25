@@ -33,6 +33,7 @@
       <input 
         #answers 
         (change)="getSelectedAnswers()"
+        [disabled]="enableReadonly"
         type="text">
       <label>{{ answer }}</label>
     </div>
