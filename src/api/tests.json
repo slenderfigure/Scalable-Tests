@@ -18,6 +18,7 @@
           "1 gram"
         ],
         "correctAnswer": ["250 grams"],
+        "feedback": "The average adult human body contains about 250 grams of salt, which is just over half a pound. If you don't have enough salt, your body suffers an electrolyte imbalance called hyponatremia.",
         "image": "assets/img/test-img1.jpg",
         "timeLimit": "00:00:20"
       }, 
@@ -35,6 +36,7 @@
           "Milk does not have a pH"
         ],
         "correctAnswer": ["Slightly Acidic"],
+        "feedback": "Milk is close to a neutral pH, but it's slightly acidic thanks in part to the lactic acid it contains.",
         "timeLimit": "00:00:20"
       },
       {
@@ -51,6 +53,7 @@
           "None of the above"
         ],
         "correctAnswer": ["Protium"],
+        "feedback": "",
         "image": "assets/img/test-img2.jpg",
         "timeLimit": "00:00:15"
       }, 
@@ -68,6 +71,7 @@
           "CO2"
         ],
         "correctAnswer": ["H2O"],
+        "feedback": "",
         "intro": {
           "header": "Intro before moving onto the next question",
           "body": "Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.<br><br>Chemistry traces its roots back to the ancient study of alchemy. Chemistry and alchemy are separate now, though alchemy still is practiced today. All matter is made up of the chemical elements, which are distinguished from each other by the numbers of protons they possess.<br><br><cite>I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.</cite> ― Dmitri Mendeleev.",
@@ -89,6 +93,7 @@
           "Water isn't a state of matter"
         ],
         "correctAnswer": ["A defined volume, but not a defined shape"],
+        "feedback": "",
         "timeLimit": "00:00:20"
       },
       {
@@ -102,8 +107,8 @@
           "Fire",
           "Electricity"
         ],
-        "hasVariousAnswers": true,
         "correctAnswer": ["Solid", "Liquid", "Gas", "Plasma"],
+        "feedback": "",
         "timeLimit": "00:00:25"
       },
       {
@@ -120,6 +125,7 @@
           "62 - 10^8"
         ],
         "correctAnswer": ["6.023 x 10^23"],
+        "feedback": "",
         "timeLimit": "00:00:30"
       },
       {
@@ -136,6 +142,7 @@
           "Neon"
         ],
         "correctAnswer": ["Chlorine"],
+        "feedback": "",
         "timeLimit": "00:00:20"
       },
       {
@@ -153,6 +160,7 @@
         ],
         "correctAnswer": ["Magnesium"],
         "image": "assets/img/test-img4.jpg",
+        "feedback": "",
         "timeLimit": "00:00:22"
       },
       {
@@ -170,6 +178,7 @@
         ],
         "correctAnswer": ["A cation"],
         "image": "assets/img/test-img5.jpg",
+        "feedback": "",
         "timeLimit": "00:00:20"
       },
       {
@@ -193,6 +202,7 @@
           "Noble gases",
           "CO2"
         ],
+        "feedback": "",
         "timeLimit": "00:01:00"
       }
     ],

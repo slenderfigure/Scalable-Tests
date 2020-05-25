@@ -1,9 +1,12 @@
-<div class="view-container">
-  <div *ngIf="questions" class="wrapper">  
+
+  <div *ngIf="questions" class="wrapper" id="top">  
+    <h1 class="title">Your answers</h1>
+
     <section 
       *ngFor="let question of questions; index as index"
       class="question-section">
       <div class="top-content">
+        <h2>{{ question.section }}. {{ question.problem }}</h2>
         <h3>{{ index + 1 }}. {{ question.title }}</h3>
   
         <div class="badge">
@@ -32,4 +35,10 @@
       </div>
     </section>
   </div>
-</div>
+
+  <button 
+    #goUpButton 
+    (click)="goToTop()"
+    class="go-up-btn">
+    <svg fill="#fff" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  </button>
