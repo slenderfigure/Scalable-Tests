@@ -53,14 +53,6 @@ export class AnswersStructureComponent implements OnChanges {
     }
   }
 
-  class(input: HTMLInputElement): void {
-    setTimeout(() => {
-      const value = input.value == 'false' ? false : true;
-    console.log(value);
-    }, 100)
-    
-  }
-
   private setDefaults(): void {
     if (this.question.type <= 2) {
       this.answers = this.question.answers.concat(this.question.correctAnswer);

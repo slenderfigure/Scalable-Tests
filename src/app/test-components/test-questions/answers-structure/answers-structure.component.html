@@ -2,8 +2,7 @@
   <div *ngSwitchCase="3">
     <label
       tabindex="0" 
-      class="answer"
-      [class.correct-selected]="input.value == question.selectedAnswer">
+      class="answer">
       <input
         formControlName="answers"
         [value]="true"         
@@ -14,8 +13,7 @@
 
     <label
       tabindex="0" 
-      class="answer"
-      [class]="">
+      class="answer">
       <input
         formControlName="answers"
         [value]="false"

@@ -79,7 +79,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 200px;
-  padding: 3rem 2rem 3rem;
+  padding: 3rem 2rem 2rem;
   background-color: #fff;
 }
 
@@ -89,4 +89,36 @@
   max-height: 300px;
   margin: 0 auto 2rem;
   border-radius: 4px;
+}
+
+.bottom-content {
+  width: 100%;
+  padding: 0 2rem 3rem;
+  background-color: #fff;
+  user-select: none;
+}
+
+.bottom-content article {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #eff4fa;
+}
+
+.bottom-content h4 {
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.correct-selected {
+  color: #2cda74;
+}
+
+.wrong-selected {
+  color: #fd4242;;
+}
+
+.feedback {
+  line-height: 1.7rem;
 }
