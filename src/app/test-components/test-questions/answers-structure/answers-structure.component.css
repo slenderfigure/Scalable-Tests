@@ -8,10 +8,6 @@
   overflow: hidden;
 }
 
-.answer:not(.answer input:disabled) {
-  cursor: pointer;
-}
-
 .answer:not(:last-of-type) {
   margin-bottom: 1rem;
 }
@@ -27,6 +23,11 @@
   color: #444;
   text-align: left;
   transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.answer input:disabled + span {
+  cursor: default;
 }
 
 .answer span strong,
