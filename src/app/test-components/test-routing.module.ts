@@ -26,7 +26,11 @@ const routes: Route[] = [
     component: TestResultsComponent,
     canActivate: [TestResultsGuard]
   },
-  { path: 'test-review', component: AnswersReviewComponent }
+  { 
+    path: 'test-review', 
+    component: AnswersReviewComponent,
+    canActivate: [TestResultsGuard]
+  }
 ];
 
 @NgModule({

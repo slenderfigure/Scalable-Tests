@@ -21,7 +21,7 @@ export class TestResultsGuard implements CanActivate {
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
     
       if (!test || !test?.sessionCompleted) {
-        this.location.back();
+        this.router.navigate(['test']);
         observer.next(false);
       } 
       else {

@@ -22,19 +22,46 @@ export class AnswersStructureComponent implements OnChanges {
   
   constructor(private fb: FormBuilder) { }
 
-
   ngOnChanges(): void {
     this.setDefaults();
     this.createFormGroup();
   }
 
+  setAnswerClass(answer: string): {} {
+    if (this.enableReadonly) {
+      return {
+        'correct-selected': this.question.correctAnswer.indexOf(answer) > -1 && 
+          this.question.selectedAnswer.indexOf(answer) > -1,
+        'correct-unselected': this.question.correctAnswer.indexOf(answer) > -1 && 
+          this.question.selectedAnswer.indexOf(answer) == -1,
+        'wrong-selected': this.question.correctAnswer.indexOf(answer) == -1 &&
+          this.question.selectedAnswer.indexOf(answer) > -1
+      };
+    }
+  }
+
+  setAnswerClass2(): {} {
+    return {
+      'correct-selected': 
+        this.question.selectedAnswer[0] === this.question.correctAnswer[0] &&
+        this.question.isCorrect,
+      'correct-unselected': 
+        this.question.selectedAnswer[0] === this.question.correctAnswer[0] &&
+        !this.question.isCorrect,
+      'wrong-selected': 
+        this.question.selectedAnswer[0] !== this.question.correctAnswer[0] && 
+        !this.question.isCorrect,
+    }
+  }
+
   private setDefaults(): void {
     if (this.question.type <= 2) {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
-      this.shuffleAnswers(this.answers);
     } 
     else if (this.question.type == 4) {
       this.answers = this.question.answers;
+    }
+    if (this.question.type !== 3) {
       this.shuffleAnswers(this.answers);
     }
   }

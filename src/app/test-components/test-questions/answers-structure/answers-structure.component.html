@@ -2,7 +2,8 @@
   <div *ngSwitchCase="3">
     <label
       tabindex="0" 
-      class="answer">
+      class="answer"
+      [class]="setAnswerClass2()">
       <input
         #answers 
         formControlName="answers"
@@ -14,7 +15,8 @@
 
     <label
       tabindex="0" 
-      class="answer">
+      class="answer"
+      [class]="setAnswerClass2()">
       <input
         #answers  
         formControlName="answers"      
@@ -28,7 +30,8 @@
   <div *ngSwitchCase="4">
     <div 
       *ngFor="let answer of answers; index as index"
-      class="answer-row">
+      class="answer-row"
+      [class]="setAnswerClass(answer)">
       <strong>{{ index + 1 }}.</strong>
       <input 
         #answers 
@@ -43,7 +46,8 @@
     <label
       *ngFor="let answer of answers; index as index"
       tabindex="0" 
-      class="answer">
+      class="answer"
+      [class]="setAnswerClass(answer)">
       <input
         #answers  
         formControlName="answers"
