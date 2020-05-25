@@ -2,11 +2,14 @@
   display: block;
   width: 100%;
   height: auto;
-  cursor: pointer;
   border: 1px solid #dbe3eb;
   border-radius: 10px;
   user-select: none;
   overflow: hidden;
+}
+
+.answer:not(.answer input:disabled) {
+  cursor: pointer;
 }
 
 .answer:not(:last-of-type) {

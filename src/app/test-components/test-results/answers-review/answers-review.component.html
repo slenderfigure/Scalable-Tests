@@ -15,9 +15,10 @@
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
         
-        <question-answers 
+        <question-answers           
+          [question]="question"
           [readonly]="true"
-          [question]="question"></question-answers>
+          [is-correct]="question.isCorrect"></question-answers>
       </div>
     </section>
   </div>

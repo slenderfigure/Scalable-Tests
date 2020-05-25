@@ -4,6 +4,7 @@ import { ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 import { Question } from '../../question.model';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Test } from '../../test.model';
 
 @Component({
   selector: 'question-answers',
@@ -14,6 +15,7 @@ export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
   @Input('readonly') enableReadonly: boolean;
+  @Input('is-correct') isCorrect: boolean;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
   answers: any[];
   form: FormGroup;
@@ -47,7 +49,10 @@ export class AnswersStructureComponent implements OnChanges {
       }));
       this.form = new FormGroup(group);
     } else {
-      this.form = this.fb.group({ answers: []});
+      this.form = this.fb.group({ answers: [{
+        value: '',
+        disabled: this.enableReadonly
+      }]});
     }
   }
 
@@ -79,10 +84,6 @@ export class AnswersStructureComponent implements OnChanges {
         break;
     }
     this.notifySelected.emit(selected);
-    console.log(selected);
   }
 
-  readonlyMode(): void {
-
-  }
 }
