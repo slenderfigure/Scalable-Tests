@@ -3,9 +3,8 @@
     <label
       tabindex="0" 
       class="answer"
-      [class]="setAnswerClass2()">
+      [class.correct-selected]="input.value == question.selectedAnswer">
       <input
-        #answers 
         formControlName="answers"
         [value]="true"         
         (change)="getSelectedAnswers()"
@@ -16,10 +15,9 @@
     <label
       tabindex="0" 
       class="answer"
-      [class]="setAnswerClass2()">
+      [class]="">
       <input
-        #answers  
-        formControlName="answers"      
+        formControlName="answers"
         [value]="false"
         (change)="getSelectedAnswers()"
         type="radio">

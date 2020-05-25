@@ -40,18 +40,25 @@ export class AnswersStructureComponent implements OnChanges {
     }
   }
 
-  setAnswerClass2(): {} {
-    return {
-      'correct-selected': 
-        this.question.selectedAnswer[0] === this.question.correctAnswer[0] &&
-        this.question.isCorrect,
-      'correct-unselected': 
-        this.question.selectedAnswer[0] === this.question.correctAnswer[0] &&
-        !this.question.isCorrect,
-      'wrong-selected': 
-        this.question.selectedAnswer[0] !== this.question.correctAnswer[0] && 
-        !this.question.isCorrect,
+  setAnswerClass2(): {} {     
+    if (this.enableReadonly) {
+      return {
+        'correct-selected': 
+          this.form.get('answers').value == this.question.correctAnswer[0] &&
+          this.question.isCorrect,
+        'wrong-selected': 
+          this.question.selectedAnswer[0] !== this.question.correctAnswer[0] && 
+          !this.question.isCorrect,
+      }
     }
+  }
+
+  class(input: HTMLInputElement): void {
+    setTimeout(() => {
+      const value = input.value == 'false' ? false : true;
+    console.log(value);
+    }, 100)
+    
   }
 
   private setDefaults(): void {
@@ -110,6 +117,8 @@ export class AnswersStructureComponent implements OnChanges {
         .map(answer => this.answers[answer]);
         break;
     }
+    console.log(selected);
+    console.log(this.form.get('answers'));
     this.notifySelected.emit(selected);
   }
 
