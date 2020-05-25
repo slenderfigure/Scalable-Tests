@@ -126,7 +126,7 @@
   width: 45px;
   height: 45px;
   border-radius: 30px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   background-color: #e20367;
   transition: opacity 0.4s ease, filter 0.3s ease;
 }

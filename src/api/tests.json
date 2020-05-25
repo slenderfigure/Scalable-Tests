@@ -234,7 +234,7 @@
   {
     "id": "CTMYTU4BAoT2RXH",
     "subject": "Literature",
-    "points": 30,
+    "points": 18,
     "questions": [
       {
         "id": 1,
@@ -242,7 +242,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Mark Twain wrote about which of these characters?",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Little Boy Blue", 
           "Red Riding Hood", 
@@ -250,6 +250,7 @@
           "Yukon Territory"
         ],
         "correctAnswer": ["Tom Sawyer"],
+        "feedback": "\"The Adventures of Tom Sawyer\" was Mark Twain's first novel.",
         "image": "assets/img/test-img8.jpg",
         "timeLimit": "00:00:25"
       }, 
@@ -259,7 +260,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "This character says, \"Please, sir, I want some more.\" Who is it?",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Atticus Finch", 
           "Darth Vader", 
@@ -267,6 +268,7 @@
           "Pluto"
         ],
         "correctAnswer": ["Oliver Twist"],
+        "feedback": "The orphans draw straws to decide who will ask for an extra helping.",
         "timeLimit": "00:00:20"
       }, 
       {
@@ -275,7 +277,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Who was the main character in J.D. Salinger's \"Catcher in the Rye?\"",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Bart Simpson", 
           "Huckleberry Finn", 
@@ -283,6 +285,7 @@
           "Saitama"
         ],
         "correctAnswer": ["Holden Caulfield"],
+        "feedback": "The story of this sixteen-year-old happens just after he's been expelled from prep school.",
         "timeLimit": "00:00:20"
       },
       {
@@ -291,9 +294,10 @@
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
         "title": "Miguel de Cervantes is not the author of 'Don Quixote'",
-        "points": 3.75,
+        "points": 2,
         "answers": [],
         "correctAnswer": [false],
+        "feedback": "The Spanish writer Miguel de Cervantes created one of the world's greatest literary masterpieces, 'Don Quixote,' in the early 1600s.",
         "image": "assets/img/test-img10.jpg",
         "timeLimit": "00:00:20"
       }, 
@@ -303,7 +307,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Which best describes George Orwell's \"Animal Farm\"",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Women/Monthly cycles",
           "Babe Ruth/Yankees",
@@ -311,6 +315,7 @@
           "Gangs and the mafia"
         ],
         "correctAnswer": ["Animals/Communism"],
+        "feedback": "\"Animal Farm\" is often read as a critique against Soviet communism, which it is and was clearly meant to be. But it is much more general than that. It is a warning that all who desire to be political leaders are suspect. George Orwell, after all, is the man who said, \"That rifle on the wall of the laborer's cottage or working class flat is the symbol of democracy. It is our job to see that it stays there!\"",
         "image": "assets/img/test-img7.jpg",
         "timeLimit": "00:00:20"
       }, 
@@ -320,7 +325,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Which is the \"Scarlet Letter?\"",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "X", 
           "Y", 
@@ -328,6 +333,7 @@
           "Q"
         ],
         "correctAnswer": ["A"],
+        "feedback": "Written by Nathaniel Hawthorne, the \"Scarlet Letter\" is considered to be his masterpiece.",
         "timeLimit": "00:00:20"
       }, 
       {
@@ -336,7 +342,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Which person penned the Harry Potter novels?",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Mark Twain", 
           "Oprah Winfrey", 
@@ -344,6 +350,7 @@
           "Coyote Peterson"
         ],
         "correctAnswer": ["J.K. Rowling"],
+        "feedback": "J.K Rowling is the British author of the Harry Potter series, which is comprised of seven books.",
         "image": "assets/img/test-img6.jpg",
         "timeLimit": "00:00:20"
       },
@@ -353,7 +360,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Which story by Edgar Allan Poe has the main character confessing his sins because of a noise he's experiencing?",
-        "points": 3.75,
+        "points": 2,
         "answers": [
           "Eldorado", 
           "The Pit and the Pendulum", 
@@ -361,12 +368,33 @@
           "Don Quixote"
         ],
         "correctAnswer": ["Tell-Tale Heart"],
+        "feedback": "\"Villains!\" I shrieked, \"dissemble no more! I admit the deed! - tear up the planks! - here, here! - it is the beating of his hideous heart!\"<br><br>The story leads some to think that he was listening to his own heartbeat.",
         "image": "assets/img/test-img9.jpg",
         "timeLimit": "00:00:20"
+      },
+      {
+        "id": 9,
+        "type": 2,
+        "section": "Section 2",
+        "problem": "Select all that apply",
+        "title": "Are characters from the reknown novel 'Frankenstein'",
+        "points": 2,
+        "answers": [
+          "Captain Hook",
+          "Michael Frankenstein"
+        ],
+        "correctAnswer": [
+          "Victor Frankenstein",
+          "Robert Walton",
+          "Henry Clerval"
+        ],
+        "feedback": "Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley (1797–1851) that tells the story of Victor Frankenstein, a young scientist who creates a hideous sapient creature in an unorthodox scientific experiment.",
+        "image": "assets/img/test-img12.jpg",
+        "timeLimit": "00:00:25"
       }
     ],
-    "timeLimit": 165,
-    "difficulty": "Low",
+    "timeLimit": 190,
+    "difficulty": "Very Low",
     "score": 0,
     "duration": 0,
     "creationDate": "2020-05-23T23:59:35.807Z",
