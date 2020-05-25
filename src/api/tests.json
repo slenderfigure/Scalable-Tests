@@ -10,7 +10,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "1 kilogram", 
           "500 grams", 
@@ -28,7 +28,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Strong Acid", 
           "Slightly Basic", 
@@ -45,7 +45,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the most common isotope of hydrogen?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Deuterium", 
           "Tritum", 
@@ -63,7 +63,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "You can't live without water! What is its chemical formula?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "H2", 
           "O2",
@@ -85,7 +85,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "A definite shape, but no defined volume", 
           "A definite volume and shape", 
@@ -93,7 +93,7 @@
           "Water isn't a state of matter"
         ],
         "correctAnswer": ["A defined volume, but not a defined shape"],
-        "feedback": "",
+        "feedback": "A liquid takes the shape of its container (no defined shape), but has a fairly constant volume (at least compared to a gas). The state of matter of a substances is due to the kinetic energy of its components. With enough energy, atoms and molecules are less strongly bound to each other.",
         "timeLimit": "00:00:20"
       },
       {
@@ -102,7 +102,7 @@
         "section": "Section 2",
         "problem": "Select all that apply",
         "title": "Are the states of matter",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Fire",
           "Electricity"
@@ -117,7 +117,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "A mole contains Avogadro's number of items. What is Avogadro's number?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "6023",
           "3 x 10^8",
@@ -134,7 +134,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Helium",
           "Krypton",
@@ -151,7 +151,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "All of the following elements are liquids around room temperature except which one?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Gallium",
           "Bromine",
@@ -169,7 +169,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "What do you call an atom that has more protons than electrons?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "A molecule",
           "An isotope",
@@ -187,7 +187,7 @@
         "section": "Section 3",
         "problem": "Fill in the blank",
         "title": "Complete the following setences with the correct response",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "Is one of the essential minerals in our body", 
           "Scientific discipline involved with elements and compounds composed of atoms, molecules and ions", 
@@ -203,7 +203,7 @@
           "CO2"
         ],
         "feedback": "No appropriate feedback",
-        "timeLimit": "00:01:00"
+        "timeLimit": "00:01:15"
       },
       {
         "id": 12,
@@ -211,7 +211,7 @@
         "section": "Section 3",
         "problem": "Choose the correct answer",
         "title": "If you fill a glass to the brim with ice water and the ice melts, what will happen?",
-        "points": 3,
+        "points": 2.5,
         "answers": [
           "The glass will over flow as the ice turns to water",
           "I'll never find out because I'll drink the water or walk away before anything happens.",
@@ -224,7 +224,7 @@
         "timeLimit": "00:00:20"
       }
     ],
-    "timeLimit": 267,
+    "timeLimit": 302,
     "difficulty": "Low",    
     "duration": 0,
     "score": 0,

@@ -109,8 +109,6 @@ export class AnswersStructureComponent implements OnChanges {
         .map(answer => this.answers[answer]);
         break;
     }
-    console.log(selected);
-    console.log(this.form.get('answers'));
     this.notifySelected.emit(selected);
   }
 

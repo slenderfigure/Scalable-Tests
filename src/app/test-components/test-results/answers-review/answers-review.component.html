@@ -28,9 +28,7 @@
           <h4 class="correct-selected" *ngIf="question.isCorrect">Correct!</h4>
           <h4 class="wrong-selected" *ngIf="!question.isCorrect">Incorrect</h4>
 
-          <div class="feedback">
-            The average adult human body contains about 250 grams of salt, which is just over half a pound. If you don't have enough salt, your body suffers an electrolyte imbalance called hyponatremia.
-          </div>
+          <div class="feedback">{{ question?.feedback }}</div>
         </article>
       </div>
     </section>
