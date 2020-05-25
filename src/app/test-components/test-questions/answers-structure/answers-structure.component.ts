@@ -13,6 +13,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
+  @Input() readonly: boolean;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
   answers: any[];
   form: FormGroup;
@@ -77,4 +78,7 @@ export class AnswersStructureComponent implements OnChanges {
     this.notifySelected.emit(selected);
   }
 
+  readonlyMode(): void {
+    
+  }
 }

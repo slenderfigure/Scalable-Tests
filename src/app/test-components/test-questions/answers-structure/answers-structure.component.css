@@ -67,5 +67,24 @@
 }
 
 .selected {
-  background-color: #dbe3eb !important;
+  background-color: #dbe3eb;
+}
+
+.correct-selected {
+  border-color: transparent;
+  background-color: #2cda74;
+}
+
+.correct-unselected {
+  border: 1px solid #2cda74;
+}
+
+.wrong-selected {
+  border-color: transparent;
+  background-color: #fd4242;;
+}
+
+.wrong-selected span,
+.wrong-selected strong {
+  color: #fff;
 }
