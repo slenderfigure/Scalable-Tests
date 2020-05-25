@@ -5,7 +5,7 @@ export interface Question {
   problem: string;
   title: string;
   points: number;
-  answers: any[];
+  answers?: any[];
   correctAnswer: any[];
   selectedAnswer?: any[]; 
   intro?: {

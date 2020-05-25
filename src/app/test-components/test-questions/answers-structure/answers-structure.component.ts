@@ -1,9 +1,9 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
-import { ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 import { Question } from '../../question.model';
-import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'question-answers',
@@ -14,31 +14,33 @@ export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
-  formGroup: FormGroup;
+  answers: any[];
+  form: FormGroup;
   
   constructor(private fb: FormBuilder) { }
 
 
   ngOnChanges(): void {
     this.setDefaults();
-  }
-
-  setDefaults(): void {
-    // !this.question.hasVariousAnswers ? 
-    //   this.question.answers.push(this.question.correctAnswer) :      
-    //   this.question.answers = this.question.answers.concat(this.question.correctAnswer);
- 
-    this.shuffleAnswers(this.question.answers);
     this.createFormGroup();
   }
 
-  createFormGroup() {
+  private setDefaults(): void {
+    if (this.question.type <= 2) {
+      this.answers = this.question.answers.concat(this.question.correctAnswer);
+      this.shuffleAnswers(this.answers);
+    }
+  }
+
+  private createFormGroup(): void {
     let group: any = {};
 
-    this.question.answers.forEach((answer) => {
-      group['answers'] = new FormControl();
-    });
-    this.formGroup = new FormGroup(group);
+    if (this.question.type <= 2) {
+      this.question.answers.forEach(() => group['answers'] = new FormControl());
+      this.form = new FormGroup(group);
+    } else {
+      this.form = this.fb.group({ answers: []});
+    }
   }
 
   private shuffleAnswers(answers: any[]): any[] {
@@ -50,12 +52,20 @@ export class AnswersStructureComponent implements OnChanges {
   }
 
   getSelectedAnswers(): void {
-    const answers  = this.answerInput.map(val => <HTMLInputElement>val.nativeElement);
-    const selected = 
-      answers.map((answer, index) => answer.checked ? index : null)
-      .filter(answer => answer !== null)
-      .map(answer => this.question.answers[answer]);
+    const answers = this.answerInput.map(val => <HTMLInputElement>val.nativeElement);
+    let selected;
 
+    switch (this.question.type) {
+      case 3:
+        selected = [this.form.get('answers').value];
+        break;
+    
+      default:
+        selected = answers.map((answer, index) => answer.checked ? index : null)
+        .filter(answer => answer !== null)
+        .map(answer => this.answers[answer]);
+        break;
+    }
     this.notifySelected.emit(selected);
     console.log(selected);
   }

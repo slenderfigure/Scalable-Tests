@@ -1,22 +1,53 @@
-<div [formGroup]="formGroup" [ngSwitch]="question.type">
-  <!-- <div *ngSwitchCase="2">
+<div [formGroup]="form" [ngSwitch]="question.type">
+  <div *ngSwitchCase="2">
     <label 
-      *ngFor="let answer of question.answers; index as index"
+      *ngFor="let answer of answers; index as index"
       tabindex="0" 
       class="answer">
       <input
+        formControlName="answers"
+        [value]="answers"
         #answers 
-        name="answer"
+
         (change)="getSelectedAnswers()"
-        [value]="answer" 
         type="checkbox">
       <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
     </label>
-  </div> -->
+  </div>
+
+  <div *ngSwitchCase="3">
+    <label
+      tabindex="0" 
+      class="answer">
+      <input
+        formControlName="answers"
+        [value]="true"
+        #answers  
+        (change)="getSelectedAnswers()"
+        type="radio">
+      <span><strong>True</strong></span>
+    </label>
+
+    <label
+      tabindex="0" 
+      class="answer">
+      <input
+        formControlName="answers"
+        [value]="false"
+        #answers  
+        (change)="getSelectedAnswers()"
+        type="radio">
+      <span><strong>False</strong></span>
+    </label>
+  </div>
+
+  <div *ngSwitchCase="4">
+
+  </div>
   
   <div *ngSwitchDefault>
     <label
-      *ngFor="let answer of question.answers; index as index"
+      *ngFor="let answer of answers; index as index"
       tabindex="0" 
       class="answer">
       <input
