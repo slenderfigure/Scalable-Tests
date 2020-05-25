@@ -14,13 +14,8 @@
   
       <div class="content">
         <img *ngIf="question.image" [src]="question.image">
-
-        <div
-          *ngFor="let answer of question.answers; index as index"
-          class="answer">
-          <input type="radio" readonly>
-          <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
-        </div>
+        
+        <question-answers [question]="question"></question-answers>
       </div>
     </section>
   </div>
