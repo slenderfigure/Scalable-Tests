@@ -53,7 +53,7 @@
           "None of the above"
         ],
         "correctAnswer": ["Protium"],
-        "feedback": "",
+        "feedback": "Most of the hydrogen in the world is protium (one proton, no neutrons), but some deuterium and tritium occurs, too. Tritium is radioactive. Deuterium is not radioactive and is the form of hydrogen found in heavy water.",
         "image": "assets/img/test-img2.jpg",
         "timeLimit": "00:00:15"
       }, 
@@ -71,7 +71,7 @@
           "CO2"
         ],
         "correctAnswer": ["H2O"],
-        "feedback": "",
+        "feedback": "You didn't miss this one, right? Water is good old H 2 O!",
         "intro": {
           "header": "Intro before moving onto the next question",
           "body": "Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.<br><br>Chemistry traces its roots back to the ancient study of alchemy. Chemistry and alchemy are separate now, though alchemy still is practiced today. All matter is made up of the chemical elements, which are distinguished from each other by the numbers of protons they possess.<br><br><cite>I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.</cite> ― Dmitri Mendeleev.",
@@ -108,7 +108,7 @@
           "Electricity"
         ],
         "correctAnswer": ["Solid", "Liquid", "Gas", "Plasma"],
-        "feedback": "",
+        "feedback": "A state of matter is one of the distinct forms that different phases of matter take on. Four states of matter are observable in everyday life: solid, liquid, gas, and plasma.",
         "timeLimit": "00:00:25"
       },
       {
@@ -125,7 +125,7 @@
           "62 - 10^8"
         ],
         "correctAnswer": ["6.023 x 10^23"],
-        "feedback": "",
+        "feedback": "Avogadro's number is huge! The reason chemists use 6.02 x 10^23 to define a unit is to avoid having to work with incredibly large numbers.",
         "timeLimit": "00:00:30"
       },
       {
@@ -142,7 +142,7 @@
           "Neon"
         ],
         "correctAnswer": ["Chlorine"],
-        "feedback": "",
+        "feedback": "Chlorine is not a noble gas. It's one electron shy of a full octet, so unlike the noble gases, it's highly reactive.",
         "timeLimit": "00:00:20"
       },
       {
@@ -160,7 +160,7 @@
         ],
         "correctAnswer": ["Magnesium"],
         "image": "assets/img/test-img4.jpg",
-        "feedback": "",
+        "feedback": "Bromine and mercury are liquid at room temperature. You can melt gallium in the palm of your hand. If you put pure magnesium in your hand, it may react with the water in your skin and ignite, but it won't melt.",
         "timeLimit": "00:00:22"
       },
       {
@@ -178,7 +178,7 @@
         ],
         "correctAnswer": ["A cation"],
         "image": "assets/img/test-img5.jpg",
-        "feedback": "",
+        "feedback": "If an atom has more protons than electrons, it has a net positive charge. This is a cation, which you can remember because the \"t\" in cation resembles a \"+\" sign for positive.",
         "timeLimit": "00:00:20"
       },
       {
@@ -202,8 +202,26 @@
           "Noble gases",
           "CO2"
         ],
-        "feedback": "",
+        "feedback": "No appropriate feedback",
         "timeLimit": "00:01:00"
+      },
+      {
+        "id": 12,
+        "type": 1,
+        "section": "Section 3",
+        "problem": "Choose the correct answer",
+        "title": "If you fill a glass to the brim with ice water and the ice melts, what will happen?",
+        "points": 3,
+        "answers": [
+          "The glass will over flow as the ice turns to water",
+          "I'll never find out because I'll drink the water or walk away before anything happens.",
+          "The glass begins to shatter as the volume increases",
+          "The level of water in the glass will remain unchanged as the ice melts"
+        ],
+        "correctAnswer": ["The water level will drop slightly as the ice melts"],
+        "image": "assets/img/test-img11.jpg",
+        "feedback": "One interesting property of water is that it achieves maximum density as a liquid, not as a solid. So, ice is less dense than water and floats. When it melts, it becomes more dense. More mass per unit volume means the level of the liquid drops slightly.",
+        "timeLimit": "00:00:20"
       }
     ],
     "timeLimit": 267,
