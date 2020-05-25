@@ -75,7 +75,6 @@ export class AnswersStructureComponent implements OnChanges {
         break;
     }
     this.notifySelected.emit(selected);
-    console.log(selected);
   }
 
 }

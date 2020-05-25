@@ -35,24 +35,16 @@
   background-color: #dbe3eb !important;
 }
 
-.selected {
-  background-color: #dbe3eb !important;
-}
-
 .answer-row {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   overflow: hidden;
-
-  /* padding: 0.8rem 1rem;
-  border-radius: 10px;
-  background-color: #dbe3eb; */
 }
 
 .answer-row:not(:last-of-type) {
-  margin-bottom: 1.8em;
+  margin-bottom: 2.1em;
 }
 
 .answer-row input {
@@ -64,7 +56,6 @@
   margin-left: 0.5rem;
   padding: 0.4rem 0.5rem;
   text-align: center;
-  /* border-bottom: 2px solid #dbe3eb; */
   background-color: #e7eff7; 
   border-radius: 8px;
   caret-color: #e00366;
@@ -73,4 +64,8 @@
 .answer-row label {
   color: #444;
   line-height: 1.5rem;
+}
+
+.selected {
+  background-color: #dbe3eb !important;
 }

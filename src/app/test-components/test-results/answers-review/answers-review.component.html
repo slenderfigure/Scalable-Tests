@@ -1,1 +1,27 @@
-<p>answers-review works!</p>
+<div class="view-container">
+  <div *ngIf="questions" class="wrapper">  
+    <section 
+      *ngFor="let question of questions; index as index"
+      class="question-section">
+      <div class="top-content">
+        <h3>{{ index + 1 }}. {{ question.title }}</h3>
+  
+        <div class="badge">
+          <span>Points:</span>
+          <span>{{ question.points }}</span>
+        </div>
+      </div>
+  
+      <div class="content">
+        <img *ngIf="question.image" [src]="question.image">
+
+        <div
+          *ngFor="let answer of question.answers; index as index"
+          class="answer">
+          <input type="radio" readonly>
+          <span><strong>{{ index + 1 }}.</strong> {{ answer }}</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+.wrapper {
+  margin-top: 7rem;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 0 2rem;
+}
+
+.test-information {
+  align-self: flex-end;
+}
+
+.test-information h3 {
+  padding-bottom: 2rem;
+  color: #999;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.test-information p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.question-section {
+  width: 100%;
+  height: auto;
+  margin: 0 auto 4rem;
+  border-radius: 4px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  overflow: hidden;
+}
+
+.top-content {
+  position: relative;
+  width: 100%;
+  padding: 2rem 2rem 1.5rem;
+  background-color: #292929;
+}
+
+.top-content h3 {
+  margin-bottom: 1rem;
+  color: #eee;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  background-color: #444;
+  user-select: none;
+}
+
+.badge span:first-of-type {
+  margin-right: 0.2rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.badge span:last-of-type {
+  color: #85a4ff;
+  font-size: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 200px;
+  padding: 3rem 2rem 2rem;
+  background-color: #fff;
+}
+
+.content img {
+  display: block;
+  max-width: 550px;
+  max-height: 300px;
+  margin: 0 auto 2rem;
+  border-radius: 4px;
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #dbe3eb;
+  border-radius: 10px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.answer:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.answer input {
+  display: none;
+}
+
+.answer span {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  color: #444;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.answer span strong,
+.answer-row strong {
+  margin-right: 0.5rem;
+}
+
+.answer input:checked + span {
+  background-color: #dbe3eb !important;
+}
+
+.answer-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.answer-row:not(:last-of-type) {
+  margin-bottom: 2.1em;
+}
+
+.answer-row input {
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+  width: 200px;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  text-align: center;
+  background-color: #e7eff7; 
+  border-radius: 8px;
+  caret-color: #e00366;
+}
+
+.answer-row label {
+  color: #444;
+  line-height: 1.5rem;
+}
