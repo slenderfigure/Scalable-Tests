@@ -40,24 +40,11 @@ export class AnswersStructureComponent implements OnChanges {
     }
   }
 
-  setAnswerClass2(): {} {     
-    if (this.enableReadonly) {
-      return {
-        'correct-selected': 
-          this.form.get('answers').value == this.question.correctAnswer[0] &&
-          this.question.isCorrect,
-        'wrong-selected': 
-          this.question.selectedAnswer[0] !== this.question.correctAnswer[0] && 
-          !this.question.isCorrect,
-      }
-    }
-  }
-
   private setDefaults(): void {
     if (this.question.type <= 2) {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
     } 
-    else if (this.question.type == 4) {
+    else if (this.question.type == 3) {
       this.answers = this.question.answers;
     }
     if (this.question.type !== 3) {
@@ -95,11 +82,11 @@ export class AnswersStructureComponent implements OnChanges {
     let selected;
 
     switch (this.question.type) {
-      case 3:
-        selected = [this.form.get('answers').value];
-        break;
+      // case 3:
+      //   selected = [this.form.get('answers').value];
+      //   break;
 
-      case 4:
+      case 3:
         selected = answers.map(answer => answer.value.trim().toLowerCase());
         break;
     

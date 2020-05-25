@@ -188,7 +188,7 @@
       },
       {
         "id": 11,
-        "type": 4,
+        "type": 3,
         "section": "Section 3",
         "problem": "Fill in the blank",
         "title": "Complete the following setences with the correct response",
@@ -295,12 +295,12 @@
       },
       {
         "id": 4,
-        "type": 3,
+        "type": 1,
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
         "title": "Miguel de Cervantes is not the author of 'Don Quixote'",
         "points": 2,
-        "answers": [],
+        "answers": [true],
         "correctAnswer": [false],
         "feedback": "The Spanish writer Miguel de Cervantes created one of the world's greatest literary masterpieces, 'Don Quixote,' in the early 1600s.",
         "image": "assets/img/test-img10.jpg",
