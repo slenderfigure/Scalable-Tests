@@ -28,7 +28,9 @@
           <h4 class="correct-selected" *ngIf="question.isCorrect">Correct!</h4>
           <h4 class="wrong-selected" *ngIf="!question.isCorrect">Incorrect</h4>
 
-          <div class="feedback">{{ question?.feedback }}</div>
+          <div 
+            class="feedback"
+            [innerHTML]="question?.feedback"></div>
         </article>
       </div>
     </section>

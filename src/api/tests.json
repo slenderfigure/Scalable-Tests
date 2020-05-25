@@ -19,6 +19,11 @@
         ],
         "correctAnswer": ["250 grams"],
         "feedback": "The average adult human body contains about 250 grams of salt, which is just over half a pound. If you don't have enough salt, your body suffers an electrolyte imbalance called hyponatremia.",
+        "intro": {
+          "header": "Intro before moving onto the next question",
+          "body": "Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.<br><br>Chemistry traces its roots back to the ancient study of alchemy. Chemistry and alchemy are separate now, though alchemy still is practiced today. All matter is made up of the chemical elements, which are distinguished from each other by the numbers of protons they possess.<br><br><cite>I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.</cite> ― Dmitri Mendeleev.",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/DIMendeleevCab.jpg"
+        },
         "image": "assets/img/test-img1.jpg",
         "timeLimit": "00:00:20"
       }, 
@@ -82,7 +87,7 @@
       {
         "id": 5,
         "type": 1,
-        "section": "Section 1",
+        "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
         "points": 2.5,
