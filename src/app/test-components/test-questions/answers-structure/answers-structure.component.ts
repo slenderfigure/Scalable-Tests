@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { Input, Output, EventEmitter } from '@angular/core';
 import { ViewChildren, ElementRef, QueryList } from '@angular/core';
 
@@ -29,6 +29,10 @@ export class AnswersStructureComponent implements OnChanges {
     if (this.question.type <= 2) {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
       this.shuffleAnswers(this.answers);
+    } 
+    else if (this.question.type == 4) {
+      this.answers = this.question.answers;
+      this.shuffleAnswers(this.answers);
     }
   }
 
@@ -58,6 +62,10 @@ export class AnswersStructureComponent implements OnChanges {
     switch (this.question.type) {
       case 3:
         selected = [this.form.get('answers').value];
+        break;
+
+      case 4:
+        selected = answers.map(answer => answer.value.trim().toLowerCase());
         break;
     
       default:

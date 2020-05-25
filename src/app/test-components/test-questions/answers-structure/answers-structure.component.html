@@ -42,7 +42,16 @@
   </div>
 
   <div *ngSwitchCase="4">
-
+    <div 
+      *ngFor="let answer of answers; index as index"
+      class="answer-row">
+      <strong>{{ index + 1 }}.</strong>
+      <input 
+        #answers 
+        (change)="getSelectedAnswers()"
+        type="text">
+      <label>{{ answer }}</label>
+    </div>
   </div>
   
   <div *ngSwitchDefault>
