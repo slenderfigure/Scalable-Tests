@@ -1,35 +1,37 @@
-<div class="wrapper">
-  <section class="section">
-    <div class="test-information">
-      <h3>Test Results</h3>
-      <span class="date">{{ test.modifiedDate | date:'MMM d, y - h:mm' }}</span>
+<div class="view-container">
+  <div class="wrapper">
+    <section class="section">
+      <div class="test-information">
+        <h3>Test Results</h3>
+        <span class="date">{{ test.modifiedDate | date:'MMM d, y - h:mm' }}</span>
 
-      <div 
-        *ngFor="let group of groups"
-        class="row-group">
-        <span>{{ group.label }}: </span>
-        <span>{{ group.value }}</span>
-        <i 
-          *ngIf="group.icon" 
-          [innerHTML]="validatedAsTrusted(group.icon)"
-          class="icon"></i>
-      </div>        
-    </div>
-
-    <div class="answers-review">
-      <span class="badge">Review your answers</span>
-      <div class="thumbnail-wrapper">
-        <button 
-          [routerLink]="['/test-review']"
-          *ngFor="let question of questions; index as index"
-          class="thumbnail"            
-          [title]="question.title">
-          <span>{{ index + 1 }}. {{ question.title }}</span>
-          <img 
-            src="assets/img/thumbnail.jpg"
-            [class]="!question?.isCorrect ? 'wrong' : 'correct'">
-        </button>
+        <div 
+          *ngFor="let group of groups"
+          class="row-group">
+          <span>{{ group.label }}: </span>
+          <span>{{ group.value }}</span>
+          <i 
+            *ngIf="group.icon" 
+            [innerHTML]="validatedAsTrusted(group.icon)"
+            class="icon"></i>
+        </div>        
       </div>
-    </div>
-  </section>
+
+      <div class="answers-review">
+        <span class="badge">Review your answers</span>
+        <div class="thumbnail-wrapper">
+          <button 
+            [routerLink]="['/test-review']"
+            *ngFor="let question of questions; index as index"
+            class="thumbnail"            
+            [title]="question.title">
+            <span>{{ index + 1 }}. {{ question.title }}</span>
+            <img 
+              src="assets/img/thumbnail.jpg"
+              [class]="!question?.isCorrect ? 'wrong' : 'correct'">
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
