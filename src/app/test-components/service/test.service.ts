@@ -6,7 +6,9 @@ import { map } from 'rxjs/operators';
 import { Test } from '../test.model';
 import { Question } from '../question.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TestService {
   private testUrl = '../../../api/tests.json';
 

@@ -34,7 +34,6 @@ export class TestInfoComponent implements OnInit {
   }
 
   onClick(): void {
-    localStorage.setItem('Test Session', JSON.stringify(this.test));
     this.router.navigate(['test/session', this.testId, 1]);
   }
 
