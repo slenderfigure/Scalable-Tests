@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { fromEvent } from 'rxjs';
 
 import { TestService } from '../service/test.service';
 import { Question } from '../question.model';
-import { Test } from '../test.model';
 
 
 @Component({

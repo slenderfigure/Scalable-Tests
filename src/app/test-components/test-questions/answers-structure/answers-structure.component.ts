@@ -14,7 +14,7 @@ import { Test } from '../../test.model';
 export class AnswersStructureComponent implements OnChanges {
   @ViewChildren('answers') answerInput: QueryList<ElementRef>;
   @Input() question: Question;
-  @Input('readonly') enableReadonly: boolean;
+  @Input('readonly') enableReadonly: boolean = false;
   @Input('is-correct') isCorrect: boolean;
   @Output('selected') notifySelected: EventEmitter<any[]> = new EventEmitter();
   answers: any[];
@@ -31,7 +31,7 @@ export class AnswersStructureComponent implements OnChanges {
     if (this.enableReadonly) {
       const correct = this.question.correctAnswer;
       const selected = this.question.selectedAnswer;
-
+      
       return {
         'correct-selected': correct.indexOf(answer) > -1 && 
           selected.indexOf(answer) > -1,
