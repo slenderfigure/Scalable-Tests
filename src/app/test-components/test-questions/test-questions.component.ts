@@ -39,16 +39,19 @@ export class TestQuestionsComponent implements OnInit {
       this.testId = params.get('testId');
       this.questionId = +params.get('questionId');
 
-      this.initQuestion(this.testId);
+      this.initQuestion();
       
       this.ts.durationTracker$.subscribe(duration => {
         this.duration = duration;
       });
+      // this.ts.getTest(this.testId).subscribe(test => {
+      //   console.log(test);
+      // });
     });
   }
 
-  private initQuestion(testId: string): void {
-    this.ts.getTest(testId).subscribe(test => {
+  private initQuestion(): void {
+    this.ts.getTest(this.testId).subscribe(test => {
       this.testSubject = test.subject;
       this.question = test.questions.find(cur => cur.id == this.questionId);
       this.questionNumber = test.questions.findIndex(cur => cur.id == this.questionId) + 1;

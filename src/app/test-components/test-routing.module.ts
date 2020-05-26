@@ -14,20 +14,20 @@ import { AnswersReviewComponent } from './test-results/answers-review/answers-re
 
 const routes: Route[] = [
   { path: '', component: TestComponent },
-  { path: ':testId', component: TestInfoComponent },
+  { path: 'info/:testId', component: TestInfoComponent },
   { 
-    path: ':testId/:questionId', 
+    path: 'session/:testId/:questionId', 
     component: TestQuestionsComponent,
-    canActivate: [TestQuestionGuard],
+    // canActivate: [TestQuestionGuard],
     // canDeactivate: [CanDeactivateGuard]
   },
   { 
-    path: 'test-results', 
+    path: 'results', 
     component: TestResultsComponent,
     canActivate: [TestResultsGuard]
   },
   { 
-    path: 'test-review', 
+    path: 'results/review', 
     component: AnswersReviewComponent,
     canActivate: [TestResultsGuard]
   }
