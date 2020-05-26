@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { Router, RouterEvent, NavigationEnd, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 
@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  private defaultTitle: string = 'Mastery Zone';
+  title: string = 'Mastery Zone';
   private altTitles: {} = {
     results: 'Test Results',
     session: 'Active Session'
@@ -19,7 +19,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.router.events.pipe(
-      filter((events: RouterEvent) => events instanceof NavigationEnd)
+      filter((events: RouterEvent) => events instanceof NavigationStart)
     ).subscribe(navigation => {
       const url = navigation.url;
       const tabTitle = document.documentElement.querySelector('title');
@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit {
           tabTitle.innerHTML = this.altTitles[key];
           break;
         } else {
-          tabTitle.innerHTML = this.defaultTitle;
+          tabTitle.innerHTML = this.title;
         }
       }
     });
