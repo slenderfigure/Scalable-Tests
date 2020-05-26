@@ -11,7 +11,7 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./answers-review.component.css']
 })
 export class AnswersReviewComponent implements OnInit, AfterViewInit {
-  @ViewChild('viewContainer') viewContainer: ElementRef<HTMLButtonElement>;
+  // @ViewChild('viewContainer') viewContainer: ElementRef<HTMLButtonElement>;
   @ViewChild('goUpButton') goUpButton: ElementRef<HTMLButtonElement>;
   questions: Question[];
 
@@ -23,11 +23,10 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    fromEvent(this.viewContainer.nativeElement, 'scroll').subscribe(e => {
-      const target = e.target as HTMLElement;
+    fromEvent(window, 'scroll').subscribe(e => {
       const button = this.goUpButton.nativeElement;
 
-      if (target.scrollTop > 800) {
+      if (window.scrollY > 800) {
         button.classList.add('show');
       } else {
         button.classList.remove('show');
@@ -37,6 +36,6 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   goToTop(): void {
-    this.viewContainer.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

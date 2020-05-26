@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   background-color: transparent;
-  z-index: 10;
+  z-index: 1;
 }
 
 .top-content {
@@ -142,6 +142,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   background-color: #e20367;
   transition: opacity 0.4s ease, filter 0.3s ease;
+  z-index: 100;
 }
 
 .go-up-btn:active {
