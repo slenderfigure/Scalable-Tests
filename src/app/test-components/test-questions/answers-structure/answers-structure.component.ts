@@ -4,7 +4,7 @@ import { ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 import { Question } from '../../question.model';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Test } from '../../test.model';
+
 
 @Component({
   selector: 'question-answers',
