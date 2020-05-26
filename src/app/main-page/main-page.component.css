@@ -1,6 +1,11 @@
 h3 {
   padding: 3rem;
+  color: #fff;
   font-size: 1.7rem;
   font-weight: 400;
   text-align: center;
+}
+
+button {
+  margin: auto;
 }

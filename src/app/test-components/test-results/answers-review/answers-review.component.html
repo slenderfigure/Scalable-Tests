@@ -1,45 +1,43 @@
-<div #viewContainer class="view-container">
-  <div *ngIf="questions" class="wrapper" id="top">  
-    <h1 class="title">Answers Review</h1>
+<div *ngIf="questions" class="wrapper" id="top">  
+  <h1 class="title">Answers Review</h1>
 
-    <section 
-      *ngFor="let question of questions; index as index"
-      class="question-section">
-      <div class="top-content">
-        <h2>{{ question.section }}. {{ question.problem }}</h2>
-        <h3>{{ index + 1 }}. {{ question.title }}</h3>
-  
-        <div class="badge">
-          <span>Points:</span>
-          <span>{{ question.points }}</span>
-        </div>
+  <section 
+    *ngFor="let question of questions; index as index"
+    class="question-section">
+    <div class="top-content">
+      <h2>{{ question.section }}. {{ question.problem }}</h2>
+      <h3>{{ index + 1 }}. {{ question.title }}</h3>
+
+      <div class="badge">
+        <span>Points:</span>
+        <span>{{ question.points }}</span>
       </div>
-  
-      <div class="content">
-        <img *ngIf="question.image" [src]="question.image">
-        
-        <question-answers           
-          [question]="question"
-          [readonly]="true"></question-answers>
-      </div>
+    </div>
 
-      <div class="bottom-content">
-        <article>
-          <h4 class="correct-selected" *ngIf="question.isCorrect">Correct!</h4>
-          <h4 class="wrong-selected" *ngIf="!question.isCorrect">Incorrect</h4>
+    <div class="content">
+      <img *ngIf="question.image" [src]="question.image">
+      
+      <question-answers           
+        [question]="question"
+        [readonly]="true"></question-answers>
+    </div>
 
-          <div 
-            class="feedback"
-            [innerHTML]="question?.feedback"></div>
-        </article>
-      </div>
-    </section>
-  </div>
+    <div class="bottom-content">
+      <article>
+        <h4 class="correct-selected" *ngIf="question.isCorrect">Correct!</h4>
+        <h4 class="wrong-selected" *ngIf="!question.isCorrect">Incorrect</h4>
 
-  <button 
-    #goUpButton 
-    (click)="goToTop()"
-    class="go-up-btn">
-    <i class="material-icons">keyboard_arrow_up</i>
-  </button>
+        <div 
+          class="feedback"
+          [innerHTML]="question?.feedback"></div>
+      </article>
+    </div>
+  </section>
 </div>
+
+<button 
+  #goUpButton 
+  (click)="goToTop()"
+  class="go-up-btn">
+  <i class="material-icons">keyboard_arrow_up</i>
+</button>

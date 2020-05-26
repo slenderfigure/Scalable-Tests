@@ -13,7 +13,11 @@ const routes: Route[] = [
 @NgModule({
   imports: [RouterModule.forRoot(
     routes,
-    { anchorScrolling: 'enabled', scrollPositionRestoration: 'disabled' }
+    { 
+      anchorScrolling: 'enabled', 
+      scrollPositionRestoration: 'disabled',
+      onSameUrlNavigation: 'reload'
+    }
   )],
   exports: [RouterModule]
 })
