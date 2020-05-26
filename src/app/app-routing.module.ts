@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Route } from '@angular/router'; 
+import { RouterModule, Route, PreloadAllModules } from '@angular/router'; 
 
 import { MainPageComponent } from './main-page/main-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -18,6 +18,7 @@ const routes: Route[] = [
   imports: [RouterModule.forRoot(
     routes,
     { 
+      preloadingStrategy: PreloadAllModules,
       anchorScrolling: 'enabled', 
       scrollPositionRestoration: 'disabled',
       onSameUrlNavigation: 'reload'
