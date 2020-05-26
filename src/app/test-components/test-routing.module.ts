@@ -30,6 +30,11 @@ const routes: Route[] = [
     path: 'results/review', 
     component: AnswersReviewComponent,
     canActivate: [TestResultsGuard]
+  },
+  { 
+    path: 'results/review/:questionId', 
+    component: AnswersReviewComponent,
+    canActivate: [TestResultsGuard]
   }
 ];
 
