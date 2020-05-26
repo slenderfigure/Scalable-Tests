@@ -2,7 +2,7 @@
   <h3>Choose a mofo test</h3>
   <ul>
     <li *ngFor="let test of testList$ | async">
-      <a [routerLink]="['/test', test.id]">{{ test.subject }}</a>
+      <a [routerLink]="['./', test.id]">{{ test.subject }}</a>
     </li>
   </ul>
 </div>
