@@ -45,7 +45,7 @@ export class AnswersStructureComponent implements OnChanges {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
     } 
     else if (this.question.type == 4) {
-      this.answers = this.question.answers;
+      this.answers = this.question.answers.map(answer => answer.toLowerCase());
     }
     if (this.question.type !== 3) {
       this.shuffleAnswers(this.answers);
@@ -63,7 +63,7 @@ export class AnswersStructureComponent implements OnChanges {
       this.form = new FormGroup(group);
     } else {
       this.form = this.fb.group({ answers: [{
-        value: '',
+        value: !this.enableReadonly ? '' : this.question.selectedAnswer[0],
         disabled: this.enableReadonly
       }]});
     }
@@ -82,10 +82,6 @@ export class AnswersStructureComponent implements OnChanges {
     let selected;
 
     switch (this.question.type) {
-      // case 3:
-      //   selected = [this.form.get('answers').value];
-      //   break;
-
       case 4:
         selected = answers.map(answer => answer.value.trim().toLowerCase());
         break;

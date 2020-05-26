@@ -6,9 +6,9 @@
       [class]="setAnswerClass(answer)">
       <strong>{{ index + 1 }}.</strong>
       <input 
-        #answers 
+        #answers
+        formControlName="answers" 
         (change)="getSelectedAnswers()"
-        [disabled]="enableReadonly"
         type="text">
       <label>{{ answer }}</label>
     </div>

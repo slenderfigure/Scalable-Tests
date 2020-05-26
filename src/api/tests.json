@@ -5,7 +5,7 @@
     "points": 30,
     "questions": [
       {
-        "id": 1,
+        "id": 0,
         "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
@@ -187,25 +187,17 @@
         "timeLimit": "00:00:20"
       },
       {
-        "id": 11,
+        "id": 1,
         "type": 4,
         "section": "Section 3",
         "problem": "Fill in the blank",
         "title": "Complete the following setences with the correct response",
         "points": 2.5,
         "answers": [
-          "Is one of the essential minerals in our body", 
-          "Scientific discipline involved with elements and compounds composed of atoms, molecules and ions", 
-          "Constitutes 60% of an adult's body", 
-          "Elements considered to be inert because they have completed outer electron shells",
-          "Carbon dioxide is a molecule with the molecular formula of"
+          "Is one of the essential minerals in our body"
         ],
         "correctAnswer": [
-          "Salt",
-          "Chemistry",
-          "Water",
-          "Noble gases",
-          "CO2"
+          "Salt"
         ],
         "feedback": "No appropriate feedback",
         "timeLimit": "00:01:15"
