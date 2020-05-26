@@ -1,4 +1,4 @@
-<div *ngIf="questions" class="wrapper" id="top">  
+<div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
   <section 
@@ -6,7 +6,7 @@
     class="question-section">
     <div class="top-content">
       <h2>{{ question.section }}. {{ question.problem }}</h2>
-      <h3>{{ index + 1 }}. {{ question.title }}</h3>
+      <h3>{{ question.id }}. {{ question.title }}</h3>
 
       <div class="badge">
         <span>Points:</span>

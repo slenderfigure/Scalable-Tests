@@ -15,6 +15,7 @@ import { Test } from '../../test.model';
 export class AnswersReviewComponent implements OnInit, AfterViewInit {
   @ViewChild('goUpButton') goUpButton: ElementRef<HTMLButtonElement>;
   questions: Question[];
+  loading: boolean = true;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -24,6 +25,8 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
       
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
       this.questions = !questionId ? test.questions : test.questions.filter(question => question.id === questionId);
+      
+      this.loading = false;
     });
   }
 
