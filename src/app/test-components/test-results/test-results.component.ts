@@ -31,7 +31,7 @@ export class TestResultsComponent implements OnInit {
       { 
         label: 'Correct answers', 
         value: this.correct,
-        icon: `<svg height="24" viewBox="0 0 24 24" width="24" fill="#2cda74"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>`
+        icon: `<svg height="24" viewBox="0 0 24 24" width="24" fill="#5add90"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>`
       },
       { 
         label: 'Wrong answers', 

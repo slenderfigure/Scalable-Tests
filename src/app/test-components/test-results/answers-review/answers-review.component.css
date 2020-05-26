@@ -5,9 +5,9 @@
   padding: 4rem 0;
   font-size: 2rem;
   color: #fff;
-  font-weight: 400;
+  font-weight: 300;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #e00366;
+  border-bottom: 2px solid #e00366;
 }
 
 .question-section {
@@ -115,7 +115,7 @@
 }
 
 .correct-selected {
-  color: #02c955;
+  color: #12a851;
 }
 
 .wrong-selected {

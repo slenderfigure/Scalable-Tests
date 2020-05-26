@@ -80,11 +80,11 @@
 
 .correct-selected {
   border-color: transparent;
-  background-color: #2cda74;
+  background-color: #5add90;
 }
 
 .correct-unselected {
-  border: 1px solid #2cda74;
+  border: 1px solid #5add90;
 }
 
 .wrong-selected {
