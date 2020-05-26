@@ -5,7 +5,7 @@
     "points": 30,
     "questions": [
       {
-        "id": 0,
+        "id": 1,
         "type": 1,
         "section": "Section 1",
         "problem": "Choose the correct answer",
@@ -187,7 +187,7 @@
         "timeLimit": "00:00:20"
       },
       {
-        "id": 1,
+        "id": 11,
         "type": 4,
         "section": "Section 3",
         "problem": "Fill in the blank",
@@ -199,7 +199,8 @@
         "correctAnswer": [
           "Salt"
         ],
-        "feedback": "No appropriate feedback",
+        "image": "assets/img/test-img13.jpg",
+        "feedback": "Salt is an essential mineral needed for proper fluid balance, nerve transmission, and muscle contraction",
         "timeLimit": "00:01:15"
       },
       {

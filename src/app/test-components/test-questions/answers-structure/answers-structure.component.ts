@@ -29,13 +29,16 @@ export class AnswersStructureComponent implements OnChanges {
 
   setAnswerClass(answer: string): {} {
     if (this.enableReadonly) {
+      const correct = this.question.correctAnswer;
+      const selected = this.question.selectedAnswer;
+
       return {
-        'correct-selected': this.question.correctAnswer.indexOf(answer) > -1 && 
-          this.question.selectedAnswer.indexOf(answer) > -1,
-        'correct-unselected': this.question.correctAnswer.indexOf(answer) > -1 && 
-          this.question.selectedAnswer.indexOf(answer) == -1,
-        'wrong-selected': this.question.correctAnswer.indexOf(answer) == -1 &&
-          this.question.selectedAnswer.indexOf(answer) > -1
+        'correct-selected': correct.indexOf(answer) > -1 && 
+          selected.indexOf(answer) > -1,
+        'correct-unselected': correct.indexOf(answer) > -1 && 
+          selected.indexOf(answer) == -1,
+        'wrong-selected': correct.indexOf(answer) == -1 &&
+          selected.indexOf(answer) > -1
       };
     }
   }
@@ -45,7 +48,7 @@ export class AnswersStructureComponent implements OnChanges {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
     } 
     else if (this.question.type == 4) {
-      this.answers = this.question.answers.map(answer => answer.toLowerCase());
+      this.answers = this.question.answers;
     }
     if (this.question.type !== 3) {
       this.shuffleAnswers(this.answers);
@@ -83,7 +86,7 @@ export class AnswersStructureComponent implements OnChanges {
 
     switch (this.question.type) {
       case 4:
-        selected = answers.map(answer => answer.value.trim().toLowerCase());
+        selected = answers.map(answer => answer.value);
         break;
     
       default:

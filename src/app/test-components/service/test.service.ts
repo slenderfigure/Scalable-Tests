@@ -72,7 +72,7 @@ export class TestService {
   private gradeTest(session: Test): void {
     session.questions.map(question => {
       if (question.correctAnswer.length == question.selectedAnswer.length &&
-        question.correctAnswer.every(answer => question.selectedAnswer.includes(answer))) {
+        question.correctAnswer.every(answer => question.selectedAnswer.map(answer => answer.toLowerCase().trim()).includes(answer.toLowerCase()))) {
         question.isCorrect = true;
       } else {
         question.isCorrect = false;
