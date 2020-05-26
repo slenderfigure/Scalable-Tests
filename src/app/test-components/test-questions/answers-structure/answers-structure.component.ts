@@ -41,10 +41,10 @@ export class AnswersStructureComponent implements OnChanges {
   }
 
   private setDefaults(): void {
-    if (this.question.type <= 2) {
+    if (this.question.type <= 3) {
       this.answers = this.question.answers.concat(this.question.correctAnswer);
     } 
-    else if (this.question.type == 3) {
+    else if (this.question.type == 4) {
       this.answers = this.question.answers;
     }
     if (this.question.type !== 3) {
@@ -55,7 +55,7 @@ export class AnswersStructureComponent implements OnChanges {
   private createFormGroup(): void {
     let group: any = {};
 
-    if (this.question.type <= 2) {
+    if (this.question.type <= 3) {
       this.question.answers.forEach(() => group['answers'] = new FormControl({
         value: '',
         disabled: this.enableReadonly
@@ -86,7 +86,7 @@ export class AnswersStructureComponent implements OnChanges {
       //   selected = [this.form.get('answers').value];
       //   break;
 
-      case 3:
+      case 4:
         selected = answers.map(answer => answer.value.trim().toLowerCase());
         break;
     

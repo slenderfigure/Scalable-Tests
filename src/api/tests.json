@@ -188,7 +188,7 @@
       },
       {
         "id": 11,
-        "type": 3,
+        "type": 4,
         "section": "Section 3",
         "problem": "Fill in the blank",
         "title": "Complete the following setences with the correct response",
@@ -295,7 +295,7 @@
       },
       {
         "id": 4,
-        "type": 1,
+        "type": 3,
         "section": "Section 1",
         "problem": "Select \"true\" or \"false\"",
         "title": "Miguel de Cervantes is not the author of 'Don Quixote'",
@@ -393,7 +393,7 @@
           "Robert Walton",
           "Henry Clerval"
         ],
-        "feedback": "Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley (1797–1851) that tells the story of Victor Frankenstein, a young scientist who creates a hideous sapient creature in an unorthodox scientific experiment.",
+        "feedback": "The story of Victor Frankenstein's terrible creation and the havoc it caused has enthralled generations of readers and inspired countless writers of horror and suspense. Considering the novel's enduring success, it is remarkable that it began merely as a whim of Lord Byron's.",
         "image": "assets/img/test-img12.jpg",
         "timeLimit": "00:00:25"
       }

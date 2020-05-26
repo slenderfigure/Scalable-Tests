@@ -139,3 +139,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+.go-up-btn .material-icons {
+  color: #fff;
+}

@@ -1,5 +1,5 @@
 <div [formGroup]="form" [ngSwitch]="question.type">
-  <div *ngSwitchCase="3">
+  <div *ngSwitchCase="4">
     <div 
       *ngFor="let answer of answers; index as index"
       class="answer-row"
@@ -36,4 +36,3 @@
     </label>
   </div>
 </div>
-
