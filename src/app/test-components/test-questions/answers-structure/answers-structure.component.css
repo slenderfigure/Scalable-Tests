@@ -93,6 +93,7 @@
 }
 
 .wrong-selected span,
-.wrong-selected strong {
+.wrong-selected strong,
+.wrong-selected label {
   color: #fff;
 }

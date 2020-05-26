@@ -44,9 +44,6 @@ export class TestQuestionsComponent implements OnInit {
       this.ts.durationTracker$.subscribe(duration => {
         this.duration = duration;
       });
-      // this.ts.getTest(this.testId).subscribe(test => {
-      //   console.log(test);
-      // });
     });
   }
 
@@ -68,7 +65,7 @@ export class TestQuestionsComponent implements OnInit {
       this.duration
     ); 
     setTimeout(() => {
-      this.router.navigate(['test', this.testId, this.questionId + 1]);
+      this.router.navigate(['test/session', this.testId, this.questionId + 1]);
       this.loading = true;
     }, 500);
   }

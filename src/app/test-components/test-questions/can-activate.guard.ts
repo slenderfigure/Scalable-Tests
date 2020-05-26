@@ -40,7 +40,7 @@ export class TestQuestionGuard implements CanActivate {
             if (questionId == missingQuestion) {
               observer.next(true);
             } else {
-              this.router.navigate(['test', testId, missingQuestion]);
+              this.router.navigate(['test/session', testId, missingQuestion]);
               observer.next(false);
             }
             break;

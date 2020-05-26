@@ -23,13 +23,13 @@
     </div>
 
     <div class="bottom-content">
-      <article>
+      <article *ngIf="question.feedback">
         <h4 class="correct-selected" *ngIf="question.isCorrect">Correct!</h4>
         <h4 class="wrong-selected" *ngIf="!question.isCorrect">Incorrect</h4>
 
         <div 
           class="feedback"
-          [innerHTML]="question?.feedback"></div>
+          [innerHTML]="question.feedback"></div>
       </article>
     </div>
   </section>
