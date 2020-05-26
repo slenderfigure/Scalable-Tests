@@ -3,7 +3,7 @@
     <div 
       *ngFor="let answer of answers; index as index"
       class="answer-row"
-      [class]="setAnswerClass(answer)">
+      [class]="setAnswerClass(form.get('answers').value.toLowerCase())">
       <strong>{{ index + 1 }}.</strong>
       <input 
         #answers

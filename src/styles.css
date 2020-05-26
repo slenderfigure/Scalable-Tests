@@ -186,7 +186,7 @@ button:disabled {
 
 html, body {
   min-height: 100%;
-  /* background-color: #222021; */
+  background-color: #222021;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -255,7 +255,7 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-.view-container {
+/* .view-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -263,7 +263,7 @@ html::-webkit-scrollbar-thumb {
   height: 100%;
   background-color: #222021;
   overflow-y: auto;
-}
+} */
 
 .wrapper {
   max-width: 1000px;

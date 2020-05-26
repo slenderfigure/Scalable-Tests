@@ -29,8 +29,9 @@ export class AnswersStructureComponent implements OnChanges {
 
   setAnswerClass(answer: string): {} {
     if (this.enableReadonly) {
-      const correct = this.question.correctAnswer;
-      const selected = this.question.selectedAnswer;
+      answer = answer.toLowerCase();
+      const correct = this.question.correctAnswer.map(val => val.toLowerCase());
+      const selected = this.question.selectedAnswer.map(val => val.toLowerCase());
       
       return {
         'correct-selected': correct.indexOf(answer) > -1 && 
