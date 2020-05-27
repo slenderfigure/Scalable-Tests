@@ -26,6 +26,7 @@
           [title]="question.title">
           <span>{{ question.id }}. {{ question.title }}</span>
           <img 
+            image-loader
             src="assets/img/thumbnail.jpg"
             [class]="!question?.isCorrect ? 'wrong' : 'correct'">
         </button>
