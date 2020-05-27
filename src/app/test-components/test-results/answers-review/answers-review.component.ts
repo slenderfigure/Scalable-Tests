@@ -20,6 +20,8 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0 });
+    
     this.route.paramMap.subscribe(params => {
       const questionId = +params.get('questionId');
       
@@ -31,7 +33,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    fromEvent(window, 'scroll').subscribe(e => {
+    fromEvent(window, 'scroll').subscribe(() => {
       const button = this.goUpButton.nativeElement;
 
       if (window.scrollY > 800) {

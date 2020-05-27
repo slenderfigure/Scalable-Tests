@@ -24,6 +24,10 @@ export class TestResultsGuard implements CanActivate {
         this.router.navigate(['test']);
         observer.next(false);
       } 
+      else if (next.paramMap.get('questionId')) {
+        console.log(next.paramMap.get('questionId'));
+        observer.next(false);
+      }
       else {
         observer.next(true);
       }
