@@ -17,7 +17,7 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
     this.testList$ = this.ts.getAllTests();
 
-    this.ts.downloadFile().subscribe();
+    
   }
 
 }

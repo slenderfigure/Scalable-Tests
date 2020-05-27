@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Injectable, ErrorHandler } from '@angular/core';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { Observable, Subject, throwError } from 'rxjs';
+import { map, tap, catchError } from 'rxjs/operators';
 
 import { Test } from '../test.model';
 import { Question } from '../question.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,36 +19,36 @@ export class TestService {
   constructor(private http: HttpClient) { }
 
   getAllTests(): Observable<Test[]> {
-    return this.http.get<Test[]>(this.testUrl);
-  }
-
-  downloadFile() {
-    return this.http.get('../../../api/sentence.txt', {
-      observe: 'response',
-      responseType: 'text',
-      reportProgress: true
-    }).pipe(
-      tap(
-        data => console.log(data),
-        error => console.error(error) 
-      )
-    );
+    return this.http.get<Test[]>(this.testUrl).pipe(
+      catchError(this.errorHandler)
+    )
   }
 
   getTest(id: string): Observable<Test> {
     return this.getAllTests().pipe(
-      map(tests => {
-        return tests.find(test => test.id == id);
-      })
+      map(tests => tests.find(test => test.id == id)),
+      catchError(this.errorHandler)
     );
   }
 
   getNextQuestion(tesId: string, questionId: string | number): Observable<Question> {
     return this.getTest(tesId).pipe(
-      map(test => {
-        return test.questions.find(question => question.id == questionId);
-      })
+      map(test => test.questions.find(question => question.id == questionId)),
+      catchError(this.errorHandler)
     );
+  }
+
+  private errorHandler(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.error('Cliend-side or network problems', error.error.message);
+    } else {
+      console.error('Backend error', { 
+        body: error.error, 
+        status: error.status,
+        statusText: error.statusText
+      });
+    }
+    return throwError('Unable to fetch data', error.error);
   }
 
   updateDurationTracker(duration: number): void {
