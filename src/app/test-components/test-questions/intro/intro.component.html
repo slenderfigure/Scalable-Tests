@@ -7,7 +7,12 @@
       
       <article class="content">
         <p [innerHTML]="question.intro.body"></p>
-        <img [src]="question.intro.image" alt="">
+        <img
+          image-loader 
+          *ngIf="question.intro.image" 
+          [src]="question.intro.image" 
+          alt="question.intro.header"
+          draggable="false">
       </article>
 
       <div class="bottom-content">
