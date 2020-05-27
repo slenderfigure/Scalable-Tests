@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestService } from './service/test.service';
 import { Test } from './test.model';
 import { Observable } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-test',
@@ -15,6 +16,8 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
     this.testList$ = this.ts.getAllTests();
+
+    this.ts.downloadFile().subscribe();
   }
 
 }

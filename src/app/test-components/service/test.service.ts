@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { Test } from '../test.model';
 import { Question } from '../question.model';
@@ -21,11 +21,17 @@ export class TestService {
     return this.http.get<Test[]>(this.testUrl);
   }
 
-  getAllTests2(): Observable<HttpResponse<Test[]>> {
-    return this.http.get<Test[]>(this.testUrl, {
+  downloadFile() {
+    return this.http.get('../../../api/sentence.txt', {
       observe: 'response',
-      responseType: 'json'
-    });
+      responseType: 'text',
+      reportProgress: true
+    }).pipe(
+      tap(
+        data => console.log(data),
+        error => console.error(error) 
+      )
+    );
   }
 
   getTest(id: string): Observable<Test> {
