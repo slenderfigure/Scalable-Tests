@@ -29,7 +29,9 @@
       </div>
   
       <div class="content">
-        <img *ngIf="question.image" [src]="question.image">
+        <div *ngIf="question.image" class="image-wrapper">
+          <img image-loader [src]="question.image">
+        </div>
 
         <question-answers
           [question]="question"
