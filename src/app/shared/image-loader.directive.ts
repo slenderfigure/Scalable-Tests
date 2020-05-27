@@ -17,7 +17,7 @@ export class ImageLoaderDirective {
 
   @HostListener('load') onImageLoad() {
     const image = this.image.nativeElement;
-    const interval =- setInterval(() => {
+    const interval = setInterval(() => {
       if (image.naturalWidth > 0 && image.naturalHeight > 0) {
         this.afterLoadedStyling();
         clearInterval(interval);
