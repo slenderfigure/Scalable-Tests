@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -19,6 +19,13 @@ export class TestService {
 
   getAllTests(): Observable<Test[]> {
     return this.http.get<Test[]>(this.testUrl);
+  }
+
+  getAllTests2(): Observable<HttpResponse<Test[]>> {
+    return this.http.get<Test[]>(this.testUrl, {
+      observe: 'response',
+      responseType: 'json'
+    });
   }
 
   getTest(id: string): Observable<Test> {
