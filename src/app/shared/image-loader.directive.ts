@@ -19,13 +19,13 @@ export class ImageLoaderDirective {
     const image = this.image.nativeElement;
     const interval = setInterval(() => {
       if (image.naturalWidth > 0 && image.naturalHeight > 0) {
-        this.afterLoadedStyling();
+        this.afterRenderStyle();
         clearInterval(interval);
       }
     }, 10);
   }
 
-  private afterLoadedStyling() {
+  private afterRenderStyle() {
     this.image.nativeElement.style.visibility = 'visible';
     this.image.nativeElement.style.opacity = '1';
   }
