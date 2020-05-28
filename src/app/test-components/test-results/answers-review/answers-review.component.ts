@@ -48,8 +48,4 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
     window.scrollTo({ top: 0 });
   }
 
-  goBack(): void {
-    this.router.navigate(['test/results', { questionId: 2 }])
-  }
-
 }

@@ -1,10 +1,6 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
-  <button 
-    routerLink="./" fragment="question-7"
-    style="background-color: #fff; padding: 0.5rem 1rem;">Go back</button>
-
   <section 
     *ngFor="let question of questions; index as index"
     class="question-section" id="question-{{ question.id }}">
