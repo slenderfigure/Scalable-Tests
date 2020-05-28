@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ViewChild, ElementRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 
 import { Question } from '../../question.model';
@@ -17,7 +17,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   questions: Question[];
   loading: boolean = true;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     window.scrollTo({ top: 0 });
@@ -47,4 +47,9 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   goToTop(): void {
     window.scrollTo({ top: 0 });
   }
+
+  goBack(): void {
+    this.router.navigate(['test/results', { questionId: 2 }])
+  }
+
 }

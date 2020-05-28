@@ -71,5 +71,5 @@ export class TestResultsComponent implements OnInit {
 
     return (time >= 3600) ? `${formatted} hr(s)` : (time < 3600 && time >= 60) ? `${formatted} min(s)` : `${formatted} sec(s)`;
   }
+  
 }
-
