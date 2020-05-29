@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { TestService } from './service/test.service';
 import { Test } from './test.model';
-import { Observable, fromEvent } from 'rxjs';
-import { HttpResponse } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-test',
@@ -17,8 +16,6 @@ export class TestComponent implements OnInit {
 
   ngOnInit(): void {
     this.testList$ = this.ts.getAllTests();
-
-    
   }
 
 }

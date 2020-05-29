@@ -46,7 +46,7 @@ export class TestQuestionGuard implements CanActivate {
             break;
           
           case (session && session.sessionCompleted):
-            this.router.navigate(['/test/results']);
+            this.router.navigate(['test/results']);
             observer.next(false);
             break;
 
