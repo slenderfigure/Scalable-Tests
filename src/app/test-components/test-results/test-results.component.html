@@ -17,10 +17,10 @@
     </div>
 
     <div class="answers-review">
-      <a [routerLink]="['review']" class="badge">Review all your answers</a>
+      <a [routerLink]="['./review']" class="badge">Review all your answers</a>
       <div class="thumbnail-wrapper">
         <button 
-          [routerLink]="['review', question.id ]"
+          [routerLink]="['./review', question.id ]"
           *ngFor="let question of questions; index as index"
           class="thumbnail"            
           [title]="question.title">

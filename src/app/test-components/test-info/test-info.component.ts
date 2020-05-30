@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
+import { map, switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -23,18 +24,19 @@ export class TestInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.ts.getTest(params.get('testId')).subscribe(test => {
-        this.test = test;
-        this.testId = params.get('testId');
-        this.timeLimit = Math.round(this.test.timeLimit / 60);
-        this.loading = false;
-      });
+    // Can use ActivatedRoute.snapshot since 
+    // the testId is not expected to change
+    this.testId = this.route.snapshot.paramMap.get('testId');
+
+    this.ts.getTest(this.testId).subscribe(test => {
+      this.test = test;
+      this.timeLimit = Math.round(this.test.timeLimit / 60);
+      this.loading = false;
     });
   }
 
   onClick(): void {
-    this.router.navigate(['test/session', this.testId, 1]);
+    this.router.navigate(['./test/session', this.testId, 1]);
   }
 
 }
