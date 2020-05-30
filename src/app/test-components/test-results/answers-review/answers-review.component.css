@@ -16,12 +16,16 @@
   right: 0;
   width: 320px;
   height: 100%;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
   border-left: 1px solid #333;
   background-color: #222021;
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 200;
+}
+
+.container::after {
+  
 }
 
 .container li:not(:last-of-type) {
@@ -32,15 +36,14 @@
   display: block;
   padding: 0.5rem;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.9rem;
   border-radius: 3px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container li a.active {
-  color: #eb4690;
-  font-weight: 600;
+  color: #85a4ff;
 }
 
 .container li a:hover {

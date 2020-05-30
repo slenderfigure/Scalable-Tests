@@ -4,6 +4,7 @@
   <ul class="container">
     <li *ngFor="let question of questions; index as index">
       <a 
+        (click)="spyedSection = index"
         #questionLink
         routerLink="./" fragment="question-{{ question.id }}"
         [class.active]="index == spyedSection">
