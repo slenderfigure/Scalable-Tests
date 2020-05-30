@@ -1,6 +1,8 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
+  <scrollspy [questions]="questions"></scrollspy> 
+
   <section 
     *ngFor="let question of questions; index as index"
     class="question-section" 
@@ -44,5 +46,3 @@
   class="go-up-btn">
   <i class="material-icons">keyboard_arrow_up</i>
 </button>
-
-<scrollspy></scrollspy> 

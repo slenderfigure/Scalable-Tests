@@ -1,10 +1,33 @@
-ul {
+.container {
   position: fixed;
   top: 0;
   right: 0;
-  padding: 3rem;
+  width: 320px;
+  height: 100%;
+  padding: 3rem 1.5rem;
+  border-left: 1px solid #333;
+  background-color: #222021;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 200;
 }
 
-ul li a {
+.container li:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.container li a {
+  display: block;
+  padding: 0.5rem;
   color: #fff;
+  font-weight: 300;
+  line-height: 1.9rem;
+}
+
+.container li a.active {
+  color: royalblue;
+}
+
+.container li a:not(.active):hover {
+  background-color: #383637;
 }

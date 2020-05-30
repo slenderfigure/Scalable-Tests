@@ -1,7 +1,7 @@
-<ul>
-  <li>
-    <a routerLink="./" fragment="random1" style="color: #fff">
-      Go to 9
+<ul class="container">
+  <li *ngFor="let question of questions">
+    <a routerLink="./" fragment="question-{{ question.id }}">
+      {{ question.id }}. {{ question.title }}
     </a>
   </li>
 </ul>
