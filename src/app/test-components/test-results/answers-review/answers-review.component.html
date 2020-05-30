@@ -1,7 +1,13 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
-  <scrollspy [questions]="questions"></scrollspy> 
+  <ul #container class="container">
+    <li *ngFor="let question of questions; first as isFirst">
+      <a routerLink="./" fragment="question-{{ question.id }}">
+        {{ question.id }}. {{ question.title }}
+      </a>
+    </li>
+  </ul>
 
   <section 
     *ngFor="let question of questions; index as index"

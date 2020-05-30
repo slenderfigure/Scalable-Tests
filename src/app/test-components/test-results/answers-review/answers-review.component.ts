@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ViewChild, ElementRef } from '@angular/core';
+import { ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { fromEvent } from 'rxjs';
 

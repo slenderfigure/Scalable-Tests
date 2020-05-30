@@ -10,6 +10,41 @@
   border-bottom: 2px solid #e00366;
 }
 
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  padding: 3rem 1.5rem;
+  border-left: 1px solid #333;
+  background-color: #222021;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 200;
+}
+
+.container li:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.container li a {
+  display: block;
+  padding: 0.5rem;
+  color: #fff;
+  font-weight: 300;
+  line-height: 1.9rem;
+}
+
+.container li a.active {
+  color: #e9237c;
+  font-weight: 600;
+}
+
+.container li a:not(.active):hover {
+  background-color: #383637;
+}
+
 .question-section {
   position: relative;
   width: 100%;
