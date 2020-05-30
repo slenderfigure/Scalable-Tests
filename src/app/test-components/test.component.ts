@@ -95,14 +95,34 @@ export class TestComponent implements OnInit {
           type: 1,
           section: 'Section 1',
           problem: 'Choose the correct answer',
-          title: 'What is the unit of measurement for light in photography:',
+          title: 'What is the unit of measurement for light in photography?',
           points: 2.3,
           answers: [
-            
+            'Apertures',
+            'Shutter speeds',
+            'Candelabras',
+            'Pixels'
           ],
           correctAnswer: ['Stops'],
-          timeLimit: '00:00:25',
-          image: 'assets/img/test-img16.jpg'
+          timeLimit: '00:00:20',
+          image: 'assets/img/test-img18.jpg'
+        },
+        { 
+          id: 6,
+          type: 1,
+          section: 'Section 2',
+          problem: 'Choose the correct answer',
+          title: 'What is Aperture measured in?',
+          points: 2.3,
+          answers: [
+            'Spots',
+            'Stops',
+            'Fractions',
+            
+          ],
+          correctAnswer: ['F Numbers'],
+          timeLimit: '00:00:20',
+          image: 'assets/img/test-img19.jpg'
         }
       ],
       timeLimit: 260,
