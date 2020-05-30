@@ -13,8 +13,11 @@ import { Test } from '../../test.model';
   styleUrls: ['./answers-review.component.css']
 })
 export class AnswersReviewComponent implements OnInit, AfterViewInit {
+  @ViewChildren('questionSection') questionSections: QueryList<ElementRef>;
+  @ViewChildren('questionLink') questionLinks: QueryList<ElementRef>;
   @ViewChild('goUpButton') goUpButton: ElementRef<HTMLButtonElement>;
   questions: Question[];
+  spyedPosition: number = 0;
   loading: boolean = true;
 
   constructor(private route: ActivatedRoute) { }
@@ -40,6 +43,22 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
         button.classList.add('show');
       } else {
         button.classList.remove('show');
+      }
+
+      this.spyScroll();
+    });
+  }
+
+  private spyScroll(): void {
+    const sections = <HTMLElement[]>this.questionSections.toArray().map(ele => ele.nativeElement);
+    const links = <HTMLElement[]>this.questionLinks.toArray().map(ele => ele.nativeElement);
+
+    sections.forEach((section, index) => {
+      const top  = section.getBoundingClientRect().top;
+
+      if (top <= 100 && top > 0) {
+        this.spyedPosition = index;
+        console.log(index);
       }
     });
   }

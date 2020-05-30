@@ -34,14 +34,16 @@
   color: #fff;
   font-weight: 300;
   line-height: 1.9rem;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
 .container li a.active {
-  color: #e9237c;
+  color: #eb4690;
   font-weight: 600;
 }
 
-.container li a:not(.active):hover {
+.container li a:hover {
   background-color: #383637;
 }
 

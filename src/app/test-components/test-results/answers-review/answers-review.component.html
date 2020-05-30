@@ -1,15 +1,19 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
-  <ul #container class="container">
+  <ul class="container">
     <li *ngFor="let question of questions; first as isFirst">
-      <a routerLink="./" fragment="question-{{ question.id }}">
+      <a 
+        #questionLink
+        routerLink="./" fragment="question-{{ question.id }}"
+        [class.active]="isFirst">
         {{ question.id }}. {{ question.title }}
       </a>
     </li>
   </ul>
 
   <section 
+    #questionSection
     *ngFor="let question of questions; index as index"
     class="question-section" 
     id="question-{{ question.id }}">
