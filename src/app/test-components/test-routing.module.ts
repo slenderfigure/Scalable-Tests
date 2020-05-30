@@ -9,6 +9,7 @@ import { TestResultsComponent } from './test-results/test-results.component';
 import { TestQuestionGuard } from './test-questions/test-question.guard';
 import { TestResultsGuard } from './test-results/test-results.guard';
 import { AnswersReviewComponent } from './test-results/answers-review/answers-review.component';
+import { CanDeactivateGuard } from './test-questions/can-deactivate.guard';
 
 
 const routes: Route[] = [
@@ -17,7 +18,8 @@ const routes: Route[] = [
   { 
     path: 'session/:testId/:questionId', 
     component: TestQuestionsComponent,
-    canActivate: [TestQuestionGuard]
+    canActivate: [TestQuestionGuard],
+    // canDeactivate: [CanDeactivateGuard]
   },
   { 
     path: 'results', 

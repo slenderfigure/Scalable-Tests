@@ -17,17 +17,15 @@ export class CanDeactivateGuard implements CanDeactivate<TestQuestionsComponent>
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean> | boolean {
-    
-    if (confirm('Leaving the page will affect your final test score. Are you sure?')) {
-      const session: Test = JSON.parse(localStorage.getItem('Test Session'));
 
-      session.questions.map(question => question.completed = true);
-      session.sessionCompleted = true;
-      session.modifiedDate = new Date();
-      return true;
-    } else {
-      return false;
-    }
+    return new Observable<boolean>(observer => {
+      if (!nextState.url.match('session')) {
+        observer.next(window.confirm('Are you sure?'));  
+      } else {
+        observer.next(true);
+      }      
+      return { unsubscribe() {} }
+    });
   }
   
 }
