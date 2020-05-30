@@ -117,12 +117,29 @@ export class TestComponent implements OnInit {
           answers: [
             'Spots',
             'Stops',
-            'Fractions',
-            
+            'Fractions', 
+            'M Numbers'           
           ],
           correctAnswer: ['F Numbers'],
           timeLimit: '00:00:20',
           image: 'assets/img/test-img19.jpg'
+        },
+        { 
+          id: 7,
+          type: 1,
+          section: 'Section 2',
+          problem: 'Choose the correct answer',
+          title: 'What is shutter speed measured in?',
+          points: 2.3,
+          answers: [
+            'FPS',
+            'Spots',
+            'Exposures', 
+            'Intervals'           
+          ],
+          correctAnswer: ['Seconds'],
+          timeLimit: '00:00:20',
+          image: 'assets/img/test-img20.jpg'
         }
       ],
       timeLimit: 260,
