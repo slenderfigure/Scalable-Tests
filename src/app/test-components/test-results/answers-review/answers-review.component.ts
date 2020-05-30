@@ -17,6 +17,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   @ViewChildren('questionLink') questionLinks: QueryList<ElementRef>;
   @ViewChild('goUpButton') goUpButton: ElementRef<HTMLButtonElement>;
   questions: Question[];
+  showSidebar: boolean;
   spyedSection: number = 0;
   loading: boolean = true;
 
@@ -30,6 +31,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
       
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
       this.questions = !questionId ? test.questions : test.questions.filter(question => question.id === questionId);
+      this.showSidebar = questionId ? false : true;
       
       this.loading = false;
     });
@@ -44,7 +46,6 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
       } else {
         button.classList.remove('show');
       }
-
       this.initScrollspy();
     });
   }

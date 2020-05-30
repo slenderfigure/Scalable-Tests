@@ -1,7 +1,7 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
-  <div class="container">
+  <nav *ngIf="showSidebar" class="side-navbar">
     <ul class="section-links">
       <li *ngFor="let question of questions; index as index">
         <a 
@@ -13,7 +13,7 @@
         </a>
       </li>
     </ul>
-  </div>
+  </nav>
 
   <section 
     #questionSection
