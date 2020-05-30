@@ -140,9 +140,26 @@ export class TestComponent implements OnInit {
           correctAnswer: ['Seconds'],
           timeLimit: '00:00:20',
           image: 'assets/img/test-img20.jpg'
+        },
+        { 
+          id: 8,
+          type: 1,
+          section: 'Section 2',
+          problem: 'Choose the correct answer',
+          title: 'Which of the following can be fixed by editing programs, after the photo has been shot?',
+          points: 2.3,
+          answers: [
+            'Colour',
+            'Aperture problems',
+            'Blurs', 
+            'Ghosting'           
+          ],
+          correctAnswer: ['Over and under exposure'],
+          timeLimit: '00:00:20',
+          image: 'assets/img/test-img21.jpg'
         }
       ],
-      timeLimit: 260,
+      timeLimit: 150,
       difficulty: 'Low'
     });
   }
