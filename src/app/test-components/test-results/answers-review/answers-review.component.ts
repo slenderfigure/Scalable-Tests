@@ -71,13 +71,13 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
     sections.forEach((section, index) => {
       const top  = section.getBoundingClientRect().top;
 
-      if (top <= 200 && top > 0 && index !== this.spyedSection) {
+      if (top <= 400 && top > 0 && index !== this.spyedSection) {
         this.scrollSectionLinkIntoView(index);
       }
     });
   }
 
-  private scrollSectionLinkIntoView(index: number): void {
+  scrollSectionLinkIntoView(index: number): void {
     const links = <HTMLElement[]>this.questionLinks.toArray()
       .map(ele => ele.nativeElement);
 
