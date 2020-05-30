@@ -50,15 +50,17 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   private spyScroll(): void {
-    const sections = <HTMLElement[]>this.questionSections.toArray().map(ele => ele.nativeElement);
-    const links = <HTMLElement[]>this.questionLinks.toArray().map(ele => ele.nativeElement);
+    const sections = <HTMLElement[]>this.questionSections.toArray()
+      .map(ele => ele.nativeElement);
+    const links = <HTMLElement[]>this.questionLinks.toArray()
+      .map(ele => ele.nativeElement);
 
     sections.forEach((section, index) => {
       const top  = section.getBoundingClientRect().top;
 
       if (top <= 100 && top > 0 && index !== this.spyedSection) {
-        this.spyedSection = index;
-        links[this.spyedSection].scrollIntoView({ block: 'center' });
+        links[index].scrollIntoView({ block: 'center' });
+        this.spyedSection = index;        
       }
     });
   }
