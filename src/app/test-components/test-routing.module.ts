@@ -38,7 +38,6 @@ const routes: Route[] = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-  providers: [CanDeactivateGuard],
+  exports: [RouterModule]
 })
 export class TestRoutingModule { }
