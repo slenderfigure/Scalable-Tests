@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { TestService } from '../service/test.service';
 import { Test } from '../test.model';
-import { map, switchMap } from 'rxjs/operators';
 
 
 @Component({
