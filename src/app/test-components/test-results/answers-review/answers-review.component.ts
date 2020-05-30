@@ -31,8 +31,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
       
       const test: Test = JSON.parse(localStorage.getItem('Test Session'));
       this.questions = !questionId ? test.questions : test.questions.filter(question => question.id === questionId);
-      this.showSidebar = questionId ? false : true;
-      
+      this.showSidebar = questionId ? false : true;      
       this.loading = false;
     });
   }
@@ -53,6 +52,10 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   private setScrollspyDefauults(): void {
+    if (this.route.snapshot.paramMap.get('questionId')) {
+      return;
+    }
+
     const sections = <HTMLElement[]>this.questionSections.toArray()
       .map(ele => ele.nativeElement);
 
