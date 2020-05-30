@@ -45,11 +45,11 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
         button.classList.remove('show');
       }
 
-      this.spyScroll();
+      this.initScrollspy();
     });
   }
 
-  private spyScroll(): void {
+  private initScrollspy(): void {
     const sections = <HTMLElement[]>this.questionSections.toArray()
       .map(ele => ele.nativeElement);
     const links = <HTMLElement[]>this.questionLinks.toArray()

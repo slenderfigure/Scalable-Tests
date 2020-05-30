@@ -1,17 +1,19 @@
 <div *ngIf="!loading && questions" class="wrapper" id="top">  
   <h1 class="title">Answers Review</h1>
 
-  <ul class="container">
-    <li *ngFor="let question of questions; index as index">
-      <a 
-        (click)="spyedSection = index"
-        #questionLink
-        routerLink="./" fragment="question-{{ question.id }}"
-        [class.active]="index == spyedSection">
-        {{ question.id }}. {{ question.title }}
-      </a>
-    </li>
-  </ul>
+  <div class="container">
+    <ul class="section-links">
+      <li *ngFor="let question of questions; index as index">
+        <a 
+          (click)="spyedSection = index"
+          #questionLink
+          routerLink="./" fragment="question-{{ question.id }}"
+          [class.active]="index == spyedSection">
+          {{ question.id }}. {{ question.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
 
   <section 
     #questionSection
