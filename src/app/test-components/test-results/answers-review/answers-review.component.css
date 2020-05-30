@@ -158,18 +158,20 @@
 }
 
 .image-wrapper {
-  width: 550px;
-  height: 270px;
+  max-width: 550px;
+  max-height: 270px;
   margin: 0 auto 2rem;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .image-wrapper img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
+  border-radius: 4px;
 }
 
 .bottom-content {
