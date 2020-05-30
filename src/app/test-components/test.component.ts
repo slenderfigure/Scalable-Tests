@@ -35,7 +35,6 @@ export class TestComponent implements OnInit {
             'Sharpness'
           ],
           correctAnswer: ['Exposure'],
-          feedback: '',
           timeLimit: '00:00:20',
           image: 'assets/img/test-img14.jpg'
         },
@@ -53,9 +52,57 @@ export class TestComponent implements OnInit {
             'Between 1600 and 3200'
           ],
           correctAnswer: ['Between 400 and 1600, depending on the camera'],
-          feedback: '',
           timeLimit: '00:00:25',
           image: 'assets/img/test-img15.jpg'
+        },
+        { 
+          id: 3,
+          type: 1,
+          section: 'Section 1',
+          problem: 'Choose the correct answer',
+          title: 'The amount of light passing through a lens is defined by the:',
+          points: 2.3,
+          answers: [
+            'Shutter speed',
+            'Film speed',
+            'Exposure',
+            'How big the lens is'
+          ],
+          correctAnswer: ['Aperture'],
+          timeLimit: '00:00:20',
+          image: 'assets/img/test-img16.jpg'
+        },
+        { 
+          id: 4,
+          type: 1,
+          section: 'Section 1',
+          problem: 'Choose the correct answer',
+          title: 'Perfect exposure is a result of the right mixture of:',
+          points: 2.3,
+          answers: [
+            'Shutter speed + aperture + resolution',
+            'Film speed + aperture + exposure',
+            'Exposure + aperture + shutter speed',
+            'Aperture + shutter speed + film speed',
+            'Film speed + resolution + exposure',
+          ],
+          correctAnswer: ['Aperture + shutter speed + film speed'],
+          timeLimit: '00:00:25',
+          image: 'assets/img/test-img17.jpg'
+        },
+        { 
+          id: 5,
+          type: 1,
+          section: 'Section 1',
+          problem: 'Choose the correct answer',
+          title: 'What is the unit of measurement for light in photography:',
+          points: 2.3,
+          answers: [
+            
+          ],
+          correctAnswer: ['Stops'],
+          timeLimit: '00:00:25',
+          image: 'assets/img/test-img16.jpg'
         }
       ],
       timeLimit: 260,
