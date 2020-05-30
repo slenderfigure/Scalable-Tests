@@ -38,6 +38,8 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    setTimeout(() => this.setScrollspyDefauults());
+
     fromEvent(window, 'scroll').subscribe(() => {
       const button = this.goUpButton.nativeElement;
 
@@ -50,20 +52,37 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
     });
   }
 
+  private setScrollspyDefauults(): void {
+    const sections = <HTMLElement[]>this.questionSections.toArray()
+      .map(ele => ele.nativeElement);
+
+    const index = sections.findIndex(section => {
+      const top = section.getBoundingClientRect().top;
+      return top <= window.innerHeight && top > -window.innerHeight;
+    });
+
+    this.scrollSectionLinkIntoView(index > -1 ? index : 0);
+  }
+
   private initScrollspy(): void {
     const sections = <HTMLElement[]>this.questionSections.toArray()
       .map(ele => ele.nativeElement);
-    const links = <HTMLElement[]>this.questionLinks.toArray()
-      .map(ele => ele.nativeElement);
-
+    
     sections.forEach((section, index) => {
       const top  = section.getBoundingClientRect().top;
 
-      if (top <= 100 && top > 0 && index !== this.spyedSection) {
-        links[index].scrollIntoView({ block: 'center' });
-        this.spyedSection = index;        
+      if (top <= 200 && top > 0 && index !== this.spyedSection) {
+        this.scrollSectionLinkIntoView(index);
       }
     });
+  }
+
+  private scrollSectionLinkIntoView(index: number): void {
+    const links = <HTMLElement[]>this.questionLinks.toArray()
+      .map(ele => ele.nativeElement);
+
+    links[index].scrollIntoView({ block: 'center' });
+    this.spyedSection = index;  
   }
 
   goToTop(): void {
