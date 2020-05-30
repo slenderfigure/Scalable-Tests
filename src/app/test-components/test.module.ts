@@ -13,6 +13,7 @@ import { AnswersReviewComponent } from './test-results/answers-review/answers-re
 import { ProgressBarComponent } from './test-questions/progress-bar/progress-bar.component';
 import { IntroComponent } from './test-questions/intro/intro.component';
 import { AnswersStructureComponent } from './test-questions/answers-structure/answers-structure.component';
+import { ScrollspyComponent } from './test-results/answers-review/scrollspy/scrollspy.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AnswersStructureComponent } from './test-questions/answers-structure/an
     AnswersReviewComponent,
     ProgressBarComponent,
     IntroComponent,
-    AnswersStructureComponent
+    AnswersStructureComponent,
+    ScrollspyComponent
   ],
   imports: [
     TestRoutingModule,

@@ -3,7 +3,8 @@
 
   <section 
     *ngFor="let question of questions; index as index"
-    class="question-section" id="question-{{ question.id }}">
+    class="question-section" 
+    id="question-{{ question.id }}">
     <div class="top-content">
       <h2>{{ question.section }}. {{ question.problem }}</h2>
       <h3>{{ question.id }}. {{ question.title }}</h3>
@@ -43,3 +44,5 @@
   class="go-up-btn">
   <i class="material-icons">keyboard_arrow_up</i>
 </button>
+
+<scrollspy></scrollspy> 

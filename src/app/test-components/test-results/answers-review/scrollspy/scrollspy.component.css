@@ -1,0 +1,10 @@
+ul {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 3rem;
+}
+
+ul li a {
+  color: #fff;
+}
