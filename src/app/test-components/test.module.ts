@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 import { TestRoutingModule } from './test-routing.module';
-import { TestService } from './service/test.service';
 import { SharedModule } from '../shared/shared.module';
 
 import { TestQuestionsComponent } from './test-questions/test-questions.component';
@@ -31,6 +30,6 @@ import { AnswersStructureComponent } from './test-questions/answers-structure/an
     TestRoutingModule,
     SharedModule
   ],
-  providers: [TestService]
+  providers: []
 })
 export class TestModule { }
