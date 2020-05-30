@@ -10,6 +10,7 @@ const routes: Routes = [
     path: '', 
     component: UserCenterComponent,
     children: [
+      { path: '', redirectTo: 'login' },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent }
     ]
