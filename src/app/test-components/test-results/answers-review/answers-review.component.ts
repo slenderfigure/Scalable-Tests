@@ -72,7 +72,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
       .map(ele => ele.nativeElement);
     
     sections.forEach((section, index) => {
-      const top  = section.getBoundingClientRect().top;
+      const top = section.getBoundingClientRect().top;
 
       if (top <= 400 && top > 0 && index !== this.spyedSection) {
         this.scrollSectionLinkIntoView(index);
