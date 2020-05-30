@@ -262,8 +262,8 @@
   color: #fff;
 }
 
-/* @media (max-width: 1900px) {
+@media (max-width: 1900px) {
   .side-navbar {
     display: none;
   }
-} */
+}
