@@ -83,6 +83,7 @@
   max-width: 550px;
   max-height: 270px;
   margin: 0 auto 2rem;
+  border-radius: 4px;
   overflow: hidden;
 }
 
@@ -91,7 +92,6 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  border-radius: 4px;
 }
 
 .bottom-content {
