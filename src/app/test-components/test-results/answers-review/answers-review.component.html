@@ -2,11 +2,11 @@
   <h1 class="title">Answers Review</h1>
 
   <ul class="container">
-    <li *ngFor="let question of questions; first as isFirst">
+    <li *ngFor="let question of questions; index as index">
       <a 
         #questionLink
         routerLink="./" fragment="question-{{ question.id }}"
-        [class.active]="isFirst">
+        [class.active]="index == spyedSection">
         {{ question.id }}. {{ question.title }}
       </a>
     </li>

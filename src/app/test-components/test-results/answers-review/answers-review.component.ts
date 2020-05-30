@@ -17,7 +17,7 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
   @ViewChildren('questionLink') questionLinks: QueryList<ElementRef>;
   @ViewChild('goUpButton') goUpButton: ElementRef<HTMLButtonElement>;
   questions: Question[];
-  spyedPosition: number = 0;
+  spyedSection: number = 0;
   loading: boolean = true;
 
   constructor(private route: ActivatedRoute) { }
@@ -56,9 +56,9 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
     sections.forEach((section, index) => {
       const top  = section.getBoundingClientRect().top;
 
-      if (top <= 100 && top > 0) {
-        this.spyedPosition = index;
-        console.log(index);
+      if (top <= 100 && top > 0 && index !== this.spyedSection) {
+        this.spyedSection = index;
+        links[this.spyedSection].scrollIntoView({ block: 'center' });
       }
     });
   }
