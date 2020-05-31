@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Location } from '@angular/common';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { TestService } from '../../service/test.service';
 
 import { Test } from '../../test.model';
 import { Question } from '../../question.model';
 import { Observable, of, EMPTY } from 'rxjs';
-import { take, mergeMap } from 'rxjs/operators';
+import { take, mergeMap, delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ import { take, mergeMap } from 'rxjs/operators';
 export class ReviewResolverService implements Resolve<Question>{
 
   constructor(
-    private router: Router,
+    private location: Location,
     private ts: TestService
   ) { }
 
@@ -25,12 +26,11 @@ export class ReviewResolverService implements Resolve<Question>{
     const questionId = +route.paramMap.get('questionId');
 
     return this.ts.getNextQuestion(test.id, questionId).pipe(
-      take(1),
       mergeMap(question => {
         if (question) {
           return of(test.questions.find(cur => cur.id == question.id));
         } else {
-          this.router.navigate(['test/results']);
+          this.location.back();
           return EMPTY;
         }
       })

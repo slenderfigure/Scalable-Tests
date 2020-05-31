@@ -28,11 +28,19 @@ export class AnswersReviewComponent implements OnInit, AfterViewInit {
     
     this.route.paramMap.subscribe(params => {
       const questionId = +params.get('questionId');
-      
-      const test: Test = JSON.parse(localStorage.getItem('Test Session'));
-      this.questions = !questionId ? test.questions : test.questions.filter(question => question.id === questionId);
-      this.showSidebar = questionId ? false : true;      
-      this.loading = false;
+
+      if (questionId) {
+        this.route.data.subscribe((data: { question: Question }) => {
+          this.questions = [data.question];
+          this.loading = false;
+        });
+      } else {
+        const test: Test = JSON.parse(localStorage.getItem('Test Session'));
+        // this.questions = !questionId ? test.questions : test.questions.filter(question => question.id === questionId);
+        this.questions = test.questions;
+        this.showSidebar = questionId ? false : true;      
+        this.loading = false;
+      }
     });
   }
 
