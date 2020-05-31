@@ -20,42 +20,42 @@ export class TestComponent implements OnInit {
 
     const questions: Question[] = [
       { 
-        id: 9,
+        id: 11,
         type: 1,
         section: 'Section 2',
         problem: 'Choose the correct answer',
-        title: 'When taking a photo at a gig, which camera mode should you be on?',
+        title: 'The balancing of light within a photograph is known as the:',
         points: 2.3,
         answers: [
-          'Program',
-          'Shutter Priority',
-          'Aperture Priority',
+          'White balance',
+          'The aperture',
+          'The shutter speed',
           'None of the above'         
         ],
-        correctAnswer: ['Manual'],
+        correctAnswer: ['The exposure'],
         timeLimit: '00:00:20',
-        image: 'assets/img/test-img22.jpg'
+        image: 'assets/img/test-img24.jpg'
       },
       { 
-        id: 10,
+        id: 12,
         type: 1,
         section: 'Section 2',
         problem: 'Choose the correct answer',
-        title: 'A low aperture would create',
+        title: 'Which is a larger aperture?',
         points: 2.3,
         answers: [
-          'Aperture doesn\'t change the depth of field',
-          'A smaller depth of field',
-          'Low brightness',
-          'Low contrast'         
+          'f/2.8',
+          '1600',
+          '1/300',
+          'f/64'
         ],
-        correctAnswer: ['A larger depth of field'],
+        correctAnswer: ['f/1.4'],
         timeLimit: '00:00:20',
-        image: 'assets/img/test-img23.jpg'
+        image: 'assets/img/test-img25.jpg'
       }
     ];
 
-    console.log(JSON.stringify(questions));
+    // console.log(JSON.stringify(questions));
   }
 
 }

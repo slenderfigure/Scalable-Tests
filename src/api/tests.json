@@ -409,7 +409,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "The amount of light or darkness on a photograph is known as the:",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Shutter Speed", 
           "Zoom", 
@@ -426,7 +426,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "In a gig setting (ie low light), the ISO should be set to:",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "The lowest setting there is on that particular camera", 
           "The highest setting there is on that particular camera", 
@@ -443,7 +443,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "The amount of light passing through a lens is defined by the:",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Shutter speed", 
           "Film speed", 
@@ -460,7 +460,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "Perfect exposure is a result of the right mixture of:",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Shutter speed + aperture + resolution", 
           "Film speed + aperture + exposure", 
@@ -477,7 +477,7 @@
         "section": "Section 1",
         "problem": "Choose the correct answer",
         "title": "What is the unit of measurement for light in photography?",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Apertures", 
           "Shutter speeds", 
@@ -494,7 +494,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "What is Aperture measured in?",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Spots", 
           "Stops", 
@@ -511,7 +511,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "What is shutter speed measured in?",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "FPS", 
           "Spots", 
@@ -528,7 +528,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "Which of the following can be fixed by editing programs, after the photo has been shot?",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Colour", 
           "Aperture problems", 
@@ -545,7 +545,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "When taking a photo at a gig, which camera mode should you be on?",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Program", 
           "Shutter Priority",
@@ -562,7 +562,7 @@
         "section": "Section 2",
         "problem": "Choose the correct answer",
         "title": "A low aperture would create",
-        "points": 2.3,
+        "points": 2.5,
         "answers": [
           "Aperture doesn't change the depth of field", 
           "A smaller depth of field", 
@@ -572,9 +572,43 @@
         "correctAnswer": ["A larger depth of field"],
         "timeLimit": "00:00:20",
         "image": "assets/img/test-img23.jpg"
+      },
+      {
+        "id": 11,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "The balancing of light within a photograph is known as the:",
+        "points": 2.5,
+        "answers": [
+          "White balance", 
+          "The aperture", 
+          "The shutter speed", 
+          "None of the above"
+        ],
+        "correctAnswer": ["The exposure"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img24.jpg"
+      }, 
+      {
+        "id": 12,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which is a larger aperture?",
+        "points": 2.5,
+        "answers": [
+          "f/2.8", 
+          "1600", 
+          "1/300", 
+          "f/64"
+        ],
+        "correctAnswer": ["f/1.4"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img25.jpg"
       }
     ], 
-    "timeLimit": 190, 
+    "timeLimit": 230, 
     "difficulty": "Low", 
     "score": 0, 
     "duration": 0, 
