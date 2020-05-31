@@ -36,9 +36,7 @@ const routes: Route[] = [
     path: 'results/review/:questionId', 
     component: AnswersReviewComponent,
     canActivate: [TestResultsGuard],
-    // resolve: {
-    //   question: ReviewResolverService
-    // }
+    // resolve: { question: ReviewResolverService }
   }
 ];
 
