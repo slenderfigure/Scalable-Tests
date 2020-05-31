@@ -113,8 +113,8 @@
   margin: 0 auto 4rem;
   border-radius: 4px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
   user-select: none;
+  overflow: hidden;
 }
 
 .question-section::after {
@@ -234,8 +234,8 @@
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  bottom: 4rem;
-  right: 4rem;
+  bottom: 3rem;
+  right: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,5 +264,12 @@
 @media (max-width: 1900px) {
   .side-navbar {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .go-up-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
 }
