@@ -43,7 +43,9 @@ export class AnswersStructureComponent implements OnChanges {
         'correct-unselected': correct.indexOf(answer) > -1 && 
           selected.indexOf(answer) == -1,
         'wrong-selected': correct.indexOf(answer) == -1 &&
-          selected.indexOf(answer) > -1
+          selected.indexOf(answer) > -1,
+        'not-applicable': correct.indexOf(answer) == -1 &&
+          selected.indexOf(answer) == -1,
       };
     }
   }
