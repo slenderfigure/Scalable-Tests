@@ -6,7 +6,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Route[] = [
-  { path: 'home', component: MainPageComponent },
+  { path: 'home', component: MainPageComponent, data: { title: 'Mastery Zone'} },
   { path: 'user-center', loadChildren: () => import('./user-center/user-center.module').then(m => m.UserCenterModule) },
   {
     path: 'test',

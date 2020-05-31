@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Router, RouterEvent, NavigationEnd, NavigationStart } from '@angular/router';
+import { Router, RouterEvent, NavigationStart } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 
