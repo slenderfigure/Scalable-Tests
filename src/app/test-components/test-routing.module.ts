@@ -10,6 +10,7 @@ import { TestQuestionGuard } from './test-questions/test-question.guard';
 import { TestResultsGuard } from './test-results/test-results.guard';
 import { AnswersReviewComponent } from './test-results/answers-review/answers-review.component';
 import { CanDeactivateGuard } from './test-questions/can-deactivate.guard';
+import { ReviewResolverService } from './test-results/answers-review/review-resolver.service';
 
 
 const routes: Route[] = [
@@ -34,7 +35,10 @@ const routes: Route[] = [
   { 
     path: 'results/review/:questionId', 
     component: AnswersReviewComponent,
-    canActivate: [TestResultsGuard]
+    canActivate: [TestResultsGuard],
+    // resolve: {
+    //   question: ReviewResolverService
+    // }
   }
 ];
 
