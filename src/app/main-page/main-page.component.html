@@ -3,11 +3,16 @@
   <br><br><br>
   <button routerLink="/test" class="btn">Go Tests</button>
 
-  <div class="message-box">
-    <div class="top-bar"></div>
+  <!-- <button (click)="isOpen = true"  class="btn">Open Message Box</button>
 
-    <div 
-      [innerHTML]="element"
-      class="content"></div>
-  </div>
+  <div [@slideUp]="!isOpen ? 'down' : 'up'" class="message-box">
+    <div class="top-bar">
+      <button (click)="closeBox()" class="close-btn">
+        <i class="material-icons">cancel</i>
+      </button>
+    </div>
+
+    <div [innerHTML]="element" class="content"></div>
+  </div> -->
+
 </div>

@@ -1,42 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.5s', style({ 
+          transform: 'translateY(0)',  
+          opacity: 1 
+        })),
+      ]),
+      transition(':leave', [
+        animate('0.3s', style({ 
+          transform: 'translateY(10px)',  
+          opacity: 0 
+        }))
+      ])
+    ])
+  ]
 })
 export class MainPageComponent implements OnInit {
   initClientX: number = 0;
   initClientY: number = 0;
   newClientX: number = 0;
   newClientY: number = 0;
+  isOpen: boolean = false;
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  get style(): string {
-    return `
-      color: royalblue;
-      font-size: 1.5rem;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
-      padding: 2rem;
-    `;
-  }
-  get element(): any {
-    return this.sanitizer.bypassSecurityTrustHtml(`<p style="${this.style}">Safe Paragraph</p>`);
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
-    
+  closeBox(): void {
+    this.isOpen = false;
   }
   
   ngAfterViewInit(): void {
-    const msgBox = <HTMLElement>document.querySelector('.message-box');
+    // const msgBox = <HTMLElement>document.querySelector('.message-box');
 
-    this.dragElement(msgBox);
-    document.body.style.overflow = 'hidden';
+    // this.dragElement(msgBox);
+    // document.body.style.overflow = 'hidden';
   }
 
   dragElement(ele: HTMLElement): void {
@@ -71,15 +79,6 @@ export class MainPageComponent implements OnInit {
     } else {
       ele.addEventListener('mousedown', onMouseDown);
     }
-  }
-
-  limitReached(ele: HTMLElement): boolean {
-    const left = ele.getBoundingClientRect().left;
-    const top = ele.getBoundingClientRect().top;
-    const right = ele.getBoundingClientRect().right;
-    const bottom = ele.getBoundingClientRect().bottom;
-
-    return left < 0 || right > window.innerWidth || top < 0 || bottom > window.innerHeight;
   }
 
   setDirection(ele: HTMLElement): void {
