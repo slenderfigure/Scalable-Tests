@@ -3,10 +3,11 @@
   <br><br><br>
   <button routerLink="/test" class="btn">Go Tests</button>
 
-  <!-- <ul>
-    <li><a routerLink="./" fragment="random1" style="color: #fff">Random 1</a></li>
-    <li><a routerLink="./" fragment="random2" style="color: #fff">Random 2</a></li>
-    <li><a routerLink="./" fragment="random3" style="color: #fff">Random 3</a></li>
-    <li><a routerLink="./" fragment="random4" style="color: #fff">Random 4</a></li>
-  </ul> -->
+  <div class="message-box">
+    <div class="top-bar"></div>
+
+    <div 
+      [innerHTML]="element"
+      class="content"></div>
+  </div>
 </div>

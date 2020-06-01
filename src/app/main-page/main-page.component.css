@@ -9,3 +9,23 @@ h3 {
 button {
   margin: auto;
 }
+
+.message-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 250px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f7fbff;
+  overflow: hidden;
+}
+
+.top-bar {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #dde3e9;
+  cursor: move;
+}
