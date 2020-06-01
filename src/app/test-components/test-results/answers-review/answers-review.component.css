@@ -109,7 +109,7 @@
 .question-section {
   position: relative;
   width: 100%;
-  height: auto;
+  min-height: 100px;
   margin: 0 auto 4rem;
   border-radius: 4px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);

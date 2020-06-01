@@ -96,18 +96,17 @@
 }
 
 .thumbnail-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   width: 100%; 
   padding-top: 2rem;
 }
 
 .thumbnail {
   position: relative;
-  width: 260px;
   height: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   border-radius: 3px;
   background-color: #292929;
   box-shadow: 0 0 20px rgba(13, 16, 25, 0.1);  
@@ -172,4 +171,22 @@
 .thumbnail img {
   height: 180px;
   object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .thumbnail-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+
+  .thumbnail {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .thumbnail-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
 }
