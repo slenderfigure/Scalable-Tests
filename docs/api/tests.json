@@ -1,0 +1,621 @@
+[
+  {
+    "id": "axd45pn78pxyxpa",
+    "subject": "Chemistry",
+    "points": 30,
+    "questions": [
+      {
+        "id": 1,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
+        "points": 2.5,
+        "answers": [
+          "1 kilogram", 
+          "500 grams", 
+          "Practically none", 
+          "1 gram"
+        ],
+        "correctAnswer": ["250 grams"],
+        "feedback": "The average adult human body contains about 250 grams of salt, which is just over half a pound. If you don't have enough salt, your body suffers an electrolyte imbalance called hyponatremia.",
+        "intro": {
+          "header": "Intro before moving onto the next question",
+          "body": "Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.<br><br>Chemistry traces its roots back to the ancient study of alchemy. Chemistry and alchemy are separate now, though alchemy still is practiced today. All matter is made up of the chemical elements, which are distinguished from each other by the numbers of protons they possess.<br><br><cite>I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.</cite> ― Dmitri Mendeleev.",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/DIMendeleevCab.jpg"
+        },
+        "image": "assets/img/test-img1.jpg",
+        "timeLimit": "00:00:20"
+      }, 
+      {
+        "id": 2,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
+        "points": 2.5,
+        "answers": [
+          "Strong Acid", 
+          "Slightly Basic", 
+          "Neutral", 
+          "Milk does not have a pH"
+        ],
+        "correctAnswer": ["Slightly Acidic"],
+        "feedback": "Milk is close to a neutral pH, but it's slightly acidic thanks in part to the lactic acid it contains.",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 3,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "What is the most common isotope of hydrogen?",
+        "points": 2.5,
+        "answers": [
+          "Deuterium", 
+          "Tritum", 
+          "Hydrogen only has one isotope!", 
+          "None of the above"
+        ],
+        "correctAnswer": ["Protium"],
+        "feedback": "Most of the hydrogen in the world is protium (one proton, no neutrons), but some deuterium and tritium occurs, too. Tritium is radioactive. Deuterium is not radioactive and is the form of hydrogen found in heavy water.",
+        "image": "assets/img/test-img2.jpg",
+        "timeLimit": "00:00:15"
+      }, 
+      {
+        "id": 4,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "You can't live without water! What is its chemical formula?",
+        "points": 2.5,
+        "answers": [
+          "H2", 
+          "O2",
+          "H2O2", 
+          "CO2"
+        ],
+        "correctAnswer": ["H2O"],
+        "feedback": "You didn't miss this one, right? Water is good old H 2 O!",
+        "intro": {
+          "header": "Intro before moving onto the next question",
+          "body": "Chemistry is the scientific discipline involved with elements and compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.<br><br>Chemistry traces its roots back to the ancient study of alchemy. Chemistry and alchemy are separate now, though alchemy still is practiced today. All matter is made up of the chemical elements, which are distinguished from each other by the numbers of protons they possess.<br><br><cite>I saw in a dream a table where all the elements fell into place as required. Awakening, I immediately wrote it down on a piece of paper.</cite> ― Dmitri Mendeleev.",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/DIMendeleevCab.jpg"
+        },
+        "timeLimit": "00:00:15"
+      }, 
+      {
+        "id": 5,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
+        "points": 2.5,
+        "answers": [
+          "A definite shape, but no defined volume", 
+          "A definite volume and shape", 
+          "No defined volume or shape", 
+          "Water isn't a state of matter"
+        ],
+        "correctAnswer": ["A defined volume, but not a defined shape"],
+        "feedback": "A liquid takes the shape of its container (no defined shape), but has a fairly constant volume (at least compared to a gas). The state of matter of a substances is due to the kinetic energy of its components. With enough energy, atoms and molecules are less strongly bound to each other.",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 6,
+        "type": 2,
+        "section": "Section 2",
+        "problem": "Select all that apply",
+        "title": "Are the states of matter",
+        "points": 2.5,
+        "answers": [
+          "Fire",
+          "Electricity"
+        ],
+        "correctAnswer": ["Solid", "Liquid", "Gas", "Plasma"],
+        "feedback": "A state of matter is one of the distinct forms that different phases of matter take on. Four states of matter are observable in everyday life: solid, liquid, gas, and plasma.",
+        "timeLimit": "00:00:25"
+      },
+      {
+        "id": 7,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "A mole contains Avogadro's number of items. What is Avogadro's number?",
+        "points": 2.5,
+        "answers": [
+          "6023",
+          "3 x 10^8",
+          "6.02 x 10^-23",
+          "62 - 10^8"
+        ],
+        "correctAnswer": ["6.023 x 10^23"],
+        "feedback": "Avogadro's number is huge! The reason chemists use 6.02 x 10^23 to define a unit is to avoid having to work with incredibly large numbers.",
+        "timeLimit": "00:00:30"
+      },
+      {
+        "id": 8,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
+        "points": 2.5,
+        "answers": [
+          "Helium",
+          "Krypton",
+          "Argon",
+          "Neon"
+        ],
+        "correctAnswer": ["Chlorine"],
+        "feedback": "Chlorine is not a noble gas. It's one electron shy of a full octet, so unlike the noble gases, it's highly reactive.",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 9,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "All of the following elements are liquids around room temperature except which one?",
+        "points": 2.5,
+        "answers": [
+          "Gallium",
+          "Bromine",
+          "Mercury",
+          "Rubidium"
+        ],
+        "correctAnswer": ["Magnesium"],
+        "image": "assets/img/test-img4.jpg",
+        "feedback": "Bromine and mercury are liquid at room temperature. You can melt gallium in the palm of your hand. If you put pure magnesium in your hand, it may react with the water in your skin and ignite, but it won't melt.",
+        "timeLimit": "00:00:22"
+      },
+      {
+        "id": 10,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "What do you call an atom that has more protons than electrons?",
+        "points": 2.5,
+        "answers": [
+          "A molecule",
+          "An isotope",
+          "An anion",
+          "A neutron"
+        ],
+        "correctAnswer": ["A cation"],
+        "image": "assets/img/test-img5.jpg",
+        "feedback": "If an atom has more protons than electrons, it has a net positive charge. This is a cation, which you can remember because the \"t\" in cation resembles a \"+\" sign for positive.",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 11,
+        "type": 4,
+        "section": "Section 3",
+        "problem": "Fill in the blank",
+        "title": "Complete the following setence with the correct response",
+        "points": 2.5,
+        "answers": [
+          "Is one of the essential minerals in our body"
+        ],
+        "correctAnswer": [
+          "Salt"
+        ],
+        "image": "assets/img/test-img13.jpg",
+        "feedback": "Salt is an essential mineral needed for proper fluid balance, nerve transmission, and muscle contraction",
+        "timeLimit": "00:01:15"
+      },
+      {
+        "id": 12,
+        "type": 1,
+        "section": "Section 3",
+        "problem": "Choose the correct answer",
+        "title": "If you fill a glass to the brim with ice water and the ice melts, what will happen?",
+        "points": 2.5,
+        "answers": [
+          "The glass will over flow as the ice turns to water",
+          "I'll never find out because I'll drink the water or walk away before anything happens.",
+          "The glass begins to shatter as the volume increases",
+          "The level of water in the glass will remain unchanged as the ice melts"
+        ],
+        "correctAnswer": ["The water level will drop slightly as the ice melts"],
+        "image": "assets/img/test-img11.jpg",
+        "feedback": "One interesting property of water is that it achieves maximum density as a liquid, not as a solid. So, ice is less dense than water and floats. When it melts, it becomes more dense. More mass per unit volume means the level of the liquid drops slightly.",
+        "timeLimit": "00:00:20"
+      }
+    ],
+    "timeLimit": 302,
+    "difficulty": "Low",    
+    "duration": 0,
+    "score": 0,
+    "creationDate": "2020-05-20T05:37:26.346Z",
+    "sessionCompleted": false,
+    "icon": "assets/img/test-icons/chemistry.jpg"
+  },
+  {
+    "id": "CTMYTU4BAoT2RXH",
+    "subject": "Literature",
+    "points": 18,
+    "questions": [
+      {
+        "id": 1,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "Mark Twain wrote about which of these characters?",
+        "points": 2,
+        "answers": [
+          "Little Boy Blue", 
+          "Red Riding Hood", 
+          "Dennis the Menace", 
+          "Yukon Territory"
+        ],
+        "correctAnswer": ["Tom Sawyer"],
+        "feedback": "\"The Adventures of Tom Sawyer\" was Mark Twain's first novel.",
+        "image": "assets/img/test-img8.jpg",
+        "timeLimit": "00:00:25"
+      }, 
+      {
+        "id": 2,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "This character says, \"Please, sir, I want some more.\" Who is it?",
+        "points": 2,
+        "answers": [
+          "Atticus Finch", 
+          "Darth Vader", 
+          "Batman", 
+          "Pluto"
+        ],
+        "correctAnswer": ["Oliver Twist"],
+        "feedback": "The orphans draw straws to decide who will ask for an extra helping.",
+        "timeLimit": "00:00:20"
+      }, 
+      {
+        "id": 3,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "Who was the main character in J.D. Salinger's \"Catcher in the Rye?\"",
+        "points": 2,
+        "answers": [
+          "Bart Simpson", 
+          "Huckleberry Finn", 
+          "Clark Kent", 
+          "Saitama"
+        ],
+        "correctAnswer": ["Holden Caulfield"],
+        "feedback": "The story of this sixteen-year-old happens just after he's been expelled from prep school.",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 4,
+        "type": 3,
+        "section": "Section 1",
+        "problem": "Select \"true\" or \"false\"",
+        "title": "Miguel de Cervantes is not the author of 'Don Quixote'",
+        "points": 2,
+        "answers": [true],
+        "correctAnswer": [false],
+        "feedback": "The Spanish writer Miguel de Cervantes created one of the world's greatest literary masterpieces, 'Don Quixote,' in the early 1600s.",
+        "image": "assets/img/test-img10.jpg",
+        "timeLimit": "00:00:20"
+      }, 
+      {
+        "id": 5,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which best describes George Orwell's \"Animal Farm\"",
+        "points": 2,
+        "answers": [
+          "Women/Monthly cycles",
+          "Babe Ruth/Yankees",
+          "Dinosaurs/Barney",
+          "Gangs and the mafia"
+        ],
+        "correctAnswer": ["Animals/Communism"],
+        "feedback": "\"Animal Farm\" is often read as a critique against Soviet communism, which it is and was clearly meant to be. But it is much more general than that. It is a warning that all who desire to be political leaders are suspect. George Orwell, after all, is the man who said, \"That rifle on the wall of the laborer's cottage or working class flat is the symbol of democracy. It is our job to see that it stays there!\"",
+        "image": "assets/img/test-img7.jpg",
+        "timeLimit": "00:00:20"
+      }, 
+      {
+        "id": 6,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which is the \"Scarlet Letter?\"",
+        "points": 2,
+        "answers": [
+          "X", 
+          "Y", 
+          "Z", 
+          "Q"
+        ],
+        "correctAnswer": ["A"],
+        "feedback": "Written by Nathaniel Hawthorne, the \"Scarlet Letter\" is considered to be his masterpiece.",
+        "timeLimit": "00:00:20"
+      }, 
+      {
+        "id": 7,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which person penned the Harry Potter novels?",
+        "points": 2,
+        "answers": [
+          "Mark Twain", 
+          "Oprah Winfrey", 
+          "Dan Brown", 
+          "Coyote Peterson"
+        ],
+        "correctAnswer": ["J.K. Rowling"],
+        "feedback": "J.K Rowling is the British author of the Harry Potter series, which is comprised of seven books.",
+        "image": "assets/img/test-img6.jpg",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 8,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which story by Edgar Allan Poe has the main character confessing his sins because of a noise he's experiencing?",
+        "points": 2,
+        "answers": [
+          "Eldorado", 
+          "The Pit and the Pendulum", 
+          "The Gold Bug", 
+          "Don Quixote"
+        ],
+        "correctAnswer": ["Tell-Tale Heart"],
+        "feedback": "\"Villains!\" I shrieked, \"dissemble no more! I admit the deed! - tear up the planks! - here, here! - it is the beating of his hideous heart!\"<br><br>The story leads some to think that he was listening to his own heartbeat.",
+        "image": "assets/img/test-img9.jpg",
+        "timeLimit": "00:00:20"
+      },
+      {
+        "id": 9,
+        "type": 2,
+        "section": "Section 2",
+        "problem": "Select all that apply",
+        "title": "Are characters from the reknown novel 'Frankenstein'",
+        "points": 2,
+        "answers": [
+          "Captain Hook",
+          "Michael Frankenstein"
+        ],
+        "correctAnswer": [
+          "Victor Frankenstein",
+          "Robert Walton",
+          "Henry Clerval"
+        ],
+        "feedback": "The story of Victor Frankenstein's terrible creation and the havoc it caused has enthralled generations of readers and inspired countless writers of horror and suspense. Considering the novel's enduring success, it is remarkable that it began merely as a whim of Lord Byron's.",
+        "image": "assets/img/test-img12.jpg",
+        "timeLimit": "00:00:25"
+      }
+    ],
+    "timeLimit": 190,
+    "difficulty": "Very Low",
+    "score": 0,
+    "duration": 0,
+    "creationDate": "2020-05-23T23:59:35.807Z",
+    "sessionCompleted": false,
+    "icon": "assets/img/test-icons/literature.jpg"
+  },
+  {
+    "id": "Dl1le7SHdAD0XB1", 
+    "subject": "Photography", 
+    "points": 30, 
+    "questions": [
+      {
+        "id": 1,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "The amount of light or darkness on a photograph is known as the:",
+        "points": 2.5,
+        "answers": [
+          "Shutter Speed", 
+          "Zoom", 
+          "Contrast", 
+          "Sharpness"
+        ],
+        "correctAnswer": ["Exposure"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img14.jpg"
+      }, 
+      {
+        "id": 2,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "In a gig setting (ie low light), the ISO should be set to:",
+        "points": 2.5,
+        "answers": [
+          "The lowest setting there is on that particular camera", 
+          "The highest setting there is on that particular camera", 
+          "About f/2.8", 
+          "Between 1600 and 3200"
+        ],
+        "correctAnswer": ["Between 400 and 1600, depending on the camera"],
+        "timeLimit": "00:00:25",
+        "image": "assets/img/test-img15.jpg"
+      }, 
+      {
+        "id": 3,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "The amount of light passing through a lens is defined by the:",
+        "points": 2.5,
+        "answers": [
+          "Shutter speed", 
+          "Film speed", 
+          "Exposure", 
+          "How big the lens is"
+        ],
+        "correctAnswer": ["Aperture"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img16.jpg"
+      }, 
+      {
+        "id": 4,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "Perfect exposure is a result of the right mixture of:",
+        "points": 2.5,
+        "answers": [
+          "Shutter speed + aperture + resolution", 
+          "Film speed + aperture + exposure", 
+          "Exposure + aperture + shutter speed", 
+          "Film speed + resolution + exposure"
+        ],
+        "correctAnswer": ["Aperture + shutter speed + film speed"],
+        "timeLimit": "00:00:25",
+        "image": "assets/img/test-img17.jpg"
+      }, 
+      {
+        "id": 5,
+        "type": 1,
+        "section": "Section 1",
+        "problem": "Choose the correct answer",
+        "title": "What is the unit of measurement for light in photography?",
+        "points": 2.5,
+        "answers": [
+          "Apertures", 
+          "Shutter speeds", 
+          "Candelabras",
+          "Pixels"
+        ],
+        "correctAnswer": ["Stops"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img18.jpg"
+      }, 
+      {
+        "id": 6,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "What is Aperture measured in?",
+        "points": 2.5,
+        "answers": [
+          "Spots", 
+          "Stops", 
+          "Fractions",
+          "M Numbers"
+        ],
+        "correctAnswer": ["F Numbers"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img19.jpg"
+      }, 
+      {
+        "id": 7,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "What is shutter speed measured in?",
+        "points": 2.5,
+        "answers": [
+          "FPS", 
+          "Spots", 
+          "Exposures", 
+          "Intervals"
+        ],
+        "correctAnswer": ["Seconds"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img20.jpg"
+      }, 
+      {
+        "id": 8,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which of the following can be fixed by editing programs, after the photo has been shot?",
+        "points": 2.5,
+        "answers": [
+          "Colour", 
+          "Aperture problems", 
+          "Blurs", 
+          "Ghosting"
+        ],
+        "correctAnswer": ["Over and under exposure"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img21.jpg"
+      },
+      {
+        "id": 9,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "When taking a photo at a gig, which camera mode should you be on?",
+        "points": 2.5,
+        "answers": [
+          "Program", 
+          "Shutter Priority",
+          "Aperture Priority", 
+          "None of the above"
+        ],
+        "correctAnswer": ["Manual"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img22.jpg"
+      }, 
+      {
+        "id": 10,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "A low aperture would create",
+        "points": 2.5,
+        "answers": [
+          "Aperture doesn't change the depth of field", 
+          "A smaller depth of field", 
+          "Low brightness", 
+          "Low contrast"
+        ],
+        "correctAnswer": ["A larger depth of field"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img23.jpg"
+      },
+      {
+        "id": 11,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "The balancing of light within a photograph is known as the:",
+        "points": 2.5,
+        "answers": [
+          "White balance", 
+          "The aperture", 
+          "The shutter speed", 
+          "None of the above"
+        ],
+        "correctAnswer": ["The exposure"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img24.jpg"
+      }, 
+      {
+        "id": 12,
+        "type": 1,
+        "section": "Section 2",
+        "problem": "Choose the correct answer",
+        "title": "Which is a larger aperture?",
+        "points": 2.5,
+        "answers": [
+          "f/2.8", 
+          "1600", 
+          "1/300", 
+          "f/64"
+        ],
+        "correctAnswer": ["f/1.4"],
+        "timeLimit": "00:00:20",
+        "image": "assets/img/test-img25.jpg"
+      }
+    ], 
+    "timeLimit": 230, 
+    "difficulty": "Low", 
+    "score": 0, 
+    "duration": 0, 
+    "creationDate": "2020-05-30T22:50:17.895Z", 
+    "sessionCompleted": false,
+    "icon": "assets/img/test-icons/photography.jpg"
+  }
+]
