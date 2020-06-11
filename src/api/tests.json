@@ -396,7 +396,8 @@
     "score": 0,
     "duration": 0,
     "creationDate": "2020-05-23T23:59:35.807Z",
-    "sessionCompleted": false
+    "sessionCompleted": false,
+    "icon": "assets/img/test-icons/chemistry.jpg"
   },
   {
     "id": "Dl1le7SHdAD0XB1", 

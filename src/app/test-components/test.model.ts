@@ -12,13 +12,15 @@ export class Test {
   creationDate: Date;
   modifiedDate: Date;
   sessionCompleted: boolean;
+  icon: string;
 
   constructor(params: {
     subject: string,
     points: number,
     questions: Question[],
     timeLimit: number,
-    difficulty: string
+    difficulty: string,
+    icon?: string
   }) {
     this.id = this.uniqueId;
     this.subject = params.subject;
@@ -30,6 +32,7 @@ export class Test {
     this.duration = 0;
     this.creationDate = new Date();
     this.sessionCompleted = false;
+    this.icon = params.icon || null;
   }
   
   private get uniqueId(): string {
