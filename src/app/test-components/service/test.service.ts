@@ -1,5 +1,5 @@
-import { Injectable, ErrorHandler } from '@angular/core';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, Subject, throwError } from 'rxjs';
 import { map, tap, catchError } from 'rxjs/operators';
 
@@ -11,7 +11,7 @@ import { Question } from '../question.model';
   providedIn: 'root'
 })
 export class TestService {
-  private testUrl = '../../../api/tests.json';
+  private testUrl = 'api/tests.json';
 
   private durationTrackerSource: Subject<number> = new Subject();
   durationTracker$: Observable<number> = this.durationTrackerSource.asObservable();
