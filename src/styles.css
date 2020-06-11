@@ -257,16 +257,6 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-/* .view-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #222021;
-  overflow-y: auto;
-} */
-
 .wrapper {
   max-width: 1000px;
   margin: auto;
@@ -296,4 +286,8 @@ html::-webkit-scrollbar-thumb {
   display: block;
   margin: 0 1rem;
   color: #fff;
+}
+
+img {
+  width: 100%;
 }
