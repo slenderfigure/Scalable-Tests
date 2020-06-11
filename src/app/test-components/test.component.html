@@ -1,8 +1,13 @@
 <div class="wrapper">
   <h3>Choose a mofo test</h3>
   <ul>
-    <li *ngFor="let test of testList$ | async">
-      <a [routerLink]="['./info', test.id]">{{ test.subject }}</a>
+    <li *ngFor="let test of testList$ | async; first as isFirst">
+      <a [routerLink]="['./info', test.id]">
+        <div *ngIf="isFirst" class="test-icon">
+          <img src="https://www.scitecheuropa.eu/wp-content/uploads/2018/06/ST27-McGillU1-image-%C2%A9-iStock-Garsya.jpg" alt="">
+        </div>
+        <p class="subject">{{ test.subject }}</p>
+      </a>
     </li>
   </ul>
 </div>
