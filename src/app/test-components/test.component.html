@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h3>Choose a mofo test</h3>
+  <h3>Select one of the available tests</h3>
   <ul>
     <li *ngFor="let test of testList$ | async">
       <a [routerLink]="['./info', test.id]">
